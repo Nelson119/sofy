@@ -1,0 +1,28 @@
+.video-background{
+	@include Item(2200,1280,-200,-250,-1,-1,1920);
+	position: fixed;
+	iframe{
+		@include SubItem();
+	}
+	&:after{
+		@include SubItem();
+		content: '';
+		background: url(../img/pattern.jpg) 0 0/ 20px auto;
+		opacity: 0.4;
+	}
+
+	.kv{
+		@include SubItem();
+		position: fixed;
+		img{
+			@include SubItem();
+		}
+	}
+	.kv-1{
+		@include Item(47*3, 64*3, 0, 0, 250,-1,1920);
+		position: fixed;
+		img{
+			@include SubItem();
+		}
+	}
+}

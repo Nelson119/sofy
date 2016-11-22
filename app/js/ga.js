@@ -6,5 +6,12 @@
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global app */
 app.partial.ga = function(){
+	$('a[data-ga]').on('click', function(){
+		ga('send', 'event', 'Button', 'click', $(this).attr('data-ga'));
+	});
 
+	$('.page[data-ga]').on('page:in', function(r){
+		ga('send', 'pageview', { 'page': 'index.html', 'title': $(this).attr('data-ga') });
+		// console.log( { 'page': 'default.htm', 'title': '活動首頁' });
+	});
 };

@@ -60,6 +60,8 @@ html{
 	min-width: 320px;
 	.container{
 		min-width: 320px;
+		position: relative;
+		z-index: 2;
 	}
 	&.ie,&.firefox.windows{
 		body{
