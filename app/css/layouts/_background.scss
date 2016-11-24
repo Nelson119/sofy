@@ -1,28 +1,130 @@
 .video-background{
-	@include Item(2200,1280,-200,-250,-1,-1,1920);
+	@include SubItem();
 	position: fixed;
-	iframe{
+	.video-container{
 		@include SubItem();
-	}
-	&:after{
-		@include SubItem();
-		content: '';
-		background: url(../img/pattern.jpg) 0 0/ 20px auto;
-		opacity: 0.4;
+		.video{
+			@include SubItem();
+			min-height: 100vh;
+			transition-duration: 0.25s;
+			position: relative;
+			.player{
+				@include Item(1920, 1080, -1, -1, -1, -1, 1920);
+				iframe{
+					@include SubItem();
+				}
+				&:before{
+					@include SubItem();
+					position: absolute;
+					content: '';
+					background: url(../img/background/grid.png) 0 0/ 20px auto;
+					opacity: 1;
+					z-index: 3;
+				}
+
+				&:after{
+					@include SubItem();
+					position: absolute;
+					content: '';
+					background: url(../img/background/play.png) center no-repeat;
+					opacity: 1;
+					z-index: 3;
+				}
+			}
+			.next{
+				@include Item(207, 45, -22.5, 0, 792, 0, 1024);
+				top: 50%;
+				z-index: 4;
+				a,img{
+					@include SubItem();
+				}
+			}
+			.share{
+				@include Item(246, 117, 0, 22, 0, 34, 1024);
+				z-index: 4;
+				a,img{
+					@include SubItem();
+				}
+			}
+			&.playing,&.paused{
+				.player:after{
+					opacity: 1;
+				}
+				.poster{
+					opacity: 0;
+				}
+
+			}
+			&.playing{
+				.player:after{
+					background-image: url(../img/background/play.png);
+					@include animation(
+						play 0.25s 1 linear forwards
+					);
+				}
+			}
+			&.paused{
+				.player:after{
+					background-image: url(../img/background/pause.png);
+					@include animation(
+						pause 0.25s 1 linear forwards
+					);
+				}
+			}
+			.poster{
+				@include SubItem();
+				background: url(../img/background/kv.png) center/ cover;
+				transition-duration: 0.25s;
+				&:after{
+					background-image: url(../img/background/pause.png);
+					@include animation(
+						pause 0.25s 1 linear forwards
+					);
+				}
+			}
+		}
 	}
 
-	.kv{
-		@include SubItem();
-		position: fixed;
-		img{
-			@include SubItem();
-		}
+	.slick-list, .slick-track{
+		height: 100%;
 	}
-	.kv-1{
-		@include Item(47*3, 64*3, 0, 0, 250,-1,1920);
-		position: fixed;
-		img{
-			@include SubItem();
-		}
-	}
+}
+.sky-background{
+	background: url(../img/background/background.jpg) 0 0/ cover;
+	@include SubItem();
+	// position: fixed;
+	z-index: 2;
+}
+
+@include keyframes( play )
+{
+    0% {
+		transform: scale(1);
+		opacity: 1;
+    }
+    99% {
+		transform: scale(1.2);
+		opacity: 0;
+    }
+    100% {
+		transform: scale(1.2);
+		opacity: 0;
+		background: url(../img/background/pause.png) center no-repeat;
+    }
+}
+@include keyframes( pause )
+{
+    0% {
+		transform: scale(1);
+		opacity: 1;
+    }
+    99% {
+		transform: scale(1.2);
+		opacity: 0;
+    }
+    100% {
+		transform: scale(1.2);
+		opacity: 0;
+		background: url(../img/background/play.png) center no-repeat;
+    }
 }

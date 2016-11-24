@@ -15,6 +15,7 @@
 
     <!-- build:css css/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -32,38 +33,55 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <figure class="video-background">
-      <iframe id="player" src="https://www.youtube.com/embed/-N0NEGGigd8?enablejsapi=1&version=3&controls=0&autoplay=1&showinfo=0&loop=1&vq=hd720" frameborder="0" allowfullscreen></iframe>
-      <!-- <div id="player"></div> -->
-      <figure class="kv">
-        <img src="img/kv.png"></figure>
-      <figure class="kv-1">
-        <img src="img/kv-1.png"></figure>
+      <aside class="video-container">
+        <aside class="video">
+          <aside class="player">
+            <iframe src="https://www.youtube.com/embed/44J2sK9FjTQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=44J2sK9FjTQ" frameborder="0" allowfullscreen></iframe>
+          </aside>
+          <figure class="poster">
+            <figure class="kv"></figure>
+            <figure class="kv-1">
+              <img src="img/background/kv-1.png">
+            </figure>
+          </figure>
+          <figure class="next">
+            <a href="javascript:"><img src="img/background/next.png"></a>
+          </figure>
+          <figure class="share">
+            <a href="javascript:"><img src="img/background/share.png"></a>
+          </figure>
+        </aside>
+        <aside class="video">
+          <aside class="player">
+            <iframe src="https://www.youtube.com/embed/i6r_6vdH3N0?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=i6r_6vdH3N0" frameborder="0" allowfullscreen></iframe>
+          </aside>
+          <figure class="poster">
+            <figure class="kv"></figure>
+            <figure class="kv-1">
+              <img src="img/background/kv-1.png">
+            </figure>
+          </figure>
+        </aside>
+      </aside>
     </figure>
-    <section class="container home">
+    <!--  -->
+    <figure class="sky-background"></figure>
+    <section class="container home hide">
       <header class="row">
-        <!-- <h1 class="logo"></h1> -->
+        <h1 class="logo">
+          <a href="./"><img src="img/header/logo.png"></a>
+        </h1>
         <a href="javascript:" class="burger visible-xs visible-sm"> 
           <i class="fa fa-bars"></i>
         </a>
-        <nav>
-          <a href="javascript:">XXX</a>
-          <a href="javascript:">XXX</a>
-          <a href="javascript:">XXX</a>
-          <a href="javascript:">XXX</a>
-          <a href="javascript:">XXX</a>
-        </nav>
       </header>
-      <section class="row">
-        <section class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><h1>1</h1></section>
-        <section class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><h2>2</h2></section>
-        <section class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><h3>3</h3></section>
-        <section class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><h4>4</h4></section>
-        <section class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><h5>5</h5></section>
-        <section class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><h6>6</h6></section>
-      </section>
-      <footer>
-        <p>ALL RIGHTS RESERVED &copy;</p>
-      </footer>
+      <nav>
+        <a href="javascript:">XXX</a>
+        <a href="javascript:">XXX</a>
+        <a href="javascript:">XXX</a>
+        <a href="javascript:">XXX</a>
+        <a href="javascript:">XXX</a>
+      </nav>
     </section>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -79,6 +97,7 @@
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

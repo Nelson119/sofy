@@ -24,6 +24,24 @@
 	}
 }
 
+
+@mixin keyframes($animationName)
+{
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName}  {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+
 @function per($pixels, $context: $browser-xs-viewport){
   @return percentage($pixels/$context);
 }
