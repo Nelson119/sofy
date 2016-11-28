@@ -9,45 +9,81 @@
 			transition-duration: 0.25s;
 			position: relative;
 			.player{
-				@include Item(1920, 1080, -1, -1, -1, -1, 1920);
+				@include SubItem();
+				overflow: hidden;
 				iframe{
 					@include SubItem();
 				}
-				&:before{
-					@include SubItem();
-					position: absolute;
-					content: '';
-					background: url(../img/background/grid.png) 0 0/ 20px auto;
-					opacity: 1;
-					z-index: 3;
-				}
-
-				&:after{
-					@include SubItem();
-					position: absolute;
-					content: '';
-					background: url(../img/background/play.png) center no-repeat;
-					opacity: 1;
-					z-index: 3;
-				}
 			}
-			.next{
+			.next, .prev{
 				@include Item(207, 45, -22.5, 0, 792, 0, 1024);
 				top: 50%;
+				top: 50vh;
 				z-index: 4;
+				opacity: 0;
+				transition: height 0s linear 0.35s, opacity 0.35s linear 0s;
 				a,img{
 					@include SubItem();
 				}
+			}
+			.prev{
+				@include Item(207, 45, -22.5, 0, 42, 0, 1024);
+				top: 50%;
+				top: 50vh;
+				z-index: 4;
 			}
 			.share{
-				@include Item(246, 117, 0, 22, 0, 34, 1024);
+				// @include Item(246, 117, 0, 22, 0, 34, 1024);
+				position: absolute;
+				width: 246px;
+				right: 34px;
+				bottom: 22px;
 				z-index: 4;
+				opacity: 0;
+				height: 0;
+				transition: height 0s linear 0.35s, opacity 0.35s linear 0s;
 				a,img{
-					@include SubItem();
+					width: 100%;
+					// @include SubItem();
 				}
 			}
+			.poster{
+				@include SubItem();
+				background: url(../img/background/kv.png) center/ cover;
+				transition-duration: 0.25s;
+				z-index: 3;
+				&:after{
+					background-image: url(../img/background/pause.png);
+					@include animation(
+						pause 0.25s 1 linear forwards
+					);
+				}
+				&.kv-1{
+					@include Item(391, 223, -50, 0, 42, 0, 1024);
+					top: 50%;
+					top: 50vh;
+					z-index: 3;
+				}
+			}
+			&:before{
+				@include SubItem();
+				position: absolute;
+				content: '';
+				background: url(../img/background/grid.png) 0 0/ 20px auto;
+				opacity: 1;
+				z-index: 3;
+			}
+
+			&:after{
+				@include SubItem();
+				position: absolute;
+				content: '';
+				background: url(../img/background/play.png) center no-repeat;
+				opacity: 1;
+				z-index: 3;
+			}
 			&.playing,&.paused{
-				.player:after{
+				&:after{
 					opacity: 1;
 				}
 				.poster{
@@ -56,7 +92,7 @@
 
 			}
 			&.playing{
-				.player:after{
+				&:after{
 					background-image: url(../img/background/play.png);
 					@include animation(
 						play 0.25s 1 linear forwards
@@ -64,22 +100,28 @@
 				}
 			}
 			&.paused{
-				.player:after{
+				&:after{
 					background-image: url(../img/background/pause.png);
 					@include animation(
 						pause 0.25s 1 linear forwards
 					);
 				}
 			}
-			.poster{
-				@include SubItem();
-				background: url(../img/background/kv.png) center/ cover;
-				transition-duration: 0.25s;
-				&:after{
-					background-image: url(../img/background/pause.png);
-					@include animation(
-						pause 0.25s 1 linear forwards
-					);
+
+
+			&.mousemove{
+				.share{
+					opacity: 1;
+					height: 117px;
+					transition: height 0s linear 0s, opacity 0.45s linear 0s;
+				}
+				.next{
+					opacity: 1;
+					transition: height 0s linear 0s, opacity 0.45s linear 0s;
+				}
+				.prev{
+					opacity: 1;
+					transition: height 0s linear 0s, opacity 0.45s linear 0s;
 				}
 			}
 		}
@@ -94,6 +136,8 @@
 	@include SubItem();
 	// position: fixed;
 	z-index: 2;
+	min-height: 100%;
+	min-height: 100vh;
 }
 
 @include keyframes( play )
@@ -115,16 +159,11 @@
 @include keyframes( pause )
 {
     0% {
-		transform: scale(1);
-		opacity: 1;
-    }
-    99% {
 		transform: scale(1.2);
 		opacity: 0;
     }
     100% {
-		transform: scale(1.2);
-		opacity: 0;
-		background: url(../img/background/play.png) center no-repeat;
+		transform: scale(1);
+		opacity: 1;
     }
 }

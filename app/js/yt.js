@@ -22,7 +22,7 @@ app.partial.yt = function(){
 
 	
 		$('.video-background .video-container').on('init', function(){
-			$('.video-background .video .player').each(function(i){
+			$('.video-background .video').each(function(i){
 
 				$('iframe', this).attr('id', 'player' + i)
 				var player = new YT.Player('player' + i);
@@ -35,7 +35,8 @@ app.partial.yt = function(){
 
 			});
 		}).slick({
-			arrows: false
+			arrows: false,
+			infinite: false
 		}).on('afterChange', function(){
 			if(playing != null){
 				playing.play();
@@ -61,5 +62,48 @@ app.partial.yt = function(){
 				$(this.pe).addClass('paused');
 			}
 		}
+		var moving = 0;
+		$('.video-background .video-container .video').on('mousemove', function(){
+			clearTimeout(moving);
+			$(this).addClass('mousemove');
+			moving = setTimeout(function(){
+				$('.video-background .video-container .video').removeClass('mousemove');
+			}, 750);
+		}).find('.share, .prev, .next').on('mousemove', function(e){
+			clearTimeout(moving);
+			e.stopPropagation();
+		});
+
+		$(window).on('resize', function(){
+
+
+			var w = $(window).width(),
+				h = $(window).height(),
+				ratio = 16 / 9;
+
+			var iframeX = 0,
+				iframeY = 0,
+				iframeW = w,
+				iframeH = h;
+
+
+			if(w / h >= ratio){
+				iframeH = w / ratio,
+				iframeW = w,
+				iframeY = ((w / ratio - h) / 2 * -1),
+				iframeX = 0;
+			}else{
+				iframeH = h,
+				iframeW = h *  ratio + 2,
+				iframeY = 0,
+				iframeX = ((h *  ratio - w) / 2 * -1);
+
+			}
+			$('.video iframe').height(iframeH).width(iframeW)
+				.css('margin-top', iframeY)
+				.css('margin-left', iframeX);
+
+			$('.video-background .video-container').slick('reinit');
+		}).trigger('resize');
 	};
 };	

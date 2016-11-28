@@ -28,7 +28,7 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="sky">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -38,14 +38,10 @@
           <aside class="player">
             <iframe src="https://www.youtube.com/embed/44J2sK9FjTQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=44J2sK9FjTQ" frameborder="0" allowfullscreen></iframe>
           </aside>
-          <figure class="poster">
-            <figure class="kv"></figure>
-            <figure class="kv-1">
-              <img src="img/background/kv-1.png">
-            </figure>
-          </figure>
+          <figure class="poster" data-src="img/background/kv.png"></figure>
+          <figure class="poster kv-1" data-src="img/background/kv-1.png"></figure>
           <figure class="next">
-            <a href="javascript:"><img src="img/background/next.png"></a>
+            <a href="javascript:$('.video-container').slick('slickGoTo', 1);void(0)"><img src="img/background/next.png"></a>
           </figure>
           <figure class="share">
             <a href="javascript:"><img src="img/background/share.png"></a>
@@ -53,35 +49,44 @@
         </aside>
         <aside class="video">
           <aside class="player">
-            <iframe src="https://www.youtube.com/embed/i6r_6vdH3N0?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=i6r_6vdH3N0" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/KqlGAw6Bs-w?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=KqlGAw6Bs-w" frameborder="0" allowfullscreen></iframe>
+            <figure class="poster" data-src="https://i.ytimg.com/vi/KqlGAw6Bs-w/maxresdefault.jpg"></figure>
           </aside>
-          <figure class="poster">
-            <figure class="kv"></figure>
-            <figure class="kv-1">
-              <img src="img/background/kv-1.png">
-            </figure>
+          <figure class="prev">
+            <a href="javascript:$('.video-container').slick('slickGoTo', 0);void(0)"><img src="img/background/prev.png"></a>
+          </figure>
+          <figure class="share">
+            <a href="javascript:"><img src="img/background/share.png"></a>
           </figure>
         </aside>
       </aside>
     </figure>
     <!--  -->
-    <figure class="sky-background"></figure>
+    <figure class="sky-background"  data-src="img/background/background.jpg"></figure>
+    <header class="row">
+      <h1 class="logo">
+        <a href="./"><img src="img/header/logo.png"></a>
+      </h1>
+      <a href="coupon.pdf" target="_blank" class="coupon"><img src="img/header/coupon.png"></a>
+      <a href="javascript:" class="burger"><img src="img/header/burger.png"></a>
+      <aside class="menu">
+        <img src="img/menu/menu-bg.png">
+        <a class="menu-f" href="javascript:"><img src="img/menu/menu-f.png"></a>
+        <a class="menu-x" href="javascript:"><img src="img/menu/menu-x.png"></a>
+        <nav class="fontsize-15 vertical-middle text-right">
+          <aside class="text-left">
+            <a href="javascript:">喬喬の寵愛肌地</a>
+            <a href="javascript:">我の清爽淨肌</a>
+            <a href="javascript:">索取清爽折扣</a>
+            <a href="javascript:">姊妹私心大推</a>
+            <a href="javascript:">活動辦法</a>
+            <a href="javascript:">得獎名單</a>
+          </aside>
+        </nav>
+      </aside>
+    </header>
+    <a class="scrolldown" href="javascript:"><img src="img/scroll-down.png"></a>
     <section class="container home hide">
-      <header class="row">
-        <h1 class="logo">
-          <a href="./"><img src="img/header/logo.png"></a>
-        </h1>
-        <a href="javascript:" class="burger visible-xs visible-sm"> 
-          <i class="fa fa-bars"></i>
-        </a>
-      </header>
-      <nav>
-        <a href="javascript:">XXX</a>
-        <a href="javascript:">XXX</a>
-        <a href="javascript:">XXX</a>
-        <a href="javascript:">XXX</a>
-        <a href="javascript:">XXX</a>
-      </nav>
     </section>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -118,8 +123,10 @@
     
     <!-- build:js js/main.js -->
     <script src="js/app.js"></script>
+    <script src="js/preload.js"></script>
     <script src="js/ga.js"></script>
     <script src="js/yt.js"></script>
+    <script src="js/menu.js"></script>
     <!-- endbuild -->
   </body>
 </html>
