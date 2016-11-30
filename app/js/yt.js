@@ -20,12 +20,15 @@ app.partial.yt = function(){
 
 	window.onYouTubeIframeAPIReady = function () {
 
-	
+		var players = [];
+		
 		$('.video-background .video-container').on('init', function(){
 			$('.video-background .video').each(function(i){
 
-				$('iframe', this).attr('id', 'player' + i)
+				$('iframe', this).attr('id', 'player' + i);
 				var player = new YT.Player('player' + i);
+
+				players.push(player);
 
 				$(this).on('click', function(){
 					player.play();
@@ -39,6 +42,8 @@ app.partial.yt = function(){
 			infinite: false
 		}).on('afterChange', function(){
 			if(playing != null){
+				playing.play();
+				playing = players[$('.slick-current').index()].playVideo();
 				playing.play();
 			}
 		});
@@ -73,6 +78,14 @@ app.partial.yt = function(){
 			clearTimeout(moving);
 			e.stopPropagation();
 		});
+		$('.scrolldown').on('click', function(e){
+			if(playing != null){
+				playing.play();
+			}
+			e.stopPropagation();
+			e.preventDefault();
+			return false;
+		});
 
 		$(window).on('resize', function(){
 
@@ -99,11 +112,25 @@ app.partial.yt = function(){
 				iframeX = ((h *  ratio - w) / 2 * -1);
 
 			}
-			$('.video iframe').height(iframeH).width(iframeW)
+			$('.video-background iframe').height(iframeH).width(iframeW)
 				.css('margin-top', iframeY)
 				.css('margin-left', iframeX);
 
 			$('.video-background .video-container').slick('reinit');
 		}).trigger('resize');
+
+		$('.tvc-video').one('mousemove', function(){
+		
+			$('iframe', this).attr('id', 'tvc');
+			var p1 = new YT.Player('tvc');
+			console.log(p1)
+
+			$(this).on('click', function(){
+				p1.play();
+			});
+
+			p1.pe = this;
+
+		})
 	};
 };	

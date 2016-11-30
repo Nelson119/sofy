@@ -7,13 +7,20 @@
 /* Space out content a bit */
 body {
 	&.video{
-		.sky-background{
-			height: 0;
+		.video-background{
 		}
 	}
 	&.sky{
 		.video-background{
+			min-height: 0;
 			height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition: height 0.2s linear 0s, opacity 0.15s linear 0s;
+		}
+		.scrolldown{
+			width: 0;
+			opacity: 0;
 		}
 	}
 }
