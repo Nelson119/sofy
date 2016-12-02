@@ -16,6 +16,7 @@
     <!-- build:css css/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -28,7 +29,7 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="sky">
+  <body class="">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -38,8 +39,10 @@
           <aside class="player">
             <iframe src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
           </aside>
-          <figure class="poster" data-src="img/background/kv.png"></figure>
-          <figure class="poster kv-1" data-src="img/background/kv-1.png"></figure>
+          <figure class="poster hidden-xs" data-src="img/background/kv.png"></figure>
+          <figure class="poster kv-1 hidden-xs" data-src="img/background/kv-1.png"></figure>
+          <figure class="poster visible-xs" data-src="img/background/kv@320.png"></figure>
+          <figure class="poster kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure>
           <figure class="next">
             <a href="javascript:$('.video-container').slick('slickGoTo', 1);void(0)"><img src="img/background/next.png"></a>
           </figure>
@@ -49,7 +52,7 @@
         </aside>
         <aside class="video">
           <aside class="player">
-            <iframe id="tvc" src="https://www.youtube.com/embed/KqlGAw6Bs-w?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=KqlGAw6Bs-w" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/KqlGAw6Bs-w?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=KqlGAw6Bs-w" frameborder="0" allowfullscreen></iframe>
             <figure class="poster" data-src="https://i.ytimg.com/vi/KqlGAw6Bs-w/maxresdefault.jpg"></figure>
           </aside>
           <figure class="prev">
@@ -89,7 +92,7 @@
 
     <section class="content">
       <article>
-        <section class="home">
+        <section class="home-page">
           <figure class="rib1"><img src="img/home/hr.png"></figure>
           <figure class="rib2"><img src="img/home/hr-1.png"></figure>
           <section class="container">
@@ -152,7 +155,7 @@
 
               <aside class="tvc">
                 <aside class="tvc-video">
-                  <iframe src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3" frameborder="0" allowfullscreen></iframe>
+                  <iframe id="tvc" src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
                 </aside>
               </aside>
             </aside>
@@ -172,8 +175,8 @@
               </figure>
 
               <ul class="bloggers row text-center">
-                <li class="col-lg-4 col-md-4">
-                  <a href="javascript:">
+                <li class="col-lg-4 col-md-4 col-sm-4">
+                  <a href="javascript:" data-target="blogger1">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -192,8 +195,8 @@
                     <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4">
-                  <a href="javascript:">
+                <li class="col-lg-4 col-md-4 col-sm-4">
+                  <a href="javascript:" data-target="blogger2">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -212,8 +215,8 @@
                     <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4">
-                  <a href="javascript:">
+                <li class="col-lg-4 col-md-4 col-sm-4">
+                  <a href="javascript:" data-target="blogger3">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -232,8 +235,8 @@
                     <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4">
-                  <a href="javascript:">
+                <li class="col-lg-4 col-md-4 col-sm-4">
+                  <a href="javascript:" data-target="blogger4">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -252,8 +255,8 @@
                     <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4">
-                  <a href="javascript:">
+                <li class="col-lg-4 col-md-4 col-sm-4">
+                  <a href="javascript:" data-target="blogger5">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -272,8 +275,8 @@
                     <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4">
-                  <a href="javascript:">
+                <li class="col-lg-4 col-md-4 col-sm-4">
+                  <a href="javascript:" data-target="blogger6">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -281,7 +284,7 @@
                       </span>
                     </figure>
                     <h3 class="fontsize-25">
-                      <span><span>薛妞妞</span></span>
+                      <span><span>小貓 Rui</span></span>
                     </h3>
                     <p class="fontsize-20">
                       <span><span>你聽過</span></span>
@@ -304,8 +307,8 @@
               </figure>
 
               <ul class="girls row text-left">
-                <li class="col-lg-6 col-md-6">
-                  <a href="javascript:">
+                <li class="col-lg-6 col-md-6 col-sm-6">
+                  <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
                       <span>
@@ -317,10 +320,10 @@
                       <h3 class="fontsize-14"><span><span class="fontsize-25">小橘 </span></span><sub class="fontsize-16">19歲</sub></h3>
                       <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
                     </figure>
-                  </a>
+                  </aside>
                 </li>
-                <li class="col-lg-6 col-md-6">
-                  <a href="javascript:">
+                <li class="col-lg-6 col-md-6 col-sm-6">
+                  <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
                       <span>
@@ -332,10 +335,10 @@
                       <h3 class="fontsize-14"><span><span class="fontsize-25">艾莉 </span></span><sub class="fontsize-16">22歲</sub></h3>
                       <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
                     </figure>
-                  </a>
+                  </aside>
                 </li>
-                <li class="col-lg-6 col-md-6">
-                  <a href="javascript:">
+                <li class="col-lg-6 col-md-6 col-sm-6">
+                  <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
                       <span>
@@ -347,10 +350,10 @@
                       <h3 class="fontsize-14"><span><span class="fontsize-25">恬恬</span></span><sub class="fontsize-16">23歲</sub></h3>
                       <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
                     </figure>
-                  </a>
+                  </aside>
                 </li>
-                <li class="col-lg-6 col-md-6">
-                  <a href="javascript:">
+                <li class="col-lg-6 col-md-6 col-sm-6">
+                  <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
                       <span>
@@ -362,7 +365,7 @@
                       <h3 class="fontsize-14"><span><span class="fontsize-25">安琪</span></span><sub class="fontsize-16">18歲</sub></h3>
                       <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
                     </figure>
-                  </a>
+                  </aside>
                 </li>
               </ul>
 
@@ -380,9 +383,321 @@
             </section>
           </section>
         </section>
+        <section class="rule-page">
+          <h3 class="text-center vertical-middle fontsize-47">活動辦法</h3>
+          <ul class="fontsize-21">
+            <li>活動主題：那幾天，喬喬の寵愛肌地</li>
+            <li>活動期間：2016/12/16～2017/1/16</li>
+            <li>活動方式：
+              <ol>
+                <li>於活動期間內，透過活動網站觀看並分享影片至個人 <br>Facebook塗鴉牆上（貼文須設定為「公開」）</li>
+                <li>完整填寫基本資料，即獲得抽獎資格</li>
+              </ol>
+            </li>
+            <li>活動獎品：
+              <ol>
+                <li>與喬喬共進拉花午茶：20名</li>
+                <li>蘇菲清爽淨肌日用超薄23cm/<br>12片一箱(24包)：50名</li>
+              </ol>
+            </li>
+            <li>得獎公告：
+              <p>2017/1/18，統一公告於本活動網站</p>
+            </li>
+            <li>注意事項：
+              <p>待提供待提供待提供待提供待提<br>供待提供待提供待提供待提供待</p>
+            </li>
+          </ul>
+          <figure class="jojo"><img src="img/rule/jojo.png"></figure>
+          <a class="close" href="javascript:">
+            <img src="img/lightbox/close.png">
+          </a>
+        </section>
       </article>
     </section>
-    
+
+    <section class="blogger-box" id="blogger1">
+      <aside class="inner">
+      
+        <figure class="guide">
+          <img src="img/home/guide-1.png">
+        </figure>
+
+        <figure class="profile-picture">
+          <img src="img/home/blossom.png">
+          <span>
+            <img src="img/home/blogger-1.jpg">
+          </span>
+        </figure>
+        <aside class="title text-center">
+          <h3 class="fontsize-25">
+            <span><span>崔咪</span></span>
+          </h3>
+          <p class="fontsize-20">
+            <span><span>生理期清爽了</span></span>
+          </p>
+          <p class="fontsize-20">
+            <span><span>生活更清爽</span></span>
+          </p>
+        </aside>
+
+        <article>
+          <aside class="fontsize-19">
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+
+          </aside>
+        </article>
+
+        <a class="close" href="javascript:$('.blogger-box').removeClass('in');void(0)">
+          <img src="img/lightbox/close.png">
+        </a>
+      </aside>
+    </section>
+
+    <section class="blogger-box" id="blogger2">
+      <aside class="inner">
+      
+        <figure class="guide">
+          <img src="img/home/guide-1.png">
+        </figure>
+
+        <figure class="profile-picture">
+          <img src="img/home/blossom.png">
+          <span>
+            <img src="img/home/blogger-2.jpg">
+          </span>
+        </figure>
+        <aside class="title text-center">
+          <h3 class="fontsize-25">
+            <span><span>薛妞妞</span></span>
+          </h3>
+          <p class="fontsize-20">
+            <span><span>我の蘇菲</span></span>
+          </p>
+          <p class="fontsize-20">
+            <span><span>清爽淨肌</span></span>
+          </p>
+        </aside>
+
+        <article>
+          <aside class="fontsize-19">
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+
+          </aside>
+        </article>
+
+        <a class="close" href="javascript:$('.blogger-box').removeClass('in');void(0)">
+          <img src="img/lightbox/close.png">
+        </a>
+      </aside>
+    </section>
+
+    <section class="blogger-box" id="blogger3">
+      <aside class="inner">
+      
+        <figure class="guide">
+          <img src="img/home/guide-1.png">
+        </figure>
+
+        <figure class="profile-picture">
+          <img src="img/home/blossom.png">
+          <span>
+            <img src="img/home/blogger-3.jpg">
+          </span>
+        </figure>
+        <aside class="title text-center">
+          <h3 class="fontsize-25">
+            <span><span>謝琦琦</span></span>
+          </h3>
+          <p class="fontsize-20">
+            <span><span>用蘇菲</span></span>
+          </p>
+          <p class="fontsize-20">
+            <span><span>寵愛自己</span></span>
+          </p>
+        </aside>
+
+        <article>
+          <aside class="fontsize-19">
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+
+          </aside>
+        </article>
+
+        <a class="close" href="javascript:$('.blogger-box').removeClass('in');void(0)">
+          <img src="img/lightbox/close.png">
+        </a>
+      </aside>
+    </section>
+
+    <section class="blogger-box" id="blogger4">
+      <aside class="inner">
+      
+        <figure class="guide">
+          <img src="img/home/guide-1.png">
+        </figure>
+
+        <figure class="profile-picture">
+          <img src="img/home/blossom.png">
+          <span>
+            <img src="img/home/blogger-1.jpg">
+          </span>
+        </figure>
+        <aside class="title text-center">
+          <h3 class="fontsize-25">
+            <span><span>崔咪</span></span>
+          </h3>
+          <p class="fontsize-20">
+            <span><span>生理期清爽了</span></span>
+          </p>
+          <p class="fontsize-20">
+            <span><span>生活更清爽</span></span>
+          </p>
+        </aside>
+
+        <article>
+          <aside class="fontsize-19">
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+
+          </aside>
+        </article>
+
+        <a class="close" href="javascript:$('.blogger-box').removeClass('in');void(0)">
+          <img src="img/lightbox/close.png">
+        </a>
+      </aside>
+    </section>
+
+    <section class="blogger-box" id="blogger5">
+      <aside class="inner">
+      
+        <figure class="guide">
+          <img src="img/home/guide-1.png">
+        </figure>
+
+        <figure class="profile-picture">
+          <img src="img/home/blossom.png">
+          <span>
+            <img src="img/home/blogger-2.jpg">
+          </span>
+        </figure>
+        <aside class="title text-center">
+          <h3 class="fontsize-25">
+            <span><span>薛妞妞</span></span>
+          </h3>
+          <p class="fontsize-20">
+            <span><span>我の蘇菲</span></span>
+          </p>
+          <p class="fontsize-20">
+            <span><span>清爽淨肌</span></span>
+          </p>
+        </aside>
+
+        <article>
+          <aside class="fontsize-19">
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+
+          </aside>
+        </article>
+
+        <a class="close" href="javascript:$('.blogger-box').removeClass('in');void(0)">
+          <img src="img/lightbox/close.png">
+        </a>
+      </aside>
+    </section>
+
+    <section class="blogger-box" id="blogger6">
+      <aside class="inner">
+      
+        <figure class="guide">
+          <img src="img/home/guide-1.png">
+        </figure>
+
+        <figure class="profile-picture">
+          <img src="img/home/blossom.png">
+          <span>
+            <img src="img/home/blogger-4.jpg">
+          </span>
+        </figure>
+        <aside class="title text-center">
+          <h3 class="fontsize-25">
+            <span><span>小貓 Rui</span></span>
+          </h3>
+          <p class="fontsize-20">
+            <span><span>你聽過</span></span>
+          </p>
+          <p class="fontsize-20">
+            <span><span>清爽淨肌嗎</span></span>
+          </p>
+        </aside>
+
+        <article>
+          <aside class="fontsize-19">
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+            <p>女孩們都很愛漂亮，不管是保養、化妝、擦指甲油還是整理頭髮，要把自己弄得光鮮亮麗出門總是很花時間呢！</p>
+
+            <p>如果那個來，所有事情處理到一半突然感覺濕黏感又上身，又不能隨時去換，真的會非常惱人，無法保持愉悅的心情怎麼把自己打扮漂亮啊！連出門都不想了阿！</p>
+
+            <p>薛妞妞告訴你一個小秘密，這時只要有了蘇菲清爽淨肌就ok啦！濃稠經血也可以瞬吸乾爽，這下就能清爽潔淨的打扮美美出門去囉~</p>
+
+          </aside>
+        </article>
+
+        <a class="close" href="javascript:$('.blogger-box').removeClass('in');void(0)">
+          <img src="img/lightbox/close.png">
+        </a>
+      </aside>
+    </section>
+
+  
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -398,6 +713,9 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/slick-carousel/slick/slick.js"></script>
     <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -422,6 +740,7 @@
     <script src="js/ga.js"></script>
     <script src="js/yt.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/home.js"></script>
     <!-- endbuild -->
   </body>
 </html>

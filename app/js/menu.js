@@ -14,51 +14,51 @@ app.partial.menu = function(){
 	});
 	$('.logo').on('click', function(e){
 		$('.video-background .video-container').slick('slickGoTo', 0);
-		$('body').removeClass('sky').addClass('video');
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
+		return changeView('video', e);
 	});
 	$('.scrolldown').on('click', function(e){
-		$('body').removeClass('video').addClass('sky');
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
+		TweenMax.set('.content article', {scrollTop: 0});
+		return changeView('home', e);
 	});
 
 	$('.menu nav a:eq(0)').on('click', function(e){
 		$('.video-background .video-container').slick('slickGoTo', 0);
-		$('body').removeClass('sky').addClass('video');
-		$('body').removeClass('menu');
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
+		return changeView('video', e);
 	});
 
 	$('.menu nav a:eq(1)').on('click', function(e){
 		$('.video-background .video-container').slick('slickGoTo', 1);
-		$('body').removeClass('sky').addClass('video');
-		$('body').removeClass('menu');
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
+		return changeView('video', e);
 	});
 
 	$('.menu nav a:eq(2)').on('click', function(e){
 		TweenMax.to('.content article', 0.5, {scrollTop: 935});
-		$('body').removeClass('video').addClass('sky');
-		$('body').removeClass('menu');
-		e.stopPropagation();
-		e.preventDefault();
-		return false;
+		return changeView('home', e);
 	});
 
 	$('.menu nav a:eq(3)').on('click', function(e){
 		TweenMax.to('.content article', 0.5, {scrollTop: 2078});
-		$('body').removeClass('video').addClass('sky');
+		return changeView('home', e);
+	});
+
+	$('.menu nav a:eq(4)').on('click', function(e){
+		TweenMax.to('.content article', 0.5, {scrollTop: 0});
+		return changeView('rule', e);
+	});
+
+
+	$('.rule-page .close').on('click', function(e){
+		return changeView('video', e);
+	});
+
+
+	function changeView(view, e){
 		$('body').removeClass('menu');
+		var views = ['rule', 'home', 'video'];
+		var rm = views.join(' ').replace(view);
+		$('body').removeClass(rm).addClass(view);
 		e.stopPropagation();
 		e.preventDefault();
 		return false;
-	});
+	}
 };

@@ -11,16 +11,21 @@ header {
 		top: 0;
 		left: 0;
 		position: fixed;
+		img{
+			filter: drop-shadow(0 0 10px #68a4b3 );
+		}
 	}
 	.burger{
 		position: absolute;
 		right: 47px;
 		top: 51px;
+		transition-duration: 0.25s;
 	}
 	.coupon{
 		position: absolute;
 		right: 108px;
 		top: 24px;
+		transition-duration: 0.25s;
 	}
 
 	.menu{
@@ -94,6 +99,10 @@ body.menu{
 		transform: none;
 		height: 100%;
 		transition: height 0s linear 0s, opacity 0.45s linear 0s, transform 0.45s linear 0s;
+	}
+
+	header .coupon, header .burger{
+		opacity: 0;
 	}
 }
 

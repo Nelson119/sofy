@@ -7,7 +7,9 @@
     "font-awesome": "fontawesome#^4.6.3",
     "detectizr": "^2.2.0",
     "slick-carousel": "^1.6.0",
-    "gsap": "^1.19.0"
+    "gsap": "^1.19.0",
+    "jquery.nicescroll": "^3.6.8",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -22,6 +24,11 @@
         "less/font-awesome.less",
         "scss/font-awesome.scss",
         "fonts/*"
+      ]
+    },
+    "jquery.nicescroll": {
+      "main": [
+        "./jquery.nicescroll.min.js"
       ]
     }
   },

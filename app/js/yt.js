@@ -48,6 +48,7 @@ app.partial.yt = function(){
 			}
 		});
 
+
 		YT.Player.prototype.play = function(){
 			// alert('');
 			if(this.getPlayerState() !== 1){
@@ -119,18 +120,13 @@ app.partial.yt = function(){
 			$('.video-background .video-container').slick('reinit');
 		}).trigger('resize');
 
-		$('.tvc-video').one('mousemove', function(){
+		var tvc = new YT.Player('tvc');
 		
-			$('iframe', this).attr('id', 'tvc');
-			var p1 = new YT.Player('tvc');
-			console.log(p1)
-
-			$(this).on('click', function(){
-				p1.play();
-			});
-
-			p1.pe = this;
-
-		})
+		$('.menu nav a, .logo').on('click', function(){
+			tvc.pauseVideo();
+			if(playing != null){
+				playing.pauseVideo();
+			}
+		});
 	};
 };	

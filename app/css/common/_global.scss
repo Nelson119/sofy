@@ -54,6 +54,21 @@ body {
 		}
 	}
 
+	&:after{
+		content: '';
+		@include SubItem();
+		background: #68a4b3 center url(../img/header/logo.png) no-repeat;
+		position: fixed;
+		z-index: 100;
+		@include animation(
+			fade 2.5s 1 linear forwards 2s
+		);
+		@include animation(
+			fade 0.01s 1 linear forwards 0s
+		);
+
+	}
+
 }
 
 html{
@@ -76,13 +91,9 @@ html{
 	}
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.footer {
-}
-
-/* Custom page footer */
-.footer {
+html, body{
+	min-height: 100vh;
+	min-height: 100%;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -99,4 +110,33 @@ html{
 	.header {
 	}
 
+}
+
+@include keyframes( fade )
+{
+    0% {
+		opacity: 1;
+	}
+    25%{
+		opacity: 1;
+		transform: scale(1.02);
+	}
+    50%{
+		opacity: 1;
+		transform: scale(1);
+	}
+    75%{
+		opacity: 1;
+		transform: scale(1.02);
+	}
+	99% {
+		opacity: 0;
+		transform: scale(1.05);
+		height: 100%;
+	}
+	100%{
+		opacity: 0;
+		transform: scale(1.05);
+		height: 0;
+	}
 }

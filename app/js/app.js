@@ -33,6 +33,7 @@ var share = {
 
 
 $(function(){
+
     // 定義每個section
 	$.each(app.partial, function(name, init){
 		init();

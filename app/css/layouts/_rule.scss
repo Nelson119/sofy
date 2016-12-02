@@ -1,0 +1,75 @@
+.rule-page{
+	width: 875px;
+	background: url(../img/lightbox/grid.png);
+	color: #fff;
+	padding: 50px 100px;
+	margin: 0 auto;
+	position: relative;
+
+	margin-bottom: 75px;
+
+	h3{
+		width: 328px;
+		height: 88px;
+		margin: 0 auto;
+		background: url(../img/rule/title-bg.png) 0 0 no-repeat;
+	}
+
+
+	ul{
+		margin-top: 1em;
+		line-height: 2em;
+		padding-left: 1.2em;
+		>li{
+			list-style: none;
+			&:before{
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background: #ee78bd;
+				border-radius: 50%;
+				content: '';
+				margin-left: -1.4em;
+				margin-right: 0.5em;
+			}
+			ol{
+				padding-left: 5em;
+				li{
+					list-style: none;
+					counter-increment: i;
+					line-height: 1.8em;
+					letter-spacing: 0.1em;
+					&:before{
+						content: '（'counter(i)'）';
+						margin-left: -3em;
+					}
+				}
+				&+li{
+					margin-top: 0.5em;
+				}
+			}
+
+			&+li{
+				margin-top: 1em;
+			}
+		}
+	}
+
+	.jojo{
+		position: absolute;
+		margin-left: 47px;
+		left: 50%;
+		bottom: 0;
+	}
+
+	.close{
+		position: absolute;
+		top: 28px;
+		right: 20px;
+		opacity: 0.8;
+		transition-duration: 0.25s;
+		&:hover{
+			opacity: 1;
+		}
+	}
+}

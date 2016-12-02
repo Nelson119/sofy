@@ -10,17 +10,48 @@ body {
 		.video-background{
 		}
 	}
-	&.sky{
+	&.home, &.rule{
 		.video-background{
-			min-height: 0;
-			height: 0;
-			overflow: hidden;
-			opacity: 0;
-			transition: height 0.2s linear 0s, opacity 0.15s linear 0s;
+			@include animation(
+				fadeOut 0.25s 1 linear forwards 0s
+			);
 		}
 		.scrolldown{
 			width: 0;
 			opacity: 0;
 		}
+		header{
+			&:before{
+				// background: url(../img/background/sky.jog) 0 0;
+				opacity: 0.8;
+				content: '';
+				@include SubItem();
+				filter: blur(2px);
+			}
+		}
+	}
+	&.rule{
+		.content .home-page{
+			@include animation(
+				fadeOut 0.25s 1 linear forwards 0s
+			);
+			overflow: hidden;
+			min-height: 0;
+		}
+	}
+}
+
+@include keyframes( fadeOut )
+{
+    0% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+		height: 0;
+		margin: 0;
 	}
 }
