@@ -36,6 +36,7 @@
 			@include Item(103, 36, 30, 0, 8, 0, 280);
 			img{
 				@include SubItem();
+				height: auto;
 			}
 		}
 	}
@@ -54,6 +55,7 @@
 			@include Item(25, 25, 9, 0, 0, 11, 280);
 			img{
 				@include SubItem();
+				height: auto;
 			}
 		}
 	}
@@ -64,11 +66,12 @@
 		left: 58px;
 		top: 109px;
 		position:absolute;
+		>img{
+			@include SubItem();
+			height: auto;
+		}
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include Item(120, 120, 75, 0, 17, 0, 280);
-			>img{
-				@include SubItem();
-			}
 		}
 
 		// >img{
@@ -87,6 +90,7 @@
 			img{
 				border-radius: 50%;
 				@include SubItem();
+				height: auto;
 			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				@include Item(92, 92, 13, 0, 15, 0, 120);

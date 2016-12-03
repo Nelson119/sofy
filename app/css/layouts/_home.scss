@@ -59,6 +59,7 @@
 				@include Item(254, 75, -37, 0, 32, 0, 320);
 				img{
 					@include SubItem();
+					height: auto;
 				}
 			}
 		}
@@ -69,6 +70,7 @@
 				@include Item(275, 138, 43, 0, 26, 0, 320);
 				img{
 					@include SubItem();
+					height: auto;
 				}
 			}
 		}
@@ -180,6 +182,7 @@
 				span{
 					img {
 						@include SubItem();
+						height: auto;
 					}
 				}
 			}
@@ -604,6 +607,7 @@
 			z-index: 5;
 			img{
 				@include SubItem();
+				height: auto;
 			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				@include Item(103, 36, 1, 0, 25, 0, 320);
@@ -632,6 +636,7 @@
 					@include Item(94, 94, 1, 0, 17, 0, 133);
 					>img{
 						@include SubItem();
+						height: auto;
 					}
 				}
 				position: relative;
@@ -649,6 +654,7 @@
 					img{
 						border-radius: 50%;
 						@include SubItem();
+						height: auto;
 					}
 				}
 			}
@@ -666,6 +672,7 @@
 				}
 				img{
 					@include SubItem();
+					height: auto;
 				}
 				h3{
 					white-space: nowrap;
@@ -692,7 +699,8 @@
 							width: vw320(77);
 							height: 0;
 							padding-top: em(10, 14);
-							margin-left: calc(50% - #{em(14, 14)});
+							// margin-left: calc(50% - #{em(14, 14)});
+							margin-left: -0.5em;
 						}
 					}
 					span{
@@ -730,6 +738,7 @@
 				@include Item(113, 39, 392, 0, 104, 0, 320);
 				img{
 					@include SubItem();
+					height: auto;
 				}
 			}
 		}

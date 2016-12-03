@@ -52,6 +52,7 @@ body {
 			min-height: 0;
 			overflow: hidden;
 			position: relative;
+			height: 0;
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {

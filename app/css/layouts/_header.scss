@@ -23,6 +23,7 @@ header {
 			@include Item(61, 37, 19, 0, 18, 0, 320);
 			img{
 				@include SubItem();
+				height: auto;
 			}
 		}
 	}
@@ -35,6 +36,7 @@ header {
 			@include Item(23, 21, 29, 0, 0, 21, 320);
 			img{
 				@include SubItem();
+				height: auto;
 			}
 		}
 	}
@@ -47,6 +49,7 @@ header {
 			@include Item(41, 42, 18, 0, 0, 55, 320);
 			img{
 				@include SubItem();
+				height: auto;
 			}
 		}
 	}
@@ -80,6 +83,7 @@ header {
 			transition-duration: 0.25s;
 			img{
 				@include SubItem();
+				height: auto;
 			}
 
 			&:hover{
@@ -173,6 +177,7 @@ body{
 		aside, img{
 			color: #7b4e4d;
 			@include SubItem();
+			height: auto;
 			span{
 				margin-top: -1em;
 				max-width: 96%;
