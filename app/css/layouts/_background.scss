@@ -33,6 +33,7 @@
 				transition: height 0s linear 0.35s, opacity 0.35s linear 0s;
 				a,img{
 					@include SubItem();
+					height: auto;
 				}
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
 					display: none;

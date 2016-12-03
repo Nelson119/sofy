@@ -177,11 +177,13 @@ body{
 		aside, img{
 			color: #7b4e4d;
 			@include SubItem();
-			height: auto;
 			span{
 				margin-top: -1em;
 				max-width: 96%;
 			}
+		}
+		img{
+			height: auto;
 		}
 	}
 }
