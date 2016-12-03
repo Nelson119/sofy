@@ -71,6 +71,7 @@ body {
 			.home-page{
 				margin-top: per(37, 320);
 				background-image: url(../img/home/background-part1@320.png);
+				background-image: no-repeat;
 			}
 
 			.part2,.part3,.part4{
@@ -86,6 +87,7 @@ body {
 		&.home.part2{
 			.home-page{
 				background-image: url(../img/home/background-part2@320.png);
+				background-image: no-repeat;
 			}
 
 			.part1,.part3,.part4{
@@ -101,6 +103,7 @@ body {
 		&.home.part3{
 			.home-page{
 				background: url(../img/home/background-part3@320.png) center top/ 100% auto;
+				background-image: no-repeat;
 			}
 
 			.part1,.part2{

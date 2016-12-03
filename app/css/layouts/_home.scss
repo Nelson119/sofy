@@ -739,8 +739,12 @@
 		height: 200px;
 		margin-top: 65px;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(320, 0, 0, 0, 0, 0, 320);
+			width: 100%;
+			margin-top: 0;
+			height: em(75, 12);
+			// padding-top: per(75, 320);
 			position: relative;
+
 		}
 		.gotop{
 			background: #dc92b6;
@@ -757,7 +761,9 @@
 				text-indent: -5px;
 			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
-				@include Item(42, 42, 21, 0, 139, 0, 320);
+				@include Item(42, 42, 0, 0, 0, 0, 320);
+				position: relative;
+				display: inline-block;
 				span{
 					@include SubItem();
 					font-weight: 300;
@@ -783,8 +789,10 @@
 	z-index: 2;
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		height: calc(100vh - #{em(65)});
+		height: calc(100vh - #{vw320(65)});
 		top: 0;
 		margin-top: per(65, 320);
+		overflow-y: hidden;
 	}
 	.rib1, .rib2{
 		position: absolute;

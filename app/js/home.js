@@ -8,7 +8,7 @@
 app.partial.home = function(){
 
 
-	$('.content article').niceScroll();
+	// $('.content article').niceScroll();
 
 	$('.bloggers a').on('click', function(e){
 		$('#' + $(this).attr('data-target')).addClass('fade in');

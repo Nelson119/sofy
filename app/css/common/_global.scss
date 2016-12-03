@@ -99,6 +99,13 @@ html, body{
 		position: relative;
 		background: url(../img/lightbox/grid.png) center/vw320(9) auto;
 	}
+	@media screen and (max-width: 1024px) {
+        margin: 0 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+	}
 }
 
 /* Responsive: Portrait tablets and up */
