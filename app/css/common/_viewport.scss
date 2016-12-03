@@ -36,9 +36,11 @@ body {
 			@include animation(
 				fadeOut 0.25s 1 linear forwards 0s
 			);
-			overflow: hidden;
-			min-height: 0;
 			padding: 0;
+			min-height: 0;
+			overflow: hidden;
+			position: relative;
+			height: 0;
 		}
 	}
 	&.rule{
@@ -46,8 +48,10 @@ body {
 			@include animation(
 				fadeOut 0.25s 1 linear forwards 0s
 			);
-			overflow: hidden;
+			padding: 0;
 			min-height: 0;
+			overflow: hidden;
+			position: relative;
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
