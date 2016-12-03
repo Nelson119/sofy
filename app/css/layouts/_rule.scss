@@ -6,13 +6,24 @@
 	margin: 0 auto;
 	position: relative;
 
+
 	margin-bottom: 75px;
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		width: per(280, 320);
+		padding: per(41, 320) per(28, 320) per(165, 320);
+		margin-top: per(10, 320);
+	}
 
 	h3{
 		width: 328px;
 		height: 88px;
 		margin: 0 auto;
 		background: url(../img/rule/title-bg.png) 0 0 no-repeat;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			width: em(171, 22);
+			background-size: cover;
+			height: em(46, 22);
+		}
 	}
 
 
@@ -31,6 +42,10 @@
 				content: '';
 				margin-left: -1.4em;
 				margin-right: 0.5em;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					width: em(8, 11);
+					height: em(8, 11);
+				}
 			}
 			ol{
 				padding-left: 5em;
@@ -60,6 +75,10 @@
 		margin-left: 47px;
 		left: 50%;
 		bottom: 0;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			left: per(20, 320);
+			bottom: em(-75);
+		}
 	}
 
 	.close{
@@ -70,6 +89,12 @@
 		transition-duration: 0.25s;
 		&:hover{
 			opacity: 1;
+		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(25, 25, 9, 0, 0, 11, 280);
+			img{
+				@include SubItem();
+			}
 		}
 	}
 }

@@ -10,20 +10,22 @@
   @return #{$pixels/$context*100}vw;
 }
 
+@function vw320($pixels, $context: 320) {
+  @return #{$pixels/$context*100}vw;
+}
+
 @for $i from 6 to 150 {
 	.fontsize-#{$i} {
-		font-size: #{$i}px;
-		font-size: percentage($i/$font-size-base-num);
-		@media screen and (max-width: 1024px) {
-			font-size: #{$i}px;
-			font-size: vwsm($i);
-		}
-	}
-	.fontsize-sm-#{$i} {
-		@media screen and (max-width: 768px) {
+		@media screen and (min-width: #{$screen-sm-num}px) {
 			font-size: #{$i}px;
 			font-size: percentage($i/$font-size-base-num);
-			font-size: vwsm($i);
+		}
+	}
+	.fontsize-xs-#{$i} {
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			font-size: #{$i}px;
+			font-size: percentage($i/$font-size-base-num);
+			font-size: vw320($i);
 		}
 	}
 }
@@ -48,6 +50,9 @@
 
 @function per($pixels, $context: $browser-xs-viewport){
   @return percentage($pixels/$context);
+}
+@function em($pixels, $context: $font-size-base-num){
+  @return #{$pixels/$context}em;
 }
 
 @mixin SubItem() {

@@ -6,6 +6,11 @@ header {
 		margin: 0;
 	}
 
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		height: 65px;
+		height: vw320(65);
+	}
+
 	.logo{
 		margin: 27px 0 0 36px;
 		top: 0;
@@ -14,18 +19,36 @@ header {
 		img{
 			filter: drop-shadow(0 0 10px #68a4b3 );
 		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(61, 37, 19, 0, 18, 0, 320);
+			img{
+				@include SubItem();
+			}
+		}
 	}
 	.burger{
 		position: absolute;
 		right: 47px;
 		top: 51px;
 		transition-duration: 0.25s;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(23, 21, 29, 0, 0, 21, 320);
+			img{
+				@include SubItem();
+			}
+		}
 	}
 	.coupon{
 		position: absolute;
 		right: 108px;
 		top: 24px;
 		transition-duration: 0.25s;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(41, 42, 18, 0, 0, 55, 320);
+			img{
+				@include SubItem();
+			}
+		}
 	}
 
 	.menu{
@@ -46,6 +69,9 @@ header {
 		.menu-f,.menu-x{
 			&.menu-f{
 				@include Item(36, 35, 39, 0, 0, 107, 258);
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(28, 28, 357, 0, 0, 150, 230);
+				}
 			}
 			&.menu-x{
 				@include Item(25, 25, 46, 0, 0, 61, 258);
@@ -67,6 +93,10 @@ header {
 			height: 100%;
 			width: 100%;
 			overflow: hidden;
+
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: 65%;
+			}
 			aside{
 				width: 78%;
 				overflow: hidden;
@@ -80,16 +110,25 @@ header {
 				border-bottom: 1px solid #f3aac0;
 				width: 100%;
 
-				&:nth-child(1),&:nth-child(4),&:nth-child(6){
-					margin-left: per(18, 206);
-				}
+				@media screen and (min-width: #{$screen-sm-num}px) {
+					&:nth-child(1),&:nth-child(4),&:nth-child(6){
+						margin-left: per(18, 206);
+					}
 
-				&:nth-child(2),&:nth-child(5){
-					margin-left: per(53, 206);
+					&:nth-child(2),&:nth-child(5){
+						margin-left: per(53, 206);
+					}
+				}
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					border-bottom: 2px solid #fa7aab;
 				}
 			}
 		}
 
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			right: per(-220, 320);
+			width: per(230, 320);
+		}
 	}
 }
 
@@ -99,10 +138,25 @@ body.menu{
 		transform: none;
 		height: 100%;
 		transition: height 0s linear 0s, opacity 0.45s linear 0s, transform 0.45s linear 0s;
-	}
 
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			right: per(-220, 320);
+		}
+	}
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		transform: translateX(#{per(-230, 320)});
+		overflow-x: visible; 
+	}
 	header .coupon, header .burger{
-		opacity: 0;
+		@media screen and (min-width: #{$screen-sm-num}px) {
+			opacity: 0;
+		}
+	}
+}
+
+body{
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		transition-duration: 0.25s;
 	}
 }
 
@@ -113,4 +167,16 @@ body.menu{
 	left: 50vw;
 	margin-left: -34px;
 	z-index: 10;
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		@include Item(116, 77, 0, 13, 101, 0, 320);
+		z-index: 10;
+		aside, img{
+			color: #7b4e4d;
+			@include SubItem();
+			span{
+				margin-top: -1em;
+				max-width: 96%;
+			}
+		}
+	}
 }

@@ -29,7 +29,7 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="">
+  <body class="home part2">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -73,10 +73,10 @@
       <a href="coupon.pdf" target="_blank" class="coupon"><img src="img/header/coupon.png"></a>
       <a href="javascript:" class="burger"><img src="img/header/burger.png"></a>
       <aside class="menu">
-        <img src="img/menu/menu-bg.png">
+        <img class="hidden-xs" src="img/menu/menu-bg.png">
         <a class="menu-f" href="javascript:"><img src="img/menu/menu-f.png"></a>
-        <a class="menu-x" href="javascript:"><img src="img/menu/menu-x.png"></a>
-        <nav class="fontsize-15 vertical-middle text-right">
+        <a class="menu-x hidden-xs" href="javascript:"><img src="img/menu/menu-x.png"></a>
+        <nav class="fontsize-15 fontsize-xs-13 vertical-middle text-right">
           <aside class="text-left">
             <a href="javascript:">喬喬の寵愛肌地</a>
             <a href="javascript:">我の清爽淨肌</a>
@@ -88,7 +88,13 @@
         </nav>
       </aside>
     </header>
-    <a class="scrolldown" href="javascript:"><img src="img/scroll-down.png"></a>
+    <a class="scrolldown hidden-xs" href="javascript:"><img src="img/scroll-down.png"></a>
+    <a class="scrolldown visible-xs" href="javascript:">
+      <img src="img/scroll-down@320.png">
+      <aside class="text-center vertical-middle fontsize-xs-10">
+        <span>立即分享影片<br>抽與喬喬的午茶約會</span>
+      </aside>
+    </a>
 
     <section class="content">
       <article>
@@ -101,53 +107,83 @@
                 <img src="img/home/title.png">
               </figure>
               <figure class="features">
-                <img src="img/home/features.png">
+                <img class="hidden-xs" src="img/home/features.png">
+                <img class="visible-xs" src="img/home/features@320.png">
               </figure>
               <figure class="smooth">
-                <img src="img/home/smooth.png">
+                <img class="hidden-xs" src="img/home/smooth.png">
+                <img class="visible-xs" src="img/home/smooth@320.png">
               </figure>
               <figure class="tempon">
-                <img src="img/home/tempon.png">
+                <img class="hidden-xs" src="img/home/tempon.png">
+                <img class="visible-xs" src="img/home/tempon@320.png">
               </figure>
 
-              <ul class="ps fontsize-12">
+              <ul class="ps fontsize-12 fontsize-xs-10">
                 <li>*新升級處為側邊與翅膀部分</li>
                 <li>*含有塊狀極度黏稠的經血無法吸收</li>
                 <li>*日本專利字號第5122007號、第5361965號</li>
               </ul>
 
-              <h4 class="subtitle fontsize-29">
+              <h4 class="subtitle fontsize-29 fontsize-xs-23">
                 <span>全系列產品</span>
               </h4>
               <aside class="products">
                 <figure>
                   <span><img src="img/home/product-1.png"></span>
                   <span><img src="img/home/product-2.png"></span>
-                  <figcaption class="text-center fontsize-15"><b>超薄系列</b>量少、 23cm、28cm 、35cm</figcaption>
+                  <figcaption class="text-center fontsize-15 fontsize-xs-12"><b>超薄系列</b>量少、 23cm、28cm 、35cm</figcaption>
                 </figure>
                 <figure>
                   <span><img src="img/home/product-3.png"></span>
-                  <figcaption class="text-center fontsize-15"><b>夜用加長型</b>40cm</figcaption>
+                  <figcaption class="text-center fontsize-15 fontsize-xs-12"><b>夜用加長型</b>40cm</figcaption>
                 </figure>
                 <figure>
                   <span><img src="img/home/product-4.png"></span>
                   <span><img src="img/home/product-5.png"></span>
-                  <figcaption class="text-center fontsize-15"><b>極薄0.1系列</b>23cm、28cm 、35cm</figcaption>
+                  <figcaption class="text-center fontsize-15 fontsize-xs-12"><b>極薄0.1系列</b>23cm、28cm 、35cm</figcaption>
                 </figure>
               </aside>
             </aside>
             <aside class="part2">
-              <p class="description fontsize-23"><span>凡於活動期間(2016/12/16～2017/1/31)內，<br>
-              至屈臣氏、康是美購買蘇菲清爽淨肌系列<br>
-              (量少型及40cm除外)，現場出示折價券，<br>
-              即可享單包優惠價35元(市價99元)！</span></p>
-              <figure class="qrcode">
+              <figure class="flag-1">
+                <img class="hidden-xs" src="img/home/flag-1.png">
+                <img class="visible-xs" src="img/home/flag-1@320.png">
+              </figure>
+              <p class="description fontsize-23 fontsize-xs-15">
+                <span>
+                  <i class="visible-inline-xs">凡於活動期間(2016/12/16～2017/1/31)內，</i>
+                  <i class="visible-inline-xs">至屈臣氏、康是美購買蘇菲清爽淨肌系列</i>
+                  <i class="visible-inline-xs">(量少型及40cm除外)，現場出示折價券，</i>
+                  <i class="visible-inline-xs">即可享單包優惠價35元(市價99元)！</i>
+                </span>
+              </p>
+              <figure class="qrcode hidden-xs">
                 <span><img src="img/home/qrcode.png"></span>
                 <figcaption class="text-center fontsize-17">掃QRCode<br>儲存折價券至手機</figcaption>
               </figure>
+              <figure class="blossom">
+                <img src="img/home/blossom.png">
+              </figure>
+              <figure class="blossom-1 hidden-xs">
+                <img src="img/home/blossom.png">
+              </figure>
+              <figure class="jojo hidden-xs">
+                <img src="img/home/jojo.png">
+              </figure>
+
+              <figure class="flag-2">
+                <img class="hidden-xs" src="img/home/flag-2.png">
+                <img class="visible-xs" src="img/home/flag-2@320.png">
+              </figure>
+
               <p class="print">
-                <span class="text-center fontsize-17">列印折價券 &gt;</span>
+                <a href="javascript:" class="text-center fontsize-17 fontsize-xs-12">列印折價券 &gt;</a>
               </p>
+              <figure class="coupon">
+                <img class="hidden-xs" src="img/home/part2-coupon.png">
+                <img class="visible-xs" src="img/home/part2-coupon@320.png">
+              </figure>
               <nav>
                 <a class="pchome" href="javascript:"><img src="img/home/pchome.png"></a>
                 <a class="watsons" href="javascript:"><img src="img/home/watsons.png"></a>
@@ -175,7 +211,7 @@
               </figure>
 
               <ul class="bloggers row text-center">
-                <li class="col-lg-4 col-md-4 col-sm-4">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <a href="javascript:" data-target="blogger1">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
@@ -183,19 +219,19 @@
                         <img src="img/home/blogger-1.jpg">
                       </span>
                     </figure>
-                    <h3 class="fontsize-25">
+                    <h3 class="fontsize-25 fontsize-xs-14">
                       <span><span>崔咪</span></span>
                     </h3>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>生理期清爽了</span></span>
                     </p>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>生活更清爽</span></span>
                     </p>
-                    <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                    <span class="more fontsize-16 fontsize-xs-10">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4 col-sm-4">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <a href="javascript:" data-target="blogger2">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
@@ -203,19 +239,19 @@
                         <img src="img/home/blogger-2.jpg">
                       </span>
                     </figure>
-                    <h3 class="fontsize-25">
+                    <h3 class="fontsize-25 fontsize-xs-14">
                       <span><span>薛妞妞</span></span>
                     </h3>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>我の蘇菲</span></span>
                     </p>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>清爽淨肌</span></span>
                     </p>
-                    <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                    <span class="more fontsize-16 fontsize-xs-10">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4 col-sm-4">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <a href="javascript:" data-target="blogger3">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
@@ -223,19 +259,19 @@
                         <img src="img/home/blogger-3.jpg">
                       </span>
                     </figure>
-                    <h3 class="fontsize-25">
+                    <h3 class="fontsize-25 fontsize-xs-14">
                       <span><span>謝琦琦</span></span>
                     </h3>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>用蘇菲</span></span>
                     </p>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>寵愛自己</span></span>
                     </p>
-                    <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                    <span class="more fontsize-16 fontsize-xs-10">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4 col-sm-4">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <a href="javascript:" data-target="blogger4">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
@@ -243,19 +279,19 @@
                         <img src="img/home/blogger-1.jpg">
                       </span>
                     </figure>
-                    <h3 class="fontsize-25">
+                    <h3 class="fontsize-25 fontsize-xs-14">
                       <span><span>崔咪</span></span>
                     </h3>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>生理期清爽了</span></span>
                     </p>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>生活更清爽</span></span>
                     </p>
-                    <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                    <span class="more fontsize-16 fontsize-xs-10">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4 col-sm-4">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <a href="javascript:" data-target="blogger5">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
@@ -263,19 +299,19 @@
                         <img src="img/home/blogger-2.jpg">
                       </span>
                     </figure>
-                    <h3 class="fontsize-25">
+                    <h3 class="fontsize-25 fontsize-xs-14">
                       <span><span>薛妞妞</span></span>
                     </h3>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>我の蘇菲</span></span>
                     </p>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>清爽淨肌</span></span>
                     </p>
-                    <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                    <span class="more fontsize-16 fontsize-xs-10">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
-                <li class="col-lg-4 col-md-4 col-sm-4">
+                <li class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                   <a href="javascript:" data-target="blogger6">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
@@ -283,16 +319,16 @@
                         <img src="img/home/blogger-4.jpg">
                       </span>
                     </figure>
-                    <h3 class="fontsize-25">
+                    <h3 class="fontsize-25 fontsize-xs-14">
                       <span><span>小貓 Rui</span></span>
                     </h3>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>你聽過</span></span>
                     </p>
-                    <p class="fontsize-20">
+                    <p class="fontsize-20 fontsize-xs-12">
                       <span><span>清爽淨肌嗎</span></span>
                     </p>
-                    <span class="fontsize-16">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                    <span class="more fontsize-16 fontsize-xs-10">more<i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                   </a>
                 </li>
               </ul>
@@ -307,7 +343,7 @@
               </figure>
 
               <ul class="girls row text-left">
-                <li class="col-lg-6 col-md-6 col-sm-6">
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
@@ -316,13 +352,16 @@
                       </span>
                     </figure>
                     <figure class="bubble">
-                      <span><img src="img/home/girl-bubble.png"></span>
-                      <h3 class="fontsize-14"><span><span class="fontsize-25">小橘 </span></span><sub class="fontsize-16">19歲</sub></h3>
-                      <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
+                      <span>
+                        <img class="hidden-xs" src="img/home/girl-bubble.png">
+                        <img class="visible-xs" src="img/home/girl-bubble@320.png">
+                      </span>
+                      <h3 class="fontsize-14"><span><span class="fontsize-25 fontsize-xs-14">小橘 </span></span><sub class="fontsize-16 fontsize-xs-10">19歲</sub></h3>
+                      <p class="fontsize-21 fontsize-xs-11">hold得住流量<br>又要透氣！</p>
                     </figure>
                   </aside>
                 </li>
-                <li class="col-lg-6 col-md-6 col-sm-6">
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
@@ -331,13 +370,16 @@
                       </span>
                     </figure>
                     <figure class="bubble">
-                      <span><img src="img/home/girl-bubble.png"></span>
-                      <h3 class="fontsize-14"><span><span class="fontsize-25">艾莉 </span></span><sub class="fontsize-16">22歲</sub></h3>
-                      <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
+                      <span>
+                        <img class="hidden-xs" src="img/home/girl-bubble.png">
+                        <img class="visible-xs" src="img/home/girl-bubble@320.png">
+                      </span>
+                      <h3 class="fontsize-14"><span><span class="fontsize-25 fontsize-xs-14">艾莉 </span></span><sub class="fontsize-16 fontsize-xs-10">22歲</sub></h3>
+                      <p class="fontsize-21 fontsize-xs-11">hold得住流量<br>又要透氣！</p>
                     </figure>
                   </aside>
                 </li>
-                <li class="col-lg-6 col-md-6 col-sm-6">
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
@@ -346,13 +388,16 @@
                       </span>
                     </figure>
                     <figure class="bubble">
-                      <span><img src="img/home/girl-bubble.png"></span>
-                      <h3 class="fontsize-14"><span><span class="fontsize-25">恬恬</span></span><sub class="fontsize-16">23歲</sub></h3>
-                      <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
+                      <span>
+                        <img class="hidden-xs" src="img/home/girl-bubble.png">
+                        <img class="visible-xs" src="img/home/girl-bubble@320.png">
+                      </span>
+                      <h3 class="fontsize-14"><span><span class="fontsize-25 fontsize-xs-14">恬恬</span></span><sub class="fontsize-16 fontsize-xs-10">23歲</sub></h3>
+                      <p class="fontsize-21 fontsize-xs-11">hold得住流量<br>又要透氣！</p>
                     </figure>
                   </aside>
                 </li>
-                <li class="col-lg-6 col-md-6 col-sm-6">
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                   <aside>
                     <figure class="profile-picture">
                       <img src="img/home/girl-bg.png">
@@ -361,9 +406,12 @@
                       </span>
                     </figure>
                     <figure class="bubble">
-                      <span><img src="img/home/girl-bubble.png"></span>
-                      <h3 class="fontsize-14"><span><span class="fontsize-25">安琪</span></span><sub class="fontsize-16">18歲</sub></h3>
-                      <p class="fontsize-21">hold得住流量<br>又要透氣！</p>
+                      <span>
+                        <img class="hidden-xs" src="img/home/girl-bubble.png">
+                        <img class="visible-xs" src="img/home/girl-bubble@320.png">
+                      </span>
+                      <h3 class="fontsize-14"><span><span class="fontsize-25 fontsize-xs-14">安琪</span></span><sub class="fontsize-16 fontsize-xs-10">18歲</sub></h3>
+                      <p class="fontsize-21 fontsize-xs-11">hold得住流量<br>又要透氣！</p>
                     </figure>
                   </aside>
                 </li>
@@ -374,7 +422,7 @@
               </a>
             </aside>
 
-            <section class="butt vertical-middle text-center fontsize-25">
+            <section class="butt vertical-middle text-center fontsize-25 fontsize-xs-12">
               <a class="gotop vertical-middle text-center" href="javascript:TweenMax.to('.content article', 0.5, {scrollTop: 0});void(0)">
                 <span>
                   top<br><i class="fa fa-angle-up fontsize-22" aria-hidden="true"></i>
@@ -384,8 +432,8 @@
           </section>
         </section>
         <section class="rule-page">
-          <h3 class="text-center vertical-middle fontsize-47">活動辦法</h3>
-          <ul class="fontsize-21">
+          <h3 class="text-center vertical-middle fontsize-47 fontsize-xs-22">活動辦法</h3>
+          <ul class="fontsize-21 fontsize-xs-11">
             <li>活動主題：那幾天，喬喬の寵愛肌地</li>
             <li>活動期間：2016/12/16～2017/1/16</li>
             <li>活動方式：
@@ -407,7 +455,10 @@
               <p>待提供待提供待提供待提供待提<br>供待提供待提供待提供待提供待</p>
             </li>
           </ul>
-          <figure class="jojo"><img src="img/rule/jojo.png"></figure>
+          <figure class="jojo">
+            <img class="hidden-xs" src="img/rule/jojo.png">
+            <img class="visible-xs" src="img/rule/jojo@320.png">
+          </figure>
           <a class="close" href="javascript:">
             <img src="img/lightbox/close.png">
           </a>
@@ -429,13 +480,13 @@
           </span>
         </figure>
         <aside class="title text-center">
-          <h3 class="fontsize-25">
+          <h3 class="fontsize-25 fontsize-xs-14">
             <span><span>崔咪</span></span>
           </h3>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>生理期清爽了</span></span>
           </p>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>生活更清爽</span></span>
           </p>
         </aside>
@@ -476,13 +527,13 @@
           </span>
         </figure>
         <aside class="title text-center">
-          <h3 class="fontsize-25">
+          <h3 class="fontsize-25 fontsize-xs-14">
             <span><span>薛妞妞</span></span>
           </h3>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>我の蘇菲</span></span>
           </p>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>清爽淨肌</span></span>
           </p>
         </aside>
@@ -523,13 +574,13 @@
           </span>
         </figure>
         <aside class="title text-center">
-          <h3 class="fontsize-25">
+          <h3 class="fontsize-25 fontsize-xs-14">
             <span><span>謝琦琦</span></span>
           </h3>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>用蘇菲</span></span>
           </p>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>寵愛自己</span></span>
           </p>
         </aside>
@@ -570,13 +621,13 @@
           </span>
         </figure>
         <aside class="title text-center">
-          <h3 class="fontsize-25">
+          <h3 class="fontsize-25 fontsize-xs-14">
             <span><span>崔咪</span></span>
           </h3>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>生理期清爽了</span></span>
           </p>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>生活更清爽</span></span>
           </p>
         </aside>
@@ -617,13 +668,13 @@
           </span>
         </figure>
         <aside class="title text-center">
-          <h3 class="fontsize-25">
+          <h3 class="fontsize-25 fontsize-xs-14">
             <span><span>薛妞妞</span></span>
           </h3>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>我の蘇菲</span></span>
           </p>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>清爽淨肌</span></span>
           </p>
         </aside>
@@ -664,13 +715,13 @@
           </span>
         </figure>
         <aside class="title text-center">
-          <h3 class="fontsize-25">
+          <h3 class="fontsize-25 fontsize-xs-14">
             <span><span>小貓 Rui</span></span>
           </h3>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>你聽過</span></span>
           </p>
-          <p class="fontsize-20">
+          <p class="fontsize-20 fontsize-xs-12">
             <span><span>清爽淨肌嗎</span></span>
           </p>
         </aside>
@@ -716,6 +767,8 @@
     <script src="/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
     <script src="/bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
     <script src="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <script src="/bower_components/hammerjs/hammer.js"></script>
+    <script src="/bower_components/jquery-hammerjs/jquery.hammer.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

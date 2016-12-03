@@ -8,6 +8,9 @@
 app.partial.menu = function(){
 	$('header .burger').on('click', function(){
 		$('body').addClass('menu');
+		$('.menu').hammer().one('swiperight',function(e){
+		  $('body').removeClass('menu');
+		});
 	});
 	$('.menu .menu-x').on('click', function(){
 		$('body').removeClass('menu');
@@ -18,7 +21,7 @@ app.partial.menu = function(){
 	});
 	$('.scrolldown').on('click', function(e){
 		TweenMax.set('.content article', {scrollTop: 0});
-		return changeView('home', e);
+		return changeView('home part1', e);
 	});
 
 	$('.menu nav a:eq(0)').on('click', function(e){
@@ -27,18 +30,22 @@ app.partial.menu = function(){
 	});
 
 	$('.menu nav a:eq(1)').on('click', function(e){
-		$('.video-background .video-container').slick('slickGoTo', 1);
-		return changeView('video', e);
+		TweenMax.to('.content article', 0.5, {scrollTop: 0});
+		return changeView('home part1', e);
 	});
 
 	$('.menu nav a:eq(2)').on('click', function(e){
-		TweenMax.to('.content article', 0.5, {scrollTop: 935});
-		return changeView('home', e);
+		$(window).width() > 768 ?
+			TweenMax.to('.content article', 0.5, {scrollTop: 935}) :
+			TweenMax.to('.content article', 0.5, {scrollTop: 0}) ;
+		return changeView('home part2', e);
 	});
 
 	$('.menu nav a:eq(3)').on('click', function(e){
-		TweenMax.to('.content article', 0.5, {scrollTop: 2078});
-		return changeView('home', e);
+		$(window).width() > 768 ?
+			TweenMax.to('.content article', 0.5, {scrollTop: 2078}) :
+			TweenMax.to('.content article', 0.5, {scrollTop: 0}) ;
+		return changeView('home part3', e);
 	});
 
 	$('.menu nav a:eq(4)').on('click', function(e){
@@ -54,7 +61,7 @@ app.partial.menu = function(){
 
 	function changeView(view, e){
 		$('body').removeClass('menu');
-		var views = ['rule', 'home', 'video'];
+		var views = ['rule', 'video', 'home part1', 'home part2', 'home part3'];
 		var rm = views.join(' ').replace(view);
 		$('body').removeClass(rm).addClass(view);
 		e.stopPropagation();

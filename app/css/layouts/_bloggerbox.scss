@@ -4,6 +4,12 @@
 	position:fixed;
 	background: rgba(0,0,0,0.5);
 	z-index: 200;
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		margin-top: per(75, 320);
+		background: none;
+		overflow: auto; 
+		height: calc(100% - #{em(75)});
+	}
 
 	.inner{
 		width: 705px;
@@ -12,11 +18,26 @@
 		top: calc((100% - 511px) / 2);
 		left: calc((100% - 705px) / 2);
 		background: #ffdefc url(../img/lightbox/grid.png);
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			position: relative;
+			width: per(280, 320);
+			height: auto;
+			top: 0;
+			left: 0;
+			margin-left: per(20, 320);
+			padding-top: 1px;
+		}
 	}
 	.guide{
 		left: 23px;
 		top: 29px;
 		position: absolute;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(103, 36, 30, 0, 8, 0, 280);
+			img{
+				@include SubItem();
+			}
+		}
 	}
 
 	.close{
@@ -29,6 +50,12 @@
 		&:hover{
 			opacity: 1;
 		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(25, 25, 9, 0, 0, 11, 280);
+			img{
+				@include SubItem();
+			}
+		}
 	}
 
 	.profile-picture{
@@ -37,6 +64,12 @@
 		left: 58px;
 		top: 109px;
 		position:absolute;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(120, 120, 75, 0, 17, 0, 280);
+			>img{
+				@include SubItem();
+			}
+		}
 
 		// >img{
 		// 	@include animation(
@@ -55,6 +88,9 @@
 				border-radius: 50%;
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(92, 92, 13, 0, 15, 0, 120);
+			}
 		}
 	}
 	.title{
@@ -64,6 +100,10 @@
 		position:absolute;
 		width: 212px;
 		height: 212px;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(132, 0, 111, 0, 136, 0, 280);
+			height: 10em;
+		}
 	}
 	h3,p{
 		position: relative;
@@ -76,6 +116,12 @@
 		}
 	}
 	h3{
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(128, 0, 0, 0, 0, 0, 128);
+			position: relative;
+			height: auto;
+			margin-bottom: em(5, 12);
+		}
 		>span:before{
 			position: absolute;	
 			bottom: 0;
@@ -84,10 +130,20 @@
 			background: url(../img/home/brush-pink.png) no-repeat;
 			content:'';
 			margin-left: calc(50% - 60px);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				background-size: 100% auto;
+				width: vw320(74);
+				height: 0;
+				padding-top: em(10, 14);
+				margin-left: calc(50% - #{em(40, 14)});
+			}
 		}
 	}
 	p{
 		margin-bottom: 5px;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			margin-bottom: em(0, 12);
+		}
 		>span:before{
 			position: absolute;	
 			bottom: 0;
@@ -96,10 +152,20 @@
 			background: url(../img/home/brush-yellow.png) no-repeat;
 			content:'';
 			margin-left: calc(50% - 85px);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				background-size: 100% auto;
+				width: em(95, 12);
+				height: 0;
+				padding-top: vw320(10);
+				margin-left: calc(50% - #{em(50, 12)});
+			}
 		}
 		&:nth-child(3){
 			>span:before{
 				margin-left: calc(50% - 70px);
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					margin-left: calc(50% - #{em(40, 12)});
+				}
 			}
 		}
 	}
@@ -111,6 +177,21 @@
 			color: #606060;
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				position: relative;
+				height: auto;
+				overflow: hidden;
+			}
+		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(196, 0, 208, 40, 40, 0, 280);
+			position: relative;
+			height: auto;
+			margin-bottom: per(40, 280);
+			padding-bottom: per(40, 280);
+			p + p{
+				margin-top: em(22);
+			}
 		}
 	}
 	&.fade{

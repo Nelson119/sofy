@@ -7,11 +7,18 @@
 	height: auto;
 	background: url(../img/home/background-head.png) center 5px/ 876px auto no-repeat;
 
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		background: center 0/ #{per(281, 320)} auto no-repeat;
+	}
 	.container{
 		width: 876px;
 		// margin-bottom: 200px;
 		position: relative;
 		// padding-bottom: 65px;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			width: 100%;
+			padding: 0;
+		}
 	}
 
 	figure{
@@ -20,11 +27,17 @@
 			img{
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(252, 99, 189, 0, 34, 0, 320);
+			}
 		}
 		&.tempon{
 			@include Item(569, 390, 180, 0, 298, 0, 876);
 			img{
 				@include SubItem();
+			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(269, 187, 298, 0, 26, 0, 320);
 			}
 		}
 	}
@@ -33,13 +46,31 @@
 		height: 910px;
 		margin-left: -15px;
 		margin-right: -15px;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			height: 0;
+			padding-top: per(1038, 320);
+			width: 100%;
+			margin: 0;
+		}
 
 		.title{
 			margin-top: -113px;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(254, 75, -37, 0, 32, 0, 320);
+				img{
+					@include SubItem();
+				}
+			}
 		}
 
 		.features{
 			margin-left: 15px;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(275, 138, 43, 0, 26, 0, 320);
+				img{
+					@include SubItem();
+				}
+			}
 		}
 
 		.ps{
@@ -48,6 +79,11 @@
 			left:0;
 			margin: 497px 0 0 61px;
 			position: absolute;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				margin: per(492, 320) 0 0 per(38, 320);
+				padding: 0;
+				font-weight: 300;
+			}
 			li{
 				list-style: none;
 			}
@@ -62,6 +98,10 @@
 				line-height: 25px;
 				padding-left: 5px;
 				@include SubItem();
+			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(123, 23, 556, 0, 42, 0, 320);
+				line-height: 1em;
 			}
 		}
 
@@ -80,11 +120,28 @@
 							@include Item(104, 120, 1, 0, 118, 0, 222);
 						}
 					}
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(168, 127, 605, 0, 76, 0, 320);
+						span{
+							&:nth-child(1){
+								@include Item(74, 81, 13, 0, 1, 0, 168);
+							}
+							&:nth-child(2){
+								@include Item(81, 94, 1, 0, 84, 0, 168);
+							}
+						}
+					}
 				}
 				&:nth-child(2){
 					@include Item(119, 141, 656, 0, 349, 0, 876);
 					span{
 						@include Item(119, 99, 1, 0, 1, 0, 119);
+					}
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(93, 110, 757, 0, 112, 0, 320);
+						span{
+							@include Item(93, 77, 1, 0, 1, 0, 93);
+						}
 					}
 				}
 				&:nth-child(3){
@@ -95,6 +152,17 @@
 						}
 						&:nth-child(2){
 							@include Item(127, 101, 1, 0, 122, 0, 249);
+						}
+					}
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(194, 114, 887, 0, 61, 0, 320);
+						span{
+							&:nth-child(1){
+								@include Item(86, 80, 1, 0, 1, 0, 194);
+							}
+							&:nth-child(2){
+								@include Item(99, 79, 1, 0, 95, 0, 194);
+							}
 						}
 					}
 				}
@@ -121,15 +189,87 @@
 	.part2{
 		height: 1156px;
 		position: relative;
-		background: url(../img/home/part2.png) no-repeat;
+		// background-image: url(../img/home/part2.png);
     	margin: 45px -25px 0;
+
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			background: none;
+			height: 0;
+			padding-top: per(727, 320);
+			width: 100%;
+			margin: 0;
+		}
 
 		.description{
 			color: #844e58;
 			line-height: 1.6;
 			letter-spacing: 0.1em;
 			@include Item(505, 148, 98, 0, 325, 0, 850);
-			span{
+
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(226, 141, 66, 0, 48, 0, 320);
+			}
+			>span{
+				@include SubItem();
+				i{
+					display: block;
+					font-style: normal;
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						display: inline;
+					}
+
+				}
+			}
+		}
+
+		.flag-1{
+			@include Item(300, 95, 1, 0, 246, 0, 896);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(165, 52, 8, 0, 16, 0, 320);
+			}
+			img{
+				@include SubItem();
+			}
+		}
+
+		.flag-2{
+			@include Item(300, 95, 487, 0, 1, 0, 896);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(165, 52, 413, 0, 16, 0, 320);
+			}
+			img{
+				@include SubItem();
+			}
+		}
+
+		.blossom{
+			@include Item(256, 255, 266, 0, 584, 0, 896);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(155, 154, 228, 0, 82, 0, 320);
+			}
+			img{
+				@include SubItem();
+			}
+		}
+
+		.blossom-1{
+			@include Item(256, 255, 266, 0, 315, 0, 896);
+			img{
+				@include SubItem();
+			}
+		}
+		.jojo{
+			@include Item(307, 530, 1, 0, 1, 0, 896);
+			img{
+				@include SubItem();
+			}
+		}
+		.coupon{
+			@include Item(90, 115, 312, 0, 669, 0, 896);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(58, 73, 256, 0, 134, 0, 320);
+			}
+			img{
 				@include SubItem();
 			}
 		}
@@ -148,10 +288,19 @@
 
 		}
 		.print{
-			@include Item(112, 20, 418, 0, 646, 0, 876);
-			span{
+			@include Item(194, 193, 295, 0, 612, 0, 896);
+			border-radius: 50%;
+			background: #ccbed9;
+			a{
 				color: #844e58;
-				@include SubItem();
+				@include Item(80, 0, 80, 0, 20, 0, 118);
+			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(118, 117, 246, 0, 99, 0, 320);
+				a{
+					@include Item(80, 0, 80, 0, 20, 0, 118);
+					height: 1.1em;
+				}
 			}
 
 		}
@@ -161,6 +310,9 @@
 			img{
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(116, 38, 475, 0, 35, 0, 320);
+			}
 		}
 
 		.watsons{
@@ -168,13 +320,23 @@
 			img{
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(116, 38, 475, 0, 169, 0, 320);
+			}
 		}
 
 		.tvc{
 			@include Item(746, 461, 701, 0, 70, 0, 896);
 			background: url(../img/home/tvc-bg.png) center/ 100%;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(284, 189, 541, 0, 16, 0, 320);
+				background: url(../img/home/tvc-bg@320.png) center/ 100%;
+			}
 			.tvc-video{
 				@include Item(558, 307, 110, 0, 110, 0, 746);
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(214, 118, 54, 0, 36, 0, 284);
+				}
 				// cursor: pointer;
 				// &:before{
 				// 	content: '';
@@ -225,17 +387,30 @@
 
 	.part3{
 		position: relative;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			background: none;
+			height: 0;
+			padding-top: per(766, 320);
+			width: 100%;
+			margin: 0;
+		}
 		.background{
 			margin-left: -15px;
 			margin-top: 84px;
 			position: absolute;
 			top: 0;
 			left: 0;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				display: none;
+			}
 		}
 		.twe{
 			@include Item(375, 158, 1, 0, 18, 0, 846);
 			img{
 				@include SubItem();
+			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(181, 77, 13, 0, 14, 0, 320);
 			}
 		}
 		.cup{
@@ -244,6 +419,9 @@
 			img{
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(59, 70, 7, 0, 234, 0, 320);
+			}
 		}
 		.guide{
 			@include Item(191, 66, 165, 0, 18, 0, 846);
@@ -251,13 +429,23 @@
 			img{
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(103, 36, 107, 0, 25, 0, 320);
+			}
 		}
 
 		.bloggers{
 			margin: 0 50px;
 			padding: 232px 0 0;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(256, 0, 145, 0, 37, 0, 320);
+				height: auto;
+			}
 			li{
 				padding: 0 23px 40px;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					padding: 0 per(6, 256) per(15, 256);
+				}
 				list-style: none;
 				color: #713c46;
 				a{
@@ -301,6 +489,12 @@
 					}
 				}
 				h3{
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(128, 0, 135, 0, 0, 0, 128);
+						position: relative;
+						height: auto;
+						margin-bottom: em(5, 12);
+					}
 					>span:before{
 						position: absolute;	
 						bottom: 0;
@@ -309,10 +503,20 @@
 						background: url(../img/home/brush-pink.png) no-repeat;
 						content:'';
 						margin-left: calc(50% - 60px);
+						@media screen and (max-width: #{$screen-sm-num - 1}px) {
+							background-size: 100% auto;
+							width: vw320(74);
+							height: 0;
+							padding-top: em(10, 14);
+							margin-left: calc(50% - #{em(40, 14)});
+						}
 					}
 				}
 				p{
 					margin-bottom: 5px;
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						margin-bottom: em(0, 12);
+					}
 					>span:before{
 						position: absolute;	
 						bottom: 0;
@@ -321,6 +525,19 @@
 						background: url(../img/home/brush-yellow.png) no-repeat;
 						content:'';
 						margin-left: calc(50% - 85px);
+						@media screen and (max-width: #{$screen-sm-num - 1}px) {
+							background-size: 100% auto;
+							width: em(95, 12);
+							height: 0;
+							padding-top: vw320(10);
+							margin-left: calc(50% - #{em(50, 12)});
+						}
+					}
+				}
+				.more{
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						margin-top: 0.5em;
+						display: block;
 					}
 				}
 			}
@@ -328,8 +545,12 @@
 			.profile-picture{
 				width: 213px;
 				height: 212px;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(116, 116, 1, 0, 1, 0, 128);
+				}
 				position: relative;
 				>img{
+					@include SubItem();
 					@include animation(
 						blossom-2 0.4s 1 linear forwards
 					);
@@ -342,9 +563,15 @@
 					height: 162px;
 					border-radius: 50%;
 
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(89, 89, 13.5, 0, 13.5, 0, 116);
+					}
 					img{
 						border-radius: 50%;
 						@include SubItem();
+						@media screen and (max-width: #{$screen-sm-num - 1}px) {
+							height: auto;
+						}
 					}
 				}
 			}
@@ -354,6 +581,13 @@
 
 	.part4{
 		position: relative;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			background: none;
+			height: 0;
+			padding-top: per(460, 320);
+			width: 100%;
+			margin: 0;
+		}
 
 		.background{
 			margin-left: 7px;
@@ -361,6 +595,9 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				display: none;
+			}
 		}
 		.guide{
 			@include Item(191, 67, 1, 0, 18, 0, 846);
@@ -368,18 +605,35 @@
 			img{
 				@include SubItem();
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(103, 36, 1, 0, 25, 0, 320);
+			}
 		}
 
 		.girls{
 			padding: 60px 25px 0;
 			margin: 0 -15px;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(266, 0, 35, 0, 25, 0, 320);
+				padding: 0;
+				height: auto;
+			}
 			li{
 				padding: 0 25px 25px;
 				list-style: none;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					padding: 0 per(17.5, 266) per(175, 266);
+				}
 			}
 			.profile-picture{
 				width: 174px;
 				height: 174px;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(94, 94, 1, 0, 17, 0, 133);
+					>img{
+						@include SubItem();
+					}
+				}
 				position: relative;
 				span{
 					position: absolute;
@@ -388,6 +642,9 @@
 					width: 164px;
 					height: 164px;
 					border-radius: 50%;
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(89, 89, 2.5, 0, 3, 0, 94);
+					}
 
 					img{
 						border-radius: 50%;
@@ -404,6 +661,9 @@
 				position: absolute;
 				z-index: 5;
 				color: #713c46;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(100, 47, 0, 20, 17, 0, 133);
+				}
 				img{
 					@include SubItem();
 				}
@@ -412,6 +672,12 @@
 					position: relative;
 					margin-top: -20px;
 					margin-left: 75px;
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						text-align: center;
+						@include Item(133, 0, -23, 0, 0, 0, 133);
+						height: auto;
+						margin-bottom: em(5, 12);
+					}
 
 					>span:before{
 						position: absolute;	
@@ -421,6 +687,13 @@
 						background: url(../img/home/brush-blue.png) no-repeat;
 						content:'';
 						margin-left: calc(50% - 60px);
+						@media screen and (max-width: #{$screen-sm-num - 1}px) {
+							background-size: 100% auto;
+							width: vw320(77);
+							height: 0;
+							padding-top: em(10, 14);
+							margin-left: calc(50% - #{em(14, 14)});
+						}
 					}
 					span{
 						position: relative;
@@ -431,6 +704,7 @@
 					}
 					sub{
 						bottom: 0.08em;
+						margin-left: 0.5em;
 					}
 				}
 				p{
@@ -438,6 +712,11 @@
 					line-height: 1.1;
 					position: relative;	
 					white-space: nowrap;
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						@include Item(85, 0, 15, 0, 10, 0, 100);
+						line-height: 1.2;
+						height: 3em;
+					}
 				}
 			}
 		}
@@ -447,12 +726,22 @@
 			display: block;
 			position: relative;
 			display: inline-block;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(113, 39, 392, 0, 104, 0, 320);
+				img{
+					@include SubItem();
+				}
+			}
 		}
 	}
 
 	.butt{
 		height: 200px;
 		margin-top: 65px;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(320, 0, 0, 0, 0, 0, 320);
+			position: relative;
+		}
 		.gotop{
 			background: #dc92b6;
 			border-radius: 50%;
@@ -467,6 +756,19 @@
 				margin-top: 18px;
 				text-indent: -5px;
 			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				@include Item(42, 42, 21, 0, 139, 0, 320);
+				span{
+					@include SubItem();
+					font-weight: 300;
+					margin-top: 1.3em;
+					text-indent: 0.2em;
+					i{
+						margin-top: 0.2em;
+						text-indent: -0.1em;
+					}
+				}
+			}
 		}
 	}
 
@@ -479,16 +781,19 @@
 	height: calc(100vw - 130px);
 	height: calc(100% - 130px);
 	z-index: 2;
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		height: calc(100vh - #{em(65)});
+		top: 0;
+		margin-top: per(65, 320);
+	}
 	.rib1, .rib2{
 		position: absolute;
-		// width: 100%;
 		left: calc((100% - 1024px) / 2 );
 		top: 719px;
-		// height: 200px;
 		z-index: 2;
-		// img {
-		// 	@include SubItem();
-		// }
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			display: none;
+		}
 	}
 	.rib2{
 		top: 1990px;

@@ -8,7 +8,9 @@
 app.partial.home = function(){
 
 
-	$('.content article').niceScroll();
+	$(window).width() > 768 ?
+		$('.content article').niceScroll() :
+		null;
 
 	$('.bloggers a').on('click', function(e){
 		$('#' + $(this).attr('data-target')).addClass('fade in');
@@ -16,8 +18,13 @@ app.partial.home = function(){
 		e.preventDefault();
 	});
 
-	$('.blogger-box article aside').mCustomScrollbar({
-		autoDraggerLength: false
+	$(window).resize(function(e){
+		$(window).width() > 768 ?
+			$('.blogger-box article aside').mCustomScrollbar({
+				autoDraggerLength: false
+			}) : 			
+			$('.blogger-box article aside').mCustomScrollbar('destroy') ;
+
 	});
 
 };	

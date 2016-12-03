@@ -34,7 +34,7 @@
 				a,img{
 					@include SubItem();
 				}
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
 					display: none;
 				}
 			}
@@ -60,14 +60,17 @@
 					width: 100%;
 					// @include SubItem();
 				}
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					display: none;
+				}
 			}
 			.poster{
 				@include SubItem();
-				background: url(../img/background/kv.png) center/ cover;
+				// background: url(../img/background/kv.png) center/ cover;
 				transition-duration: 0.25s;
 				z-index: 3;
-				@media screen and (max-width: 768px) {
-					background: url(../img/background/kv@320.png) center / cover;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					// background: url(../img/background/kv@320.png) center / cover;
 				}
 				&:after{
 					background-image: url(../img/background/pause.png);
@@ -75,6 +78,9 @@
 						pause 0.25s 1 linear forwards
 					);
 				}
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: right center;
 				&.kv-1{
 					// @include Item(391, 223, -50, 0, 42, 0, 1024);
 					position: absolute;
@@ -85,7 +91,9 @@
 					top: 50%;
 					top: 50vh;
 					z-index: 3;
-					@media screen and (max-width: 768px) {
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						background-size: cover;
+						background-repeat: no-repeat;
 						width: per(262, 320);
 						padding-top: per(133, 320);
 						height: 0;
@@ -112,7 +120,7 @@
 				background: url(../img/background/play.png) center no-repeat;
 				opacity: 1;
 				z-index: 3;
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
 					background: url(../img/background/play@320.png) center calc(50% - 26px)/42px 42px no-repeat;
 				}
 			}
@@ -172,6 +180,9 @@
 	z-index: 2;
 	min-height: 100%;
 	min-height: 100vh;
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		background-image: url(../img/background/background@320.jpg)
+	}
 }
 
 @include keyframes( play )
