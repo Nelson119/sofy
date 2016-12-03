@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app */
+/*global app, $ YT */
 app.partial.yt = function(){
 	// 2. This code loads the IFrame Player API code asynchronously.
 	var tag = document.createElement('script');
@@ -67,7 +67,7 @@ app.partial.yt = function(){
 				$(this.pe).removeClass('playing');
 				$(this.pe).addClass('paused');
 			}
-		}
+		};
 		var moving = 0;
 		$('.video-background .video-container .video').on('mousemove', function(){
 			clearTimeout(moving);
@@ -102,14 +102,14 @@ app.partial.yt = function(){
 
 
 			if(w / h >= ratio){
-				iframeH = w / ratio,
-				iframeW = w,
-				iframeY = ((w / ratio - h) / 2 * -1),
+				iframeH = w / ratio;
+				iframeW = w;
+				iframeY = ((w / ratio - h) / 2 * -1);
 				iframeX = 0;
 			}else{
-				iframeH = h,
-				iframeW = h *  ratio + 2,
-				iframeY = 0,
+				iframeH = h;
+				iframeW = h *  ratio + 2;
+				iframeY = 0;
 				iframeX = ((h *  ratio - w) / 2 * -1);
 
 			}

@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app */
+/*global app, $, ga */
 app.partial.ga = function(){
 	$('a[data-ga]').on('click', function(){
 		ga('send', 'event', 'Button', 'click', $(this).attr('data-ga'));

@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app */
+/*global app, $, TweenMax */
 app.partial.menu = function(){
 	$('header .burger').on('click', function(){
 		$('body').addClass('menu');
@@ -35,16 +35,20 @@ app.partial.menu = function(){
 	});
 
 	$('.menu nav a:eq(2)').on('click', function(e){
-		$(window).width() > 768 ?
-			TweenMax.to('.content article', 0.5, {scrollTop: 935}) :
-			TweenMax.to('.content article', 0.5, {scrollTop: 0}) ;
+		if( $(window).width() > 768){
+			TweenMax.to('.content article', 0.5, {scrollTop: 935});
+		}else{
+			TweenMax.to('.content article', 0.5, {scrollTop: 0});
+		}
 		return changeView('home part2', e);
 	});
 
 	$('.menu nav a:eq(3)').on('click', function(e){
-		$(window).width() > 768 ?
-			TweenMax.to('.content article', 0.5, {scrollTop: 2078}) :
-			TweenMax.to('.content article', 0.5, {scrollTop: 0}) ;
+		if( $(window).width() > 768){
+			TweenMax.to('.content article', 0.5, {scrollTop: 2078});
+		}else{
+			TweenMax.to('.content article', 0.5, {scrollTop: 0});
+		}
 		return changeView('home part3', e);
 	});
 

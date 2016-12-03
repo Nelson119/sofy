@@ -4,13 +4,11 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app */
+/*global app, $ */
 app.partial.home = function(){
 
 
-	$(window).width() > 768 ?
-		$('.content article').niceScroll() :
-		null;
+	$('.content article').niceScroll();
 
 	$('.bloggers a').on('click', function(e){
 		$('#' + $(this).attr('data-target')).addClass('fade in');
@@ -19,11 +17,14 @@ app.partial.home = function(){
 	});
 
 	$(window).resize(function(e){
-		$(window).width() > 768 ?
+		if($(window).width() > 768){
+
 			$('.blogger-box article aside').mCustomScrollbar({
 				autoDraggerLength: false
-			}) : 			
-			$('.blogger-box article aside').mCustomScrollbar('destroy') ;
+			});
+		}else{			
+			$('.blogger-box article aside').mCustomScrollbar('destroy');
+		}
 
 	});
 
