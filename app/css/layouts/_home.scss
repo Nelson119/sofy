@@ -554,6 +554,7 @@
 				position: relative;
 				>img{
 					@include SubItem();
+					height: auto;
 					@include animation(
 						blossom-2 0.4s 1 linear forwards
 					);
@@ -572,6 +573,7 @@
 					img{
 						border-radius: 50%;
 						@include SubItem();
+						height: auto;
 						@media screen and (max-width: #{$screen-sm-num - 1}px) {
 							height: auto;
 						}
