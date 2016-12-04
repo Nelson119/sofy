@@ -91,8 +91,8 @@ app.partial.yt = function(){
 		$(window).on('resize', function(){
 
 
-			var w = $(window).innerHeight() || $(window).width(),
-				h = $(window).height(),
+			var w = $(window).width(),
+				h = $(window).innerHeight() || $(window).height(),
 				ratio = 16 / 9;
 
 			var iframeX = 0,
