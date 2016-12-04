@@ -1,0 +1,13 @@
+.thankyou-page{
+
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		position: relative;
+		width: per(280, 320);
+		padding: per(136, 320) per(28, 320) per(235, 320);
+		margin: per(10, 320) auto 0;
+		background: url(../img/thankyou/background@320.png) center top/ 100% auto no-repeat;
+		aside{
+			color: #ff6795;
+		}
+	}
+}
