@@ -65,8 +65,10 @@ app.partial.menu = function(){
 		var views = ['rule', 'video', 'form', 'thankyou', 'home part1', 'home part2', 'home part3'];
 		var rm = views.join(' ').replace(view);
 		$('body').removeClass(rm).addClass(view);
-		e.stopPropagation();
-		e.preventDefault();
+		if(e){
+			e.stopPropagation();
+			e.preventDefault();
+		}
 		return false;
 	}
 
