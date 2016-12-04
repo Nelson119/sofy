@@ -6,8 +6,8 @@
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global app, share $ */
 app.partial.share = function(){
-	$('.share').on('click', function(e){
-		share.facebook($(this).attr('data-ref'), '喬喬的午茶約會');
+	$('.share a').on('click', function(e){
+		share.facebook($(this).parent().attr('data-ref'), '喬喬的午茶約會');
 		e.preventDefault();
 		e.stopPropagation();
 		return false;
