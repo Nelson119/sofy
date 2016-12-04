@@ -58,18 +58,17 @@ app.partial.menu = function(){
 	});
 
 
-	$('.rule-page .close').on('click', function(e){
-		return changeView('video', e);
-	});
 
 
 	function changeView(view, e){
 		$('body').removeClass('menu');
-		var views = ['rule', 'video', 'home part1', 'home part2', 'home part3'];
+		var views = ['rule', 'video', 'form', 'thankyou', 'home part1', 'home part2', 'home part3'];
 		var rm = views.join(' ').replace(view);
 		$('body').removeClass(rm).addClass(view);
 		e.stopPropagation();
 		e.preventDefault();
 		return false;
 	}
+
+	app.changeView = changeView;
 };

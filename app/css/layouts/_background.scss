@@ -62,7 +62,23 @@
 					// @include SubItem();
 				}
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					display: none;
+					@include Item(116, 77, 0, 13, 101, 0, 320);
+					z-index: 10;
+					opacity: 1;
+					aside, img{
+						color: #7b4e4d;
+						@include SubItem();
+						span{
+							margin-top: -1em;
+							max-width: 96%;
+						}
+					}
+					a{
+						@include SubItem();
+					}
+					img{
+						height: auto;
+					}
 				}
 			}
 			.poster{
@@ -154,9 +170,11 @@
 
 			&.mousemove{
 				.share{
-					opacity: 1;
-					height: 117px;
-					transition: height 0s linear 0s, opacity 0.45s linear 0s;
+					@media screen and (min-width: #{$screen-sm-num}px) {
+						opacity: 1;
+						height: 117px;
+						transition: height 0s linear 0s, opacity 0.45s linear 0s;
+					}
 				}
 				.next{
 					opacity: 1;

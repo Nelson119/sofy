@@ -3,15 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
+    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta property="og:image" content="/img/share.jpg"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta property="og:title" content="【那幾天，喬喬の寵愛肌地】到底在哪呢？">
+    <!-- <meta property="og:url" content=" http://wakaimc.sofy.com.tw/ "/> -->
+    <meta property="og:description" content="快來看影片一起尋找，分享還能抽大獎！">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <title>那幾天，喬喬の寵愛肌地</title>
 
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:image" content=""/>
-    <link rel="apple-touch-icon" href="">
-    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
 
     <!-- build:css css/vendor.css -->
     <!-- bower:css -->
@@ -29,7 +34,7 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="thankyou">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -46,8 +51,14 @@
           <figure class="next">
             <a href="javascript:$('.video-container').slick('slickGoTo', 1);void(0)"><img src="img/background/next.png"></a>
           </figure>
-          <figure class="share">
-            <a href="javascript:"><img src="img/background/share.png"></a>
+          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
+            <a href="javascript:" class="hidden-xs"><img src="img/background/share.png"></a>
+            <a class="visible-xs" href="javascript:">
+              <img src="img/scroll-down@320.png">
+              <aside class="text-center vertical-middle fontsize-xs-10">
+                <span>立即分享影片<br>抽與喬喬的午茶約會</span>
+              </aside>
+            </a>
           </figure>
         </aside>
         <aside class="video">
@@ -58,8 +69,14 @@
           <figure class="prev">
             <a href="javascript:$('.video-container').slick('slickGoTo', 0);void(0)"><img src="img/background/prev.png"></a>
           </figure>
-          <figure class="share">
-            <a href="javascript:"><img src="img/background/share.png"></a>
+          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
+            <a href="javascript:" class="hidden-xs"><img src="img/background/share.png"></a>
+            <a class="visible-xs" href="javascript:">
+              <img src="img/scroll-down@320.png">
+              <aside class="text-center vertical-middle fontsize-xs-10">
+                <span>立即分享影片<br>抽與喬喬的午茶約會</span>
+              </aside>
+            </a>
           </figure>
         </aside>
       </aside>
@@ -89,15 +106,10 @@
       </aside>
     </header>
     <a class="scrolldown hidden-xs" href="javascript:"><img src="img/scroll-down.png"></a>
-    <a class="scrolldown visible-xs" href="javascript:">
-      <img src="img/scroll-down@320.png">
-      <aside class="text-center vertical-middle fontsize-xs-10">
-        <span>立即分享影片<br>抽與喬喬的午茶約會</span>
-      </aside>
-    </a>
 
     <section class="content">
       <article>
+        
         <section class="home-page">
           <figure class="rib1"><img src="img/home/hr.png"></figure>
           <figure class="rib2"><img src="img/home/hr-1.png"></figure>
@@ -431,6 +443,7 @@
             </section>
           </section>
         </section>
+        
         <section class="rule-page">
           <h3 class="text-center vertical-middle fontsize-47 fontsize-xs-22">活動辦法</h3>
           <ul class="fontsize-21 fontsize-xs-11">
@@ -463,6 +476,60 @@
             <img src="img/lightbox/close.png">
           </a>
         </section>
+
+        <section class="form-page">
+          <h3 class="text-center vertical-middle fontsize-47 fontsize-xs-16">請完整填寫資料，<br>以利與妳聯絡抽獎事宜</h3>
+
+          <form>
+            <span class="row">
+              <span class="col-xs-4"> 真實姓名</span>
+              <span class="col-xs-8"> <input name="sName" type="text"></span>
+            </span>
+            <span class="row">
+              <span class="col-xs-4"> 手機</span>
+              <span class="col-xs-8"> <input name="sMobile" type="text"></span>
+            </span>
+            <span class="row">
+              <span class="col-xs-4"> E-mail</span>
+              <span class="col-xs-8"> <input name="sEmail" type="text"></span>
+            </span>
+            <span class="row">
+              <span class="col-xs-4"> 聯絡地址</span>
+              <span class="col-xs-8"> <textarea name="sAddr"></textarea></span>
+            </span>
+            <span class="row">
+              <span class="col-xs-1"> <input type="checkbox" name="agree" id="agree"></span>
+              <span class="col-xs-11"><label class="fontsize-xs-11" for="agree">我已詳閱並同意活動辦法及隱私權條款，並同意提供個人資料作為活動參加使用。</label></span>
+            </span>
+            <span class="row">
+              <span class="col-xs-12">
+                <a href="javascript:"><img src="img/form/reset.png"></a>
+              </span>
+            </span>
+            <span class="row">
+              <span class="col-xs-12">
+                <a href="javascript:"><img src="img/form/submit.png"></a>
+              </span>
+            </span>
+
+          </form>
+          
+          <figure class="jojo">
+            <img class="hidden-xs" src="img/rule/jojo.png">
+            <img class="visible-xs" src="img/rule/jojo@320.png">
+          </figure>
+          <a class="close" href="javascript:">
+            <img src="img/lightbox/close.png">
+          </a>
+        </section>
+
+        <section class="thankyou-page">
+          <aside class="text-center">
+            <h3>完成活動!</h3>
+            <h4>恭喜妳已獲得抽獎資格</h4>
+          </aside>
+        </section>
+
       </article>
     </section>
 
@@ -758,6 +825,16 @@
       // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       // ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+    <script>
+
+    (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/zh_TW/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->
@@ -794,6 +871,10 @@
     <script src="js/yt.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/rule.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/thankyou.js"></script>
+    <script src="js/share.js"></script>
     <!-- endbuild -->
   </body>
 </html>

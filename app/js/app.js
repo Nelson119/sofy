@@ -5,8 +5,11 @@
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
 /*global  $ */
+
 var app = {};
 app.partial = {};
+app.me = {};
+app.fbstatus = null;
 
 // var dayOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -15,22 +18,68 @@ var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
 var share = {
 	facebook: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=roseanni');
-		title = encodeURIComponent(title || document.title);
-		window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
+		// href = encodeURIComponent(href || location.href + '?utm_source=facebook&utm_medium=share&utm_campaign=sofy');
+		// title = encodeURIComponent(title || document.title);
+		// window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
+		if(app.fbstatus != 'connected'){
+			FB.login(function(r){
+				if(r.status === 'connected'){				
+					app.fbstatus = r.status;
+					ui();
+					me();
+				}else{
+					console.log('not logged in');
+				}
+			}, {
+				scope: 'email'
+			});
+
+		}else{
+			ui();
+		}
+
+		function me(){
+			FB.api('/me', function(me){
+				app.me.name = me.name;
+				app.me.email = me.email;
+				app.me.fbid = me.id;
+			});
+		}
+
+		function ui(){
+			FB.ui({
+				method: 'share', 
+				href: href,
+				title: title
+			}, function(r){
+				console.log(r);
+				// app.changeView('form');
+			});
+		}
 	},
 	googleplus: function(href){
-		href = encodeURIComponent(href || location.href + '?utm_source=g+&utm_medium=fbshare_m&utm_campaign=roseanni');
+		href = encodeURIComponent(href || location.href + '?utm_source=g+&utm_medium=fbshare_m&utm_campaign=sofy');
 		window.open('https://plus.google.com/share?url=' + href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 	},
 	email: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=email&utm_medium=fbshare_m&utm_campaign=roseanni');
+		href = encodeURIComponent(href || location.href + '?utm_source=email&utm_medium=fbshare_m&utm_campaign=sofy');
 		title = encodeURIComponent(title || document.title);
 		var body = encodeURIComponent(''+href+' #' +title+'');
 		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
 	}
 };
 
+window.fbAsyncInit = function() {
+	FB.init({
+		appId      : (debug ? '227687320989903' : '227679697657332'),
+		xfbml      : true,
+		version    : 'v2.6'
+	});
+
+	FB.getLoginStatus(function(r) {
+		app.fbstatus = r.status;
+	});
+};
 
 $(function(){
 
