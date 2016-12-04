@@ -91,7 +91,7 @@ app.partial.yt = function(){
 		$(window).on('resize', function(){
 
 
-			var w = $(window).width(),
+			var w = $(window).innerHeight() || $(window).width(),
 				h = $(window).height(),
 				ratio = 16 / 9;
 
