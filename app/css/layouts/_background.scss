@@ -193,9 +193,11 @@
 	}
 }
 .sky-background{
-	background: url(../img/background/background.jpg) 0 0/ cover;
+	background: url(../img/background/background.jpg) 0 0/ 100% auto;
 	@include SubItem();
 	// position: fixed;
+	left: -1%;
+	width: 101%;
 	z-index: 2;
 	min-height: 100%;
 	min-height: 100vh;
