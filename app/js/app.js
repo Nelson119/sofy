@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global  $ */
+/*global  $, FB */
 
 var app = {};
 app.partial = {};
@@ -52,8 +52,24 @@ var share = {
 				href: href,
 				title: title
 			}, function(r){
-				console.log(r);
-				// app.changeView('form');
+				// console.log(r);
+				app.changeView('form');
+			});
+
+			FB.ui({
+				method: 'share_open_graph',
+				action_type: 'og.shares',
+				action_properties: JSON.stringify({
+					object : {
+						'og:url': href,
+						'og:title': title
+					}
+				})
+			},
+			function(r) {
+				if (r && !r.error_message) {
+					app.changeView('form');
+				}
 			});
 		}
 	},
