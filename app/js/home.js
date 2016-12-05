@@ -7,7 +7,7 @@
 /*global app, $ */
 app.partial.home = function(){
 
-	if(!$('body.mobile').length){
+	if(!$('html.mobile,html.tablet').length){
 		$('.content article').niceScroll({horizrailenabled:false});
 	}
 

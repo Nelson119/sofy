@@ -91,6 +91,10 @@ app.partial.form = function(){
 				console.log(r);
 			}else{
 				app.changeView('thankyou');
+
+				setTimeout(function(){
+					app.changeView('home');
+				}, 3000);
 			}
 		}).error(function(e){
 			alert('無法送出表單請稍後再試');

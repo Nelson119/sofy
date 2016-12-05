@@ -817,13 +817,24 @@
 	.rib1, .rib2{
 		position: absolute;
 		left: calc((100% - 1024px) / 2 );
+		max-width: 1024px;
 		top: 719px;
 		z-index: 2;
+		img{
+			@include SubItem();
+			height: auto;
+		}
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			display: none;
 		}
 	}
+	.rib1{
+		width: 1024px;
+		height: 226px;
+	}
 	.rib2{
+		width: 1024px;
+		height: 316px;
 		top: 1990px;
 	}
 	article{

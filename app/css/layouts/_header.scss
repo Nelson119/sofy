@@ -17,15 +17,15 @@ header {
 		top: 0;
 		left: 0;
 		position: fixed;
+		width: 112px;
+		height: 70px;
 		img{
+			@include SubItem();
+			height: auto;
 			filter: drop-shadow(0 0 10px #68a4b3 );
 		}
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include Item(61, 37, 19, 0, 18, 0, 320);
-			img{
-				@include SubItem();
-				height: auto;
-			}
 		}
 	}
 	.burger{

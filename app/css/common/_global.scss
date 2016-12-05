@@ -58,6 +58,7 @@ body {
 		content: '';
 		@include SubItem();
 		background: #68a4b3 center url(../img/header/logo.png) no-repeat;
+		background-size: 112px 70px;
 		position: fixed;
 		z-index: 100;
 		@include animation(
@@ -66,6 +67,10 @@ body {
 		// @include animation(
 		// 	fade 0.01s 1 linear forwards 0s
 		// );
+
+		@media screen and (max-width: 768px) {		
+			background-size: per(61, 320) auto;
+		}
 
 	}
 
