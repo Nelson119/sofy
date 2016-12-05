@@ -36,7 +36,7 @@ app.partial.menu = function(){
 
 	$('.menu nav a:eq(2)').on('click', function(e){
 		if( $(window).width() > 768){
-			TweenMax.to('.content article', 0.5, {scrollTop: 935});
+			TweenMax.to('.content article', 0.5, {scrollTop: 935*0.8});
 		}else{
 			TweenMax.to('.content article', 0.5, {scrollTop: 0});
 		}
@@ -45,7 +45,7 @@ app.partial.menu = function(){
 
 	$('.menu nav a:eq(3)').on('click', function(e){
 		if( $(window).width() > 768){
-			TweenMax.to('.content article', 0.5, {scrollTop: 2078});
+			TweenMax.to('.content article', 0.5, {scrollTop: 2078*0.8});
 		}else{
 			TweenMax.to('.content article', 0.5, {scrollTop: 0});
 		}
@@ -58,11 +58,14 @@ app.partial.menu = function(){
 	});
 
 
+	$('.kv-container a').on('click', function(e){
+		changeView('video-carosel', e);
+	});
 
 
 	function changeView(view, e){
 		$('body').removeClass('menu');
-		var views = ['rule', 'video', 'form', 'thankyou', 'home part1', 'home part2', 'home part3'];
+		var views = ['rule', 'video', 'form', 'thankyou', 'home part1', 'home part2', 'home part3', 'video-carosel'];
 		var rm = views.join(' ').replace(view);
 		$('body').removeClass(rm).addClass(view);
 		if(e){

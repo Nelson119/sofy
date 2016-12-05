@@ -39,7 +39,8 @@ app.partial.yt = function(){
 			});
 		}).slick({
 			arrows: false,
-			infinite: false
+			infinite: false,
+			dots: true
 		}).on('afterChange', function(){
 			if(playing != null){
 				playing.play();
@@ -116,7 +117,7 @@ app.partial.yt = function(){
 			$('.video-background iframe').height(iframeH).width(iframeW)
 				.css('margin-top', iframeY)
 				.css('margin-left', iframeX);
-
+			$('.slick-dots').remove();
 			$('.video-background .video-container').slick('reinit');
 		}).trigger('resize');
 

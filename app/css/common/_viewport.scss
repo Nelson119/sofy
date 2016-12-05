@@ -6,6 +6,21 @@
 }
 /* Space out content a bit */
 body {
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		.video-container {
+			.video-background{
+				top: 100%;
+			}
+			@include animation(
+				fadeOut 0.25s 1 linear forwards 0s
+			);
+			padding: 0;
+			min-height: 0;
+			overflow: hidden;
+			position: relative;
+			height: 0;
+		}
+	}
 	&.video{
 		.video-background{
 		}
@@ -96,6 +111,32 @@ body {
 			height: 0;
 		}
 	}
+	&.video-carosel{
+		.content .rule-page, .content .form-page, .content .home-page, .content .thankyou-page{
+			@include animation(
+				fadeOut 0.25s 1 linear forwards 0s
+			);
+			padding: 0;
+			min-height: 0;
+			overflow: hidden;
+			position: relative;
+			height: 0;
+		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			.kv-container {
+				@include animation(
+					fadeOut 0.25s 1 linear forwards 0s
+				);
+			}
+			z-index: 10;
+			.video-container {
+				top: 0%;
+				@include animation(
+					fadeIn 0.25s 1 linear forwards 0s
+				);
+			}
+		}
+	}
 
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		&.home{
@@ -166,5 +207,20 @@ body {
 		opacity: 0;
 		height: 0;
 		margin: 0;
+	}
+}
+
+
+@include keyframes( fadeIn )
+{
+    0% {
+		top: 100%;
+	}
+	99% {
+		top: 0%;
+	}
+	100%{
+		top: 0%;
+		opacity: 1;
 	}
 }

@@ -12,6 +12,18 @@ app.partial.form = function(){
 		return app.changeView('video', e);
 	});
 
+	$('.form-page .zip').twzipcode({
+		language: 'lang/zh-tw' 
+	});
+// sName
+// sMobile
+// sEmail
+// sZip
+// sCounty
+// sDistrict
+// sAddr
+// sAD
+
 	var form = {};
 
 	$('.submit').on('click', function(){
@@ -19,12 +31,53 @@ app.partial.form = function(){
 			send();
 		}
 	});
+	$('.reset').on('click', function(){
+		$('[name=sName]').val('');
+		$('[name=sEmail]').val();
+		$('[name=sAddr]').val();
+		$('[name=sMobile]').val();
+		$('[name=district]').val(null);
+		$('[name=county]').val(null);
+		$('[name=zipcode]').val('');
+
+	});
 
 	function checkFields(){
 		form.sName = $('[name=sName]').val();
 		form.sEmail = $('[name=sEmail]').val();
-		form.sName = $('[name=sAddr]').val();
-		form.sName = $('[name=sMobile]').val();
+		form.sAddr = $('[name=sAddr]').val();
+		form.sMobile = $('[name=sMobile]').val();
+		form.sDistrict = $('[name=district] option:selected').val();
+		form.sCounty = $('[name=county] option:selected').val();
+		form.sZip = $('[name=zipcode]').val();
+		form.sAD = extractUrlValue('utm_medium') || 'none';
+
+		if(!form.sName){
+			alert('請填寫姓名');
+			return false;
+		}
+		if(!form.sMobile){
+			alert('請填寫手機');
+			return false;
+		}
+		if(!/09\d{8,8}/ig.test(form.sMobile)){
+			alert('請填寫正確的手機號碼');
+			return false;
+		}
+		if(!form.sEmail){
+			alert('請填寫Email');
+			return false;
+		}
+		if(!form.sAddr || !form.sDistrict || !form.sCounty || !form.sZip){
+			alert('請填寫完整地址');
+			return false;
+		}
+		if(!$('#agree').is(':checked')){
+			alert('請勾選同意');
+			return false;
+		}
+
+
 		return true;
 	}
 
@@ -32,17 +85,25 @@ app.partial.form = function(){
 		$.ajax({
 			url: 'http://www1.jwttw.com/event/sofy/2016waka/SaveData.ashx',
 			data: form,
-			method: 'post',
-			dataType: 'json',
-			contentType: 'json'
+			method: 'post'
 		}).success(function(r){
 			if(r.Success == '0'){
-				alert(r);
+				console.log(r);
 			}else{
 				app.changeView('thankyou');
 			}
 		}).error(function(e){
-			alert(e);
+			alert('無法送出表單請稍後再試');
 		});
 	}
+
+	function extractUrlValue(key, url)
+	{
+		if (typeof url === 'undefined'){
+			url = window.location.href;
+		}
+		var match = url.match('[?&]' + key + '=([^&]+)');
+		return match ? match[1] : null;
+	}
+
 };	

@@ -14,8 +14,35 @@
 			.player{
 				@include SubItem();
 				overflow: hidden;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					margin: #{per(150, 320)} 0 0 #{per(10, 320)}!important;
+					width: #{per(300, 320)}!important;
+					padding-top: #{per(204, 320)}!important;
+					height: 0!important;
+					&:before{
+						@include SubItem();
+						position: absolute;
+						content: '';
+						background: url(../img/background/grid.png) 0 0/ 20px auto;
+						opacity: 1;
+						z-index: 3;
+					}
+				}
 				iframe{
 					@include SubItem();
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						width: 100%!important;
+						height: 100%!important;
+						margin: 0!important;
+					}
+				}
+			}
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				.poster{
+					margin: #{per(150, 320)} 0 0 #{per(10, 320)}!important;
+					width: #{per(300, 320)}!important;
+					padding-top: #{per(204, 320)}!important;
+					height: 0!important;
 				}
 			}
 			.next, .prev{
@@ -62,7 +89,7 @@
 					// @include SubItem();
 				}
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					@include Item(116, 77, 0, 13, 101, 0, 320);
+					@include Item(189, 84, 0, 63, 65, 0, 320);
 					z-index: 10;
 					opacity: 1;
 					aside, img{
@@ -81,46 +108,6 @@
 					}
 				}
 			}
-			.poster{
-				@include SubItem();
-				// background: url(../img/background/kv.png) center/ cover;
-				transition-duration: 0.25s;
-				z-index: 3;
-				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					// background: url(../img/background/kv@320.png) center / cover;
-				}
-				&:after{
-					background-image: url(../img/background/pause.png);
-					@include animation(
-						pause 0.25s 1 linear forwards
-					);
-				}
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: right center;
-				&.kv-1{
-					// @include Item(391, 223, -50, 0, 42, 0, 1024);
-					position: absolute;
-					width: 391px;
-					height: 223px;
-					margin-top: per(-50, 1024);
-					margin-left: per(42, 1024);
-					top: 50%;
-					top: 50vh;
-					z-index: 3;
-					@media screen and (max-width: #{$screen-sm-num - 1}px) {
-						background-size: cover;
-						background-repeat: no-repeat;
-						width: per(262, 320);
-						padding-top: per(133, 320);
-						height: 0;
-						top: 50vh;
-						top: 50%;
-						margin-top: per(16, 320);
-						margin-left: per(16, 320);
-					}
-				}
-			}
 			&:before{
 				@include SubItem();
 				position: absolute;
@@ -128,6 +115,9 @@
 				background: url(../img/background/grid.png) 0 0/ 20px auto;
 				opacity: 1;
 				z-index: 3;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					display: none;
+				}
 			}
 
 			&:after{
@@ -137,8 +127,14 @@
 				background: url(../img/background/play.png) center no-repeat;
 				opacity: 1;
 				z-index: 3;
+				transform-origin: center center 1px;
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					background: url(../img/background/play@320.png) center calc(50% - 26px)/42px 42px no-repeat;
+					margin: #{per(150, 320)} 0 0 #{per(10, 320)}!important;
+					width: #{per(300, 320)}!important;
+					padding-top: #{per(204, 320)}!important;
+					height: 0!important;
+					background: url(../img/background/play@320.png) center center/#{per(36,300)} auto no-repeat;
+					opacity: 0.53;
 				}
 			}
 			&.playing,&.paused{
@@ -156,6 +152,10 @@
 					@include animation(
 						play 0.25s 1 linear forwards
 					);
+					@media screen and (max-width: #{$screen-sm-num - 1}px) {
+						background-image: url(../img/background/play@320.png);
+						opacity: 0.53;
+					}
 				}
 			}
 			&.paused{
@@ -183,6 +183,149 @@
 				.prev{
 					opacity: 1;
 					transition: height 0s linear 0s, opacity 0.45s linear 0s;
+				}
+			}
+
+
+			.tagline{
+				color: #fff;
+				@include Item(320, 0, 97, 0, 1, 0, 320);
+				span{
+					line-height: em(36,14);
+					height: em(36,14);
+					padding: 0 2em;
+					background: url(../img/background/video-tagline-bg.png) no-repeat center/100%;
+				}
+
+			}
+		}
+
+		.slick-dots{
+			display: none;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				display: block;
+				width: 100%;
+				text-align: center;
+				letter-spacing: 0;
+				padding: 0;
+				position: absolute;
+				top:0;
+				margin-top: 115%;
+				
+				li{
+					display: inline-block;
+					width: 1em;
+					padding-top: 1em;
+					background: #fff;
+					opacity: 0.3;
+					transition-duration: 0.25s;
+					border-radius: 50%;
+
+					&+li{
+						margin-left: 0.6em;
+					}
+
+					&.slick-active{
+						opacity: 1;
+					}
+
+					button{
+						display: none;
+					}
+				}
+			}
+
+		}
+	}
+	.poster{
+		@include SubItem();
+		// background: url(../img/background/kv.png) center/ cover;
+		transition-duration: 0.25s;
+		z-index: 3;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			// background: url(../img/background/kv@320.png) center / cover;
+		}
+		&:after{
+			background-image: url(../img/background/pause.png);
+			@include animation(
+				pause 0.25s 1 linear forwards
+			);
+		}
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: right center;
+		&.kv-1{
+			// @include Item(391, 223, -50, 0, 42, 0, 1024);
+			position: absolute;
+			width: 391px;
+			height: 223px;
+			margin-top: per(-50, 1024);
+			margin-left: per(42, 1024);
+			top: 50%;
+			top: 50vh;
+			z-index: 3;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				background-size: cover;
+				background-repeat: no-repeat;
+				width: per(262, 320);
+				padding-top: per(133, 320);
+				height: 0;
+				top: 50vh;
+				top: 50%;
+				margin-top: per(16, 320);
+				margin-left: per(16, 320);
+			}
+		}
+	}
+
+	.kv-container{
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include SubItem();
+			.scrolldown{
+				@include Item(116, 77, 0, 13, 101, 0, 320);
+				z-index: 10;
+				opacity: 1;
+				aside, img{
+					color: #7b4e4d;
+					@include SubItem();
+					span{
+						margin-top: -1em;
+						max-width: 96%;
+					}
+				}
+				a{
+					@include SubItem();
+				}
+				img{
+					height: auto;
+				}
+			}
+			.play-button{
+				position: absolute;
+				top: 40%;
+				left: 40%;
+				width: 20%;
+				height: 10%;
+				z-index: 4;
+			}
+			&:before{
+				@include SubItem();
+				position: absolute;
+				content: '';
+				background: url(../img/background/grid.png) 0 0/ 20px auto;
+				opacity: 1;
+				z-index: 3;
+			}
+
+			&:after{
+				@include SubItem();
+				position: absolute;
+				content: '';
+				background: url(../img/background/play.png) center no-repeat;
+				opacity: 1;
+				z-index: 3;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					background: url(../img/background/play@320.png) center calc(50% - 26px)/42px 42px no-repeat;
 				}
 			}
 		}

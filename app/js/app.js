@@ -48,25 +48,23 @@ var share = {
 
 		function ui(){
 			FB.ui({
-				method: 'share', 
-				href: href,
-				title: title
-			}, function(r){
-				// console.log(r);
-				app.changeView('form');
-			});
-
-			FB.ui({
-				method: 'share_open_graph',
-				action_type: 'og.shares',
-				action_properties: JSON.stringify({
-					object : {
-						'og:url': href,
-						'og:title': title
-					}
-				})
+  				method: 'feed',
+  				link: href
+				// method: 'share_open_graph',
+				// action_type: 'og.shares',
+				// action_properties: JSON.stringify({
+				// 	object : {
+				// 		'og:url': href,
+				// 		'og:title': $('meta[property*=og][property$=title]').attr('content'),
+				// 		'og:description': $('meta[property*=og][property$=description]').attr('content'),
+				// 		'og:image:width': $('meta[property*=og][property$=width]').attr('content'),
+				// 		'og:image:height': $('meta[property*=og][property$=height]').attr('content'),
+				// 		'og:image': $('meta[property*=og][property$=image]').attr('content')
+				// 	}
+				// })
 			},
 			function(r) {
+				console.log(r);
 				if (r && !r.error_message) {
 					app.changeView('form');
 				}
@@ -89,7 +87,7 @@ window.fbAsyncInit = function() {
 	FB.init({
 		appId      : (debug ? '227687320989903' : '227679697657332'),
 		xfbml      : true,
-		version    : 'v2.6'
+		version    : 'v2.7'
 	});
 
 	FB.getLoginStatus(function(r) {
@@ -108,37 +106,10 @@ $(function(){
 
 	//觸發第一次調整頁面尺寸
 	$(window).trigger('resize');
-	//分享按鈕
 
-	$('.share .facebook').on('click', function(e){
-		share.facebook();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
-
-	$('.share .googleplus').on('click', function(e){
-		share.googleplus();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
-
-	$('.share .email').on('click', function(e){
-		share.email();
-
-		e.stopPropagation();
-
-		e.preventDefault();
-
-		return false;
-	});
+	if(location.hash == '#rule'){
+		app.changeView('rule');
+	}
 
 });
 

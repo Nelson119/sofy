@@ -1,5 +1,5 @@
 header {
-	height: 130px;
+	height: 90px;
 	position: relative;
 	overflow: visible;
 	z-index: 50;
@@ -13,7 +13,7 @@ header {
 	}
 
 	.logo{
-		margin: 27px 0 0 36px;
+		margin: 7px 0 0 36px;
 		top: 0;
 		left: 0;
 		position: fixed;
@@ -31,7 +31,7 @@ header {
 	.burger{
 		position: absolute;
 		right: 47px;
-		top: 51px;
+		top: 31px;
 		transition-duration: 0.25s;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include Item(23, 21, 29, 0, 0, 21, 320);
@@ -44,7 +44,7 @@ header {
 	.coupon{
 		position: absolute;
 		right: 108px;
-		top: 24px;
+		top: 4px;
 		transition-duration: 0.25s;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include Item(41, 42, 18, 0, 0, 55, 320);
