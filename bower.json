@@ -33,6 +33,11 @@
       "main": [
         "./jquery.nicescroll.min.js"
       ]
+    },
+    "iscroll": {
+      "main": [
+        "./build/iscroll.js"
+      ]
     }
   },
   "devDependencies": {

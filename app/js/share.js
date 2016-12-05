@@ -7,7 +7,7 @@
 /*global app, share $ */
 app.partial.share = function(){
 	$('.share a').on('click', function(e){
-		share.facebook($(this).parent().attr('data-ref'), '喬喬的午茶約會');
+		share.facebook($(this).parent().attr('data-ref'), '喬喬的午茶約會', true);
 		e.preventDefault();
 		e.stopPropagation();
 		return false;

@@ -8,6 +8,12 @@
 
 
 	margin-bottom: 75px;
+	@media screen and (min-width: #{$screen-sm-num}px) {
+		transform: scale(0.8);
+		transform-origin: center bottom 1px;
+		margin-top: -48.3em;
+	}
+
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		width: per(280, 320);
 		padding: per(41, 320) per(28, 320) per(165, 320);
@@ -58,9 +64,20 @@
 						content: '（'counter(i)'）';
 						margin-left: -3em;
 					}
-				}
-				&+li{
-					margin-top: 0.5em;
+					&:nth-child(6){
+						@media screen and (min-width: #{$screen-sm-num}px) {
+							width: 405px;
+						}
+
+					}
+					&:nth-child(7){
+						@media screen and (min-width: #{$screen-sm-num}px) {
+							width: 255px;
+						}
+					}
+					&+li{
+						margin-top: 0.5em;
+					}
 				}
 			}
 
@@ -78,6 +95,12 @@
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			left: per(20, 320);
 			bottom: em(-75);
+			width: per(244, 320);
+			padding-top : per(266, 320);
+			img{
+				@include SubItem();
+				height: auto;
+			}
 		}
 	}
 

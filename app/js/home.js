@@ -7,8 +7,9 @@
 /*global app, $ */
 app.partial.home = function(){
 
-
-	// $('.content article').niceScroll();
+	if(!$('body.mobile').length){
+		$('.content article').niceScroll({horizrailenabled:false});
+	}
 
 	$('.bloggers a').on('click', function(e){
 		$('#' + $(this).attr('data-target')).addClass('fade in');

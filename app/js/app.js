@@ -17,15 +17,15 @@ app.fbstatus = null;
 var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
 
 var share = {
-	facebook: function(href, title){
+	facebook: function(href, title, goform){
 		// href = encodeURIComponent(href || location.href + '?utm_source=facebook&utm_medium=share&utm_campaign=sofy');
 		// title = encodeURIComponent(title || document.title);
 		// window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
-		if(app.fbstatus != 'connected'){
+		if(goform && app.fbstatus != 'connected'){
 			FB.login(function(r){
 				if(r.status === 'connected'){				
 					app.fbstatus = r.status;
-					ui();
+					ui(href);
 					me();
 				}else{
 					console.log('not logged in');
@@ -35,7 +35,7 @@ var share = {
 			});
 
 		}else{
-			ui();
+			ui(href + '?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy');
 		}
 
 		function me(){
@@ -46,10 +46,10 @@ var share = {
 			});
 		}
 
-		function ui(){
+		function ui(h){
 			FB.ui({
   				method: 'feed',
-  				link: href
+  				link: h
 				// method: 'share_open_graph',
 				// action_type: 'og.shares',
 				// action_properties: JSON.stringify({
@@ -64,7 +64,9 @@ var share = {
 				// })
 			},
 			function(r) {
-				console.log(r);
+				if(!goform){
+					return;
+				}
 				if (r && !r.error_message) {
 					app.changeView('form');
 				}

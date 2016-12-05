@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app, $, TweenMax */
+/*global app, $, TweenMax, share */
 app.partial.menu = function(){
 	$('header .burger').on('click', function(){
 		$('body').addClass('menu');
@@ -62,6 +62,9 @@ app.partial.menu = function(){
 		changeView('video-carosel', e);
 	});
 
+	$('.menu-f').on('click', function(){
+		share.facebook(location.href.replace(location.search,'').replace(location.hash,''), '喬喬的午茶約會');
+	});
 
 	function changeView(view, e){
 		$('body').removeClass('menu');
