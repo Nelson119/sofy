@@ -89,7 +89,7 @@
 					// @include SubItem();
 				}
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					@include Item(189, 84, 0, 63, 65, 0, 320);
+					@include Item(189, 84, 421, 50, 65, 0, 320);
 					z-index: 10;
 					opacity: 1;
 					aside, img{

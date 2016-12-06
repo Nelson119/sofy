@@ -62,7 +62,7 @@ body {
 		position: fixed;
 		z-index: 100;
 		@include animation(
-			fade 2.5s 1 linear forwards 2s
+			fade 2.5s 1 linear forwards 1s
 		);
 		// @include animation(
 		// 	fade 0.01s 1 linear forwards 0s

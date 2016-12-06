@@ -33,9 +33,9 @@ app.partial.form = function(){
 	});
 	$('.reset').on('click', function(){
 		$('[name=sName]').val('');
-		$('[name=sEmail]').val();
-		$('[name=sAddr]').val();
-		$('[name=sMobile]').val();
+		$('[name=sEmail]').val('');
+		$('[name=sAddr]').val('');
+		$('[name=sMobile]').val('');
 		$('[name=district]').val(null);
 		$('[name=county]').val(null);
 		$('[name=zipcode]').val('');

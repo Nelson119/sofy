@@ -25,8 +25,13 @@ app.partial.menu = function(){
 	});
 
 	$('.menu nav a:eq(0)').on('click', function(e){
-		$('.video-background .video-container').slick('slickGoTo', 0);
-		return changeView('video', e);
+		if($(window).width() > 768){
+			$('.video-background .video-container').slick('slickGoTo', 0);
+			return changeView('video', e);
+		}else{
+			$('.video-background .video-container').slick('slickGoTo', 0);
+			return changeView('video-carosel', e);
+		}
 	});
 
 	$('.menu nav a:eq(1)').on('click', function(e){
