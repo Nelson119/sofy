@@ -175,4 +175,36 @@ body{
 	left: 50vw;
 	margin-left: -34px;
 	z-index: 10;
+	img{
+		position: relative;
+		@include animation(
+			scrolldown 2s infinite ease-out
+		);
+	}
+	.bg{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		@include animation(
+			none
+		);
+	}
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		@include animation(
+			none
+		);
+	}
+}
+
+@include keyframes( scrolldown )
+{
+  from {
+    transform: translate3d(0, -35%, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 20%, 0);
+  }
 }

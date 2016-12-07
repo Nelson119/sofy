@@ -22,6 +22,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -93,7 +94,8 @@
       <h1 class="logo">
         <a href="./"><img src="img/header/logo.png"></a>
       </h1>
-      <a href="coupon.pdf" target="_blank" class="coupon"><img src="img/header/coupon.png"></a>
+      <a href="coupon.pdf" target="_blank" class="coupon hidden-xs"><img src="img/header/coupon.png"></a>
+      <a download="coupon" href="coupon.ashx" target="_blank" class="coupon visible-xs"><img src="img/header/coupon.png"></a>
       <a href="javascript:" class="burger"><img src="img/header/burger.png"></a>
       <aside class="menu">
         <img class="hidden-xs" src="img/menu/menu-bg.png">
@@ -111,7 +113,9 @@
         </nav>
       </aside>
     </header>
-    <a class="scrolldown hidden-xs" href="javascript:"><img src="img/scroll-down.png"></a>
+    <a class="scrolldown hidden-xs" href="javascript:">
+      <img class="bg" src="img/scroll-down-bg.png">
+      <img src="img/scroll-down.png"></a>
 
     <section class="content">
       <article>
@@ -196,7 +200,9 @@
               </figure>
 
               <p class="print">
-                <a href="coupon.pdf" target="_blank" class="text-center fontsize-17 fontsize-xs-12">列印折價券 &gt;</a>
+                <a href="coupon.pdf" target="_blank" class="text-center fontsize-17 hidden-xs">列印折價券 &gt;</a>
+                <a download="coupon.ashx" href="coupon.ashx" target="_blank" class="text-center fontsize-xs-12 visible-xs">列印折價券 &gt;</a>
+
               </p>
               <figure class="coupon">
                 <img class="hidden-xs" src="img/home/part2-coupon.png">

@@ -58,7 +58,7 @@ app.partial.menu = function(){
 	});
 
 	$('.menu nav a:eq(4)').on('click', function(e){
-		TweenMax.to('.content article', 0.5, {scrollTop: 0});
+		TweenMax.to('.content article', 0.0001, {scrollTop: 0});
 		return changeView('rule', e);
 	});
 

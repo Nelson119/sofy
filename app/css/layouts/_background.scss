@@ -124,7 +124,7 @@
 				@include SubItem();
 				position: absolute;
 				content: '';
-				background: url(../img/background/play.png) center no-repeat;
+				background: url(../img/background/play.png) center/ 55px auto no-repeat;
 				opacity: 1;
 				z-index: 3;
 				transform-origin: center center 1px;
@@ -136,10 +136,16 @@
 					background: url(../img/background/play@320.png) center center/#{per(36,300)} auto no-repeat;
 					opacity: 0.53;
 				}
+				@include animation(
+					tada 3s infinite ease-out
+				);
 			}
 			&.playing,&.paused{
 				&:after{
 					opacity: 1;
+					@include animation(
+						none
+					);
 				}
 				.poster{
 					opacity: 0;
@@ -376,3 +382,4 @@
 		opacity: 1;
     }
 }
+
