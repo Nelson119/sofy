@@ -35,7 +35,7 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="video-carousel">
+  <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -47,11 +47,12 @@
           <iframe id="kvloop" src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
         </aside>
         <figure class="kv-1 hidden-xs" data-src="img/background/kv-1.png"></figure>
-        <figure class="scrolldown">
+        <figure class="kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure>
+        <figure class="goto-video">
           <a class="visible-xs" href="javascript:">
             <img src="img/scroll-down@320.png">
             <aside class="text-center vertical-middle fontsize-xs-10">
-              <span>立即分享影片<br>抽與喬喬的午茶約會</span>
+              <span>立即觀看影片<br>抽與喬喬的午茶約會</span>
             </aside>
           </a>
         </figure>
@@ -64,12 +65,12 @@
             <iframe src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
           </aside>
           <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
-            <span>ep1 北緯121.59° 輕風草原</span>
+            <span>ep1 東經121.59° 清風草原</span>
           </h3>
           <figure class="poster hidden-xs" data-src="img/background/kv.png"></figure>
           <figure class="poster visible-xs" data-src="img/background/video-poster@320.png"></figure>
           <figure class="next">
-            <a href="javascript:$('.video-container').slick('slickGoTo', 1);void(0)">
+            <a href="javascript:">
               <img class="hidden-xs" src="img/background/next.png">
               <img class="visible-xs" src="img/background/next@320.png">
             </a>
@@ -88,7 +89,7 @@
             <span>ep2 北緯24.93° 柔海花田</span>
           </h3>
           <figure class="prev">
-            <a href="javascript:$('.video-container').slick('slickGoTo', 0);void(0)">
+            <a href="javascript:">
               <img class="hidden-xs" src="img/background/prev.png">
               <img class="visible-xs" src="img/background/prev@320.png">
             </a>
@@ -140,7 +141,7 @@
         </nav>
       </aside>
     </header>
-    <a class="scrolldown hidden-xs" href="javascript:">
+    <a class="scrolldown" href="javascript:">
       <img class="bg" src="img/scroll-down-bg.png">
       <img src="img/scroll-down.png"></a>
 

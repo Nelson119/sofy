@@ -78,7 +78,7 @@
 				top: 50vh;
 				z-index: 4;
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					@include Item(16, 30, 243, 0, 17, 0, 320);
+					@include Item(16, 30, 243, 0, 18, 0, 320);
 					z-index: 4;
 					opacity: 1;
 				}
@@ -325,7 +325,7 @@
 				height: 0;
 				top: 50vh;
 				top: 50%;
-				margin-top: per(16, 320);
+				margin-top: per(-37, 320);
 				margin-left: per(16, 320);
 			}
 		}
@@ -337,19 +337,20 @@
 			height: 71px;
 			z-index: 4;
 		}
+
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			overflow-y: auto;
 			overflow-x: hidden;
 			@include SubItem();
-			.scrolldown{
-				@include Item(116, 77, 0, 13, 101, 0, 320);
+			.goto-video{
+				@include Item(116, 77, 0, 68, 101, 0, 320);
 				z-index: 10;
 				opacity: 1;
 				aside, img{
 					color: #7b4e4d;
 					@include SubItem();
 					span{
-						margin-top: -1em;
+						margin-top: -2.5em;
 						max-width: 96%;
 					}
 				}
@@ -360,12 +361,6 @@
 					height: auto;
 				}
 			}
-			.play-button{
-				top: 40%;
-				left: 40%;
-				width: 20%;
-				height: 10%;
-			}
 			&:before{
 				@include SubItem();
 				content: '';
@@ -375,9 +370,10 @@
 			}
 
 			&:after{
-				background: url(../img/background/play@320.png) center calc(50% - 26px)/42px 42px no-repeat;
+				display: none;
 			}
 		}
+
 		@media screen and (min-width: #{$screen-sm-num}px) {
 			&:after{
 				background: url(../img/background/play.png) center/ 55px auto no-repeat;

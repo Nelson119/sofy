@@ -34,8 +34,8 @@ var share = {
 				scope: 'email'
 			});
 
-		}else{
-			ui(href + '?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy');
+		} else{
+			window.open('https://www.facebook.com/share.php?u='+encodeURIComponent(href+'?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy'));
 		}
 
 		function me(){
@@ -50,18 +50,6 @@ var share = {
 			FB.ui({
   				method: 'feed',
   				link: h
-				// method: 'share_open_graph',
-				// action_type: 'og.shares',
-				// action_properties: JSON.stringify({
-				// 	object : {
-				// 		'og:url': href,
-				// 		'og:title': $('meta[property*=og][property$=title]').attr('content'),
-				// 		'og:description': $('meta[property*=og][property$=description]').attr('content'),
-				// 		'og:image:width': $('meta[property*=og][property$=width]').attr('content'),
-				// 		'og:image:height': $('meta[property*=og][property$=height]').attr('content'),
-				// 		'og:image': $('meta[property*=og][property$=image]').attr('content')
-				// 	}
-				// })
 			},
 			function(r) {
 				if(!goform){

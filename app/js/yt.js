@@ -41,8 +41,14 @@ app.partial.yt = function(){
 			arrows: false,
 			infinite: false,
 			dots: true
+		}).on('beforeChange', function(){
+			// if($(window).width() > 768){
+			// 	players[$('.slick-current').index()].playVideo();
+			// }
 		}).on('afterChange', function(){
-			players[$('.slick-current').index()].carouselPlay();
+			if($(window).width() > 768){
+				players[$('.slick-current').index()].carouselPlay();
+			}
 		});
 
 
@@ -85,6 +91,21 @@ app.partial.yt = function(){
 			e.stopPropagation();
 		});
 
+		$('.video-background .video-container .video .next').on('click', function(e){
+			$('.video-container').slick('slickGoTo', 1);
+			e.stopPropagation();
+			e.preventDefault();
+			return false;
+		});
+
+		$('.video-background .video-container .video .prev').on('click', function(e){
+			$('.video-container').slick('slickGoTo', 0);
+			e.stopPropagation();
+			e.preventDefault();
+			return false;
+		});
+
+
 		$(window).on('resize', function(){
 
 
@@ -126,7 +147,7 @@ app.partial.yt = function(){
 				kvloop.playVideo();
 				clearInterval(wait4loop);
 				setTimeout(function(){
-					// app.changeView('loop');
+					app.changeView('loop');
 				}, 1000);
 			}
 		}, 500);
@@ -147,7 +168,7 @@ app.partial.yt = function(){
 				$('.video-background .video-container').slick('slickGoTo', $('.slick-active').index());
 			}else{
 				$.each(players, function(i,d){
-					if(this.pauseVideo){
+					if(this.pauseVideo && $(this.pe).hasClass('playing')){
 						this.pauseVideo();
 						$(this.pe).removeClass('playing');
 						$(this.pe).addClass('paused');

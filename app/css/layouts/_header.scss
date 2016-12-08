@@ -193,12 +193,20 @@ body{
 	left: 50vw;
 	margin-left: -34px;
 	z-index: 10;
+	@media screen and (max-width: #{$screen-sm-num - 1}px) {
+		@include Item(52, 25, 0, 0, -26, 0, 258);
+		left:50%;
+		left: 50vw;
+		position: fixed;
+		z-index: 10;
+	}
 	img{
 		position: relative;
 		@include animation(
 			scrolldown 2s infinite ease-out
 		);
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include SubItem();
 			@include animation(
 				none
 			);

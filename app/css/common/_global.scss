@@ -57,7 +57,7 @@ body {
 	&:after{
 		content: '';
 		@include SubItem();
-		background: #68a4b3 center url(../img/header/logo.png) no-repeat;
+		background: #96c1f4 center url(../img/header/logo.png) no-repeat;
 		background-size: 112px 70px;
 		position: fixed;
 		z-index: 100;
@@ -66,7 +66,7 @@ body {
 			background-size: per(61, 320) auto;
 		}
 		@include animation(
-			fade 1.5s 1 linear forwards 0s
+			fade 1.5s 1 linear forwards 3s
 		);
 
 	}

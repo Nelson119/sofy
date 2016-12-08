@@ -70,7 +70,6 @@ app.partial.menu = function(){
 	var kvc = new Hammer($('.kv-container')[0]);
 	kvc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 	kvc.on('swipeup',function(e){
-		console.log(e);
 		return app.changeView('home');
 	});
 
@@ -116,6 +115,45 @@ app.partial.menu = function(){
 	});
 	$('body').on('viewport:change', function(e, view){
 	});
+
+	$('body').on('viewport:home', function(e){
+		var hc1 = new Hammer(this);
+		hc1.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+		if($('.home-content article').scrollTop() === 0){
+			hc1.on('swipedown',function(e){
+				$('.logo').trigger('click');
+				hc1.off('swipedown');
+				hc1.get('swipe').set({ direction: null });
+			});
+			$(this).one('mousewheel',function(e){
+				if(e.deltaY > 0){
+					$('.logo').trigger('click');
+				}
+			});
+		}
+		$('.home-content article').unbind('scroll').on('scroll', function(e){
+			if($('.home-content article').scrollTop() === 0 && $('body').hasClass('home')){
+				var hc2 = new Hammer(this);
+				hc2.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+				hc2.on('swipedown',function(e){
+					$('.logo').trigger('click');
+					hc2.off('swipedown');
+					hc2.get('swipe').set({ direction: null });
+				});
+				$(this).one('mousewheel',function(e){
+					if(e.deltaY > 0){
+						$('.logo').trigger('click');
+					}
+				});
+			}else{
+				hc1.off('swipedown');
+				hc1.get('swipe').set({ direction: null });
+			}
+		});
+	});
+
+	
+
 
 	app.changeView = changeView;
 	app.viewBack = viewBack;

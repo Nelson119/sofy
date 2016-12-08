@@ -8,10 +8,11 @@
 body {
 	// @media screen and (max-width: #{$screen-sm-num - 1}px) {
 	// }
-	.content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
+	.blogger-box, .content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
 		@include animation(
-			fadeIn 0.45s 1 linear forwards 0s
+			fadeOut 0.75s 1 linear forwards 0s
 		);
+		overflow: hidden;
 	}
 	.video-container {
 		.video-background{
@@ -49,19 +50,17 @@ body {
 		}
 	}
 	&.home{
-		.content.rule-content, .content.form-content, .content.thankyou-content{
+		.content.home-content, .blogger-box{
 			@include animation(
-				fadeOut 0.75s 1 linear forwards 0s
+				fadeIn 0.75s 1 linear forwards 0s
 			);
-			overflow: hidden;
 		}
 	}
 	&.rule{
-		.content.home-content, .content.form-content, .content.thankyou-content{
+		.content.rule-content{
 			@include animation(
-				fadeOut 0.75s 1 linear forwards 0s
+				fadeIn 0.75s 1 linear forwards 0s
 			);
-			overflow: hidden;
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
@@ -75,11 +74,10 @@ body {
 		}
 	}
 	&.form{
-		.content.rule-content, .content.home-content, .content.thankyou-content{
+		.content.form-content{
 			@include animation(
-				fadeOut 0.75s 1 linear forwards 0s
+				fadeIn 0.75s 1 linear forwards 0s
 			);
-			overflow: hidden;
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
@@ -90,28 +88,20 @@ body {
 		}
 	}
 	&.thankyou{
-		.content.rule-content, .content.form-content, .content.home-content{
+		.content.thankyou-content{
 			@include animation(
-				fadeOut 0.75s 1 linear forwards 0s
+				fadeIn 0.75s 1 linear forwards 0s
 			);
-			overflow: hidden;
 		}
 	}
 	&.loop{
-		.content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
+		.kv-container {
 			@include animation(
-				fadeOut 0.75s 1 linear forwards 0s
+				fadeIn 0.75s 1 linear forwards 0s
 			);
-			overflow: hidden;
 		}
 	}
 	&.video-carousel{
-		.content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
-			@include animation(
-				fadeOut 0.75s 1 linear forwards 0s
-			);
-			overflow: hidden;
-		}
 
 		@media screen and (min-width: #{$screen-sm-num}px){
 			header, .scrolldown{
@@ -128,7 +118,7 @@ body {
 		.video-container {
 			top: 0%;
 			@include animation(
-				fadeIn 0.25s 1 linear forwards 0s
+				fadeIn 0.75s 1 linear forwards 0s
 			);
 		}
 		.video-background{
@@ -142,6 +132,7 @@ body {
 		&.home{
 			.home-page{
 				margin-top: per(37, 320);
+				background-image: url(../img/home/background-part@320.png);
 			}
 		}
 		&.home.part1{
