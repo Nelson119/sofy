@@ -61,17 +61,23 @@ body {
 		background-size: 112px 70px;
 		position: fixed;
 		z-index: 100;
-		@include animation(
-			fade 2.5s 1 linear forwards 1s
-		);
-		// @include animation(
-		// 	fade 0.01s 1 linear forwards 0s
-		// );
 
 		@media screen and (max-width: 768px) {		
 			background-size: per(61, 320) auto;
 		}
+		@include animation(
+			fade 1.5s 1 linear forwards 0s
+		);
 
+	}
+
+	&.loading{
+		&:after{
+			@include animation(
+				none
+			);
+
+		}
 	}
 
 }
@@ -104,12 +110,12 @@ html, body{
 		position: relative;
 		background: url(../img/lightbox/grid.png) center/vw320(9) auto;
 	}
-	@media screen and (max-width: 1024px) {
+	// @media screen and (max-width: 1024px) {
         margin: 0 0;
         height: 100%;
         width: 100%;
         -webkit-overflow-scrolling: touch;
-	}
+	// }
 }
 
 /* Responsive: Portrait tablets and up */
@@ -133,30 +139,23 @@ html, body{
     0% {
 		opacity: 1;
 	}
-    25%{
-		opacity: 1;
-		transform: scale(1);
-	}
     50%{
 		opacity: 1;
-		transform: scale(1);
-	}
-    75%{
-		opacity: 1;
-		transform: scale(1);
+		transform: scale(0.99);
 	}
 	99% {
 		opacity: 0;
-		transform: scale(1);
+		transform: scale(0.98);
 		height: 100%;
 	}
 	100%{
 		opacity: 0;
-		transform: scale(1);
+		transform: scale(0.98);
 		height: 0;
 	}
 }
 .nicescroll-cursors{
-    background-color: #68a4b3 !important;
-    border: 1px solid rgba(220, 146, 182, 0.6) !important;
+	margin-right: 0.5em;
+    background-color: rgba(0,0,0,0.4) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
 }

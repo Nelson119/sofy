@@ -35,48 +35,18 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="video-carousel">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <figure class="video-background">
-      <aside class="video-container">
-        <aside class="video">
-          <aside class="player">
-            <iframe src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
-          </aside>
-          <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
-            <span>ep1 北緯121.59° 輕風草原</span>
-          </h3>
-          <figure class="poster hidden-xs" data-src="img/background/kv.png"></figure>
-          <figure class="poster kv-1 hidden-xs" data-src="img/background/kv-1.png"></figure>
-          <figure class="poster visible-xs" data-src="img/background/video-poster@320.png"></figure>
-          <figure class="next">
-            <a href="javascript:$('.video-container').slick('slickGoTo', 1);void(0)"><img src="img/background/next.png"></a>
-          </figure>
-          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
-            <a href="javascript:"><img src="img/background/share.png"></a>
-          </figure>
+      <aside class="kv-container">        
+        <!-- <figure class="poster visible-xs" data-src="img/background/kv@320.png"></figure>
+        <figure class="poster kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure> -->
+        <aside class="player">
+          <iframe id="kvloop" src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
         </aside>
-        <aside class="video">
-          <aside class="player">
-            <iframe src="https://www.youtube.com/embed/KqlGAw6Bs-w?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=KqlGAw6Bs-w" frameborder="0" allowfullscreen></iframe>
-            <figure class="poster" data-src="https://i.ytimg.com/vi/KqlGAw6Bs-w/maxresdefault.jpg"></figure>
-          </aside>
-          <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
-            <span>ep2 北緯24.93° 柔海花田</span>
-          </h3>
-          <figure class="prev">
-            <a href="javascript:$('.video-container').slick('slickGoTo', 0);void(0)"><img src="img/background/prev.png"></a>
-          </figure>
-          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
-            <a href="javascript:"><img src="img/background/share.png"></a>
-          </figure>
-        </aside>
-      </aside>
-      <aside class="kv-container visible-xs">        
-        <figure class="poster visible-xs" data-src="img/background/kv@320.png"></figure>
-        <figure class="poster kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure>
+        <figure class="kv-1 hidden-xs" data-src="img/background/kv-1.png"></figure>
         <figure class="scrolldown">
           <a class="visible-xs" href="javascript:">
             <img src="img/scroll-down@320.png">
@@ -87,9 +57,66 @@
         </figure>
         <a class="play-button" href="javascript:"></a>
       </aside>
+      <aside class="video-container">
+        <aside class="video">
+          <figure class="bg visible-xs" data-src="img/lightbox/grid.png"></figure>
+          <aside class="player">
+            <iframe src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
+          </aside>
+          <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
+            <span>ep1 北緯121.59° 輕風草原</span>
+          </h3>
+          <figure class="poster hidden-xs" data-src="img/background/kv.png"></figure>
+          <figure class="poster visible-xs" data-src="img/background/video-poster@320.png"></figure>
+          <figure class="next">
+            <a href="javascript:$('.video-container').slick('slickGoTo', 1);void(0)">
+              <img class="hidden-xs" src="img/background/next.png">
+              <img class="visible-xs" src="img/background/next@320.png">
+            </a>
+          </figure>
+          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
+            <a href="javascript:"><img src="img/background/share.png"></a>
+          </figure>
+        </aside>
+        <aside class="video">
+          <figure class="bg visible-xs" data-src="img/lightbox/grid.png"></figure>
+          <aside class="player">
+            <iframe src="https://www.youtube.com/embed/KqlGAw6Bs-w?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=KqlGAw6Bs-w" frameborder="0" allowfullscreen></iframe>
+            <figure class="poster" data-src="https://i.ytimg.com/vi/KqlGAw6Bs-w/maxresdefault.jpg"></figure>
+          </aside>
+          <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
+            <span>ep2 北緯24.93° 柔海花田</span>
+          </h3>
+          <figure class="prev">
+            <a href="javascript:$('.video-container').slick('slickGoTo', 0);void(0)">
+              <img class="hidden-xs" src="img/background/prev.png">
+              <img class="visible-xs" src="img/background/prev@320.png">
+            </a>
+          </figure>
+          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
+            <a href="javascript:"><img src="img/background/share.png"></a>
+          </figure>
+        </aside>
+      </aside>
+      <a href="javascript:" class="close-button">
+        <img src="img/lightbox/close.png">
+      </a>
     </figure>
     <!--  -->
-    <figure class="sky-background"  data-src="img/background/background.jpg"></figure>
+    <figure class="sky-background"  data-src="img/background/background.jpg">
+      <figure class="cloud-1"  data-src="img/background/cloud-1.png"></figure>
+      <figure class="cloud-2"  data-src="img/background/cloud-2.png"></figure>
+      <figure class="cloud-3"  data-src="img/background/cloud-3.png"></figure>
+      <figure class="cloud-4"  data-src="img/background/cloud-4.png"></figure>
+      <figure class="cloud-5"  data-src="img/background/cloud-5.png"></figure>
+      <figure class="cloud-6"  data-src="img/background/cloud-6.png"></figure>
+      <figure class="cloud-7"  data-src="img/background/cloud-4.png"></figure>
+      <figure class="cloud-8"  data-src="img/background/cloud-5.png"></figure>
+      <figure class="cloud-9"  data-src="img/background/cloud-6.png"></figure>
+      <figure class="cloud-10"  data-src="img/background/cloud-1.png"></figure>
+      <figure class="cloud-11"  data-src="img/background/cloud-2.png"></figure>
+      <figure class="cloud-12"  data-src="img/background/cloud-3.png"></figure>
+    </figure>
     <header class="row">
       <h1 class="logo">
         <a href="./"><img src="img/header/logo.png"></a>
@@ -117,7 +144,7 @@
       <img class="bg" src="img/scroll-down-bg.png">
       <img src="img/scroll-down.png"></a>
 
-    <section class="content">
+    <section class="content home-content">
       <article>
         
         <section class="home-page">
@@ -455,7 +482,11 @@
             </section>
           </section>
         </section>
-        
+      </article>
+    </section>
+
+    <section class="content rule-content">
+      <article>
         <section class="rule-page">
           <h3 class="text-center vertical-middle fontsize-47 fontsize-xs-22">活動辦法</h3>
           <ul class="fontsize-21 fontsize-xs-11">
@@ -515,6 +546,11 @@
             <img src="img/lightbox/close.png">
           </a>
         </section>
+      </article>
+    </section>
+
+    <section class="content form-content">
+      <article>
 
         <section class="form-page">
           <h3 class="text-center vertical-middle fontsize-25 fontsize-xs-16">
@@ -565,6 +601,11 @@
             <img src="img/lightbox/close.png">
           </a>
         </section>
+      </article>
+    </section>
+
+    <section class="content thankyou-content">
+      <article>
 
         <section class="thankyou-page">
           <aside class="text-center">

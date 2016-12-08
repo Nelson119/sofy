@@ -15,9 +15,9 @@
 				@include SubItem();
 				overflow: hidden;
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					margin: #{per(150, 320)} 0 0 #{per(10, 320)}!important;
-					width: #{per(300, 320)}!important;
-					padding-top: #{per(204, 320)}!important;
+					margin: #{per(175, 320)} 0 0 #{per(35, 320)}!important;
+					width: #{per(244, 320)}!important;
+					padding-top: #{per(166, 320)}!important;
 					height: 0!important;
 					&:before{
 						@include SubItem();
@@ -39,9 +39,9 @@
 			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				.poster{
-					margin: #{per(150, 320)} 0 0 #{per(10, 320)}!important;
-					width: #{per(300, 320)}!important;
-					padding-top: #{per(204, 320)}!important;
+					margin: #{per(175, 320)} 0 0 #{per(35, 320)}!important;
+					width: #{per(244, 320)}!important;
+					padding-top: #{per(166, 320)}!important;
 					height: 0!important;
 				}
 			}
@@ -60,10 +60,14 @@
 				transition: height 0s linear 0.35s, opacity 0.35s linear 0s;
 				a,img{
 					@include SubItem();
+				}
+				img{
 					height: auto;
 				}
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					display: none;
+					@include Item(16, 30, 243, 0, 0, 23, 320);
+					z-index: 4;
+					opacity: 1;
 				}
 			}
 			.prev{
@@ -73,6 +77,11 @@
 				top: 50%;
 				top: 50vh;
 				z-index: 4;
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(16, 30, 243, 0, 17, 0, 320);
+					z-index: 4;
+					opacity: 1;
+				}
 			}
 			.share{
 				// @include Item(246, 117, 0, 22, 0, 34, 1024);
@@ -154,22 +163,22 @@
 			}
 			&.playing{
 				&:after{
-					background-image: url(../img/background/play.png);
+					background-image: url(../img/background/pause.png);
 					@include animation(
 						play 0.25s 1 linear forwards
+					);
+				}
+			}
+			&.paused{
+				&:after{
+					background-image: url(../img/background/play.png);
+					@include animation(
+						pause 0.25s 1 linear forwards
 					);
 					@media screen and (max-width: #{$screen-sm-num - 1}px) {
 						background-image: url(../img/background/play@320.png);
 						opacity: 0.53;
 					}
-				}
-			}
-			&.paused{
-				&:after{
-					background-image: url(../img/background/pause.png);
-					@include animation(
-						pause 0.25s 1 linear forwards
-					);
 				}
 			}
 
@@ -190,12 +199,27 @@
 					opacity: 1;
 					transition: height 0s linear 0s, opacity 0.45s linear 0s;
 				}
+				@media screen and (min-width: #{$screen-sm-num}px) {
+					&:after{
+						opacity: 1;
+						@include animation(none);
+					}
+				}
 			}
 
 
+			&.mousemove.paused{
+				@media screen and (min-width: #{$screen-sm-num}px) {
+					&:after{
+						opacity: 1;
+						@include animation(none);
+					}
+				}
+			}
+
 			.tagline{
 				color: #fff;
-				@include Item(320, 0, 97, 0, 1, 0, 320);
+				@include Item(320, 0, 122, 0, 1, 0, 320);
 				span{
 					line-height: em(36,14);
 					height: em(36,14);
@@ -203,6 +227,14 @@
 					background: url(../img/background/video-tagline-bg.png) no-repeat center/100%;
 				}
 
+			}
+
+			.bg{
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(279, 474, 74, 0, 18, 0, 320);
+					z-index: 0;
+					opacity: 0.5;
+				}
 			}
 		}
 
@@ -260,7 +292,22 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: right center;
-		&.kv-1{
+	}
+
+	.kv-container{
+		&:after{
+			@include SubItem();
+			position: absolute;
+			content: '';
+			opacity: 1;
+			z-index: 3;
+			@include animation(
+				tada 3s infinite ease-out
+			);
+		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {	
+		}
+		.kv-1{
 			// @include Item(391, 223, -50, 0, 42, 0, 1024);
 			position: absolute;
 			width: 391px;
@@ -282,10 +329,17 @@
 				margin-left: per(16, 320);
 			}
 		}
-	}
-
-	.kv-container{
+		.play-button{
+			position: absolute;
+			top: calc((100% - 71px) / 2);
+			left: calc((100% - 73px) / 2);
+			width: 73px;
+			height: 71px;
+			z-index: 4;
+		}
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			overflow-y: auto;
+			overflow-x: hidden;
 			@include SubItem();
 			.scrolldown{
 				@include Item(116, 77, 0, 13, 101, 0, 320);
@@ -307,16 +361,13 @@
 				}
 			}
 			.play-button{
-				position: absolute;
 				top: 40%;
 				left: 40%;
 				width: 20%;
 				height: 10%;
-				z-index: 4;
 			}
 			&:before{
 				@include SubItem();
-				position: absolute;
 				content: '';
 				background: url(../img/background/grid.png) 0 0/ 20px auto;
 				opacity: 1;
@@ -324,15 +375,12 @@
 			}
 
 			&:after{
-				@include SubItem();
-				position: absolute;
-				content: '';
-				background: url(../img/background/play.png) center no-repeat;
-				opacity: 1;
-				z-index: 3;
-				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					background: url(../img/background/play@320.png) center calc(50% - 26px)/42px 42px no-repeat;
-				}
+				background: url(../img/background/play@320.png) center calc(50% - 26px)/42px 42px no-repeat;
+			}
+		}
+		@media screen and (min-width: #{$screen-sm-num}px) {
+			&:after{
+				background: url(../img/background/play.png) center/ 55px auto no-repeat;
 			}
 		}
 	}
@@ -340,9 +388,35 @@
 	.slick-list, .slick-track{
 		height: 100%;
 	}
+
+	.close-button{
+		// @include Item(25, 25, 46, 0, 0, 61, 10);
+		width: 36px;
+		height: 36px;
+		top: 46px;
+		right: 61px;
+		position: absolute;
+		z-index: 3;
+		display: none;
+
+		opacity: 0.75;
+		transition-duration: 0.25s;
+		img{
+			@include SubItem();
+			filter: drop-shadow(0 0 2px #fff );
+			height: auto;
+		}
+
+		&:hover{
+			opacity: 1;
+		}
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(25, 25, 85, 0, 263, 0, 320);
+		}
+	}
 }
 .sky-background{
-	background: url(../img/background/background.jpg) 0 0/ 100% auto;
+	background: url(../img/background/background.jpg) 0 0/ 100% 100%;
 	@include SubItem();
 	// position: fixed;
 	left: -1%;
@@ -350,6 +424,106 @@
 	z-index: 2;
 	min-height: 100%;
 	min-height: 100vh;
+	overflow: hidden;
+
+	.cloud-1, ,.cloud-2,.cloud-3,.cloud-4,,.cloud-5,.cloud-6,
+	.cloud-7, ,.cloud-8,.cloud-9,.cloud-10,,.cloud-11,.cloud-12{
+		@include animation(
+			cloud 650s infinite linear
+		);
+	}
+
+	.cloud-1{
+		@include Item(343, 169, 64, 0, 1, 0, 1920);
+		background-size: 100% 100%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(343, 169, 64, 0, 1, 0, 640);
+		}
+	}
+	.cloud-2{
+		@include Item(440, 192, 94, 0, 0, 114, 1920);
+		background-size: 100% 100%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(440, 192, 94, 0, 0, 114, 1920);
+		}
+	}
+	.cloud-3{
+		@include Item(390, 260, 382, 0, 248, 0, 1920);
+		background-size: 100% 100%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(390, 260, 382, 0, 248, 0, 640);
+		}
+	}
+	.cloud-4{
+		@include Item(314, 142, 584, 0, 0, 269, 1920);
+		background-size: 100% 100%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(314, 142, 584, 0, 0, 269, 640);
+		}
+	}
+	.cloud-5{
+		@include Item(301, 143, 0, 135, 155, 0, 1920);
+		background-size: 100% 100%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(301, 143, 0, 135, 155, 0, 640);
+		}
+	}
+	.cloud-6{
+		@include Item(583, 188, 0, -50, 0, -70, 1920);
+		background-size: 100% 100%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(583, 188, 0, -50, 0, -70, 640);
+		}
+	}
+	.cloud-7{
+		@include Item(314, 142, 584, 0, 0, 269, 1920);
+		background-size: 100% 100%;
+		right: 150%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(314, 142, 584, 0, 0, 269, 640);
+		}
+	}
+	.cloud-8{
+		@include Item(301, 143, 0, 135, 155, 0, 1920);
+		background-size: 100% 100%;
+		left: 150%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(301, 143, 0, 135, 155, 0, 640);
+		}
+	}
+	.cloud-9{
+		@include Item(583, 188, 0, -50, 0, -70, 1920);
+		background-size: 100% 100%;
+		right: 150%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(583, 188, 0, -50, 0, -70, 640);
+		}
+	}
+	.cloud-10{
+		@include Item(343, 169, 64, 0, 1, 0, 1920);
+		background-size: 100% 100%;
+		left: 150%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(343, 169, 64, 0, 1, 0, 640);
+		}
+	}
+	.cloud-11{
+		@include Item(440, 192, 94, 0, 0, 114, 1920);
+		background-size: 100% 100%;
+		right: 150%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(440, 192, 94, 0, 0, 114, 640);
+		}
+	}
+	.cloud-12{
+		@include Item(390, 260, 382, 0, 248, 0, 1920);
+		background-size: 100% 100%;
+		left: 150%;
+		@media screen and (max-width: #{$screen-sm-num - 1}px) {
+			@include Item(390, 260, 382, 0, 248, 0, 640);
+		}
+	}
+
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		background-image: url(../img/background/background@320.jpg)
 	}
@@ -382,4 +556,47 @@
 		opacity: 1;
     }
 }
+@include keyframes( mousemove )
+{
+    0% {
+		transform: scale(1);
+		opacity: 1;
+    }
+    99% {
+		transform: scale(1);
+		opacity: 0;
+    }
+    100% {
+		transform: scale(1);
+		opacity: 0;
+		background: url(../img/background/pause.png) center no-repeat;
+    }
+}
 
+@include keyframes( cloud )
+{
+    0% {
+		transform: scale(1) translateX(0vw);
+		opacity: 1;
+    }
+    50% {
+		transform: scale(1.1) translateX(150vw);
+		opacity: 1;
+    }
+    51% {
+		transform: scale(0) translateX(150vw);
+		opacity: 0;
+    }
+    52% {
+		transform: scale(0) translateX(-150vw);
+		opacity: 0;
+    }
+    53% {
+		transform: scale(1.1) translateX(-150vw);
+		opacity: 1;
+    }
+    100% {
+		transform: scale(1) translateX(0vw);
+		opacity: 1;
+    }
+}

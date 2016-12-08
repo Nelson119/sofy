@@ -9,6 +9,6 @@ app.partial.rule = function(){
 
 
 	$('.rule-page .close').on('click', function(e){
-		return app.changeView('video', e);
+		return app.viewBack(e);
 	});
 };	

@@ -6,29 +6,31 @@
 }
 /* Space out content a bit */
 body {
-	@media screen and (max-width: #{$screen-sm-num - 1}px) {
-		.video-container {
-			.video-background{
-				top: 100%;
-			}
-			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
-			);
-			padding: 0;
-			min-height: 0;
-			overflow: hidden;
-			position: relative;
-			height: 0;
-		}
+	// @media screen and (max-width: #{$screen-sm-num - 1}px) {
+	// }
+	.content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
+		@include animation(
+			fadeIn 0.45s 1 linear forwards 0s
+		);
 	}
-	&.video{
+	.video-container {
 		.video-background{
+			top: 100%;
 		}
+		@include animation(
+			fadeOut 0.75s 1 linear forwards 0s
+		);
+		padding: 0;
+		min-height: 0;
+		overflow: hidden;
+		position: relative;
+		height: 0;
 	}
 	&.home, &.rule, &.form, &.thankyou{
 		.video-background{
+			overflow: hidden;
 			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
+				fadeOut 0.75s 1 linear forwards 0s
 			);
 		}
 		.scrolldown{
@@ -47,27 +49,19 @@ body {
 		}
 	}
 	&.home{
-		.content .rule-page, .content .form-page, .content .thankyou-page{
+		.content.rule-content, .content.form-content, .content.thankyou-content{
 			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
+				fadeOut 0.75s 1 linear forwards 0s
 			);
-			padding: 0;
-			min-height: 0;
 			overflow: hidden;
-			position: relative;
-			height: 0;
 		}
 	}
 	&.rule{
-		.content .home-page, .content .form-page, .content .thankyou-page{
+		.content.home-content, .content.form-content, .content.thankyou-content{
 			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
+				fadeOut 0.75s 1 linear forwards 0s
 			);
-			padding: 0;
-			min-height: 0;
 			overflow: hidden;
-			position: relative;
-			height: 0;
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
@@ -81,15 +75,11 @@ body {
 		}
 	}
 	&.form{
-		.content .rule-page, .content .home-page, .content .thankyou-page{
+		.content.rule-content, .content.home-content, .content.thankyou-content{
 			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
+				fadeOut 0.75s 1 linear forwards 0s
 			);
-			padding: 0;
-			min-height: 0;
 			overflow: hidden;
-			position: relative;
-			height: 0;
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
@@ -100,40 +90,50 @@ body {
 		}
 	}
 	&.thankyou{
-		.content .rule-page, .content .form-page, .content .home-page{
+		.content.rule-content, .content.form-content, .content.home-content{
 			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
+				fadeOut 0.75s 1 linear forwards 0s
 			);
-			padding: 0;
-			min-height: 0;
 			overflow: hidden;
-			position: relative;
-			height: 0;
 		}
 	}
-	&.video-carosel{
-		.content .rule-page, .content .form-page, .content .home-page, .content .thankyou-page{
+	&.loop{
+		.content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
 			@include animation(
-				fadeOut 0.25s 1 linear forwards 0s
+				fadeOut 0.75s 1 linear forwards 0s
 			);
-			padding: 0;
-			min-height: 0;
 			overflow: hidden;
-			position: relative;
-			height: 0;
 		}
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			.kv-container {
-				@include animation(
-					fadeOut 0.25s 1 linear forwards 0s
-				);
+	}
+	&.video-carousel{
+		.content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
+			@include animation(
+				fadeOut 0.75s 1 linear forwards 0s
+			);
+			overflow: hidden;
+		}
+
+		@media screen and (min-width: #{$screen-sm-num}px){
+			header, .scrolldown{
+				display: none;
 			}
-			z-index: 10;
-			.video-container {
-				top: 0%;
-				@include animation(
-					fadeIn 0.25s 1 linear forwards 0s
-				);
+		}
+
+		.kv-container {
+			@include animation(
+				fadeOut 0.75s 1 linear forwards 0s
+			);
+		}
+		z-index: 10;
+		.video-container {
+			top: 0%;
+			@include animation(
+				fadeIn 0.25s 1 linear forwards 0s
+			);
+		}
+		.video-background{
+			.close-button{
+				display: block;
 			}
 		}
 	}
@@ -141,7 +141,7 @@ body {
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		&.home{
 			.home-page{
-				margin-top: per(12, 320);
+				margin-top: per(37, 320);
 			}
 		}
 		&.home.part1{
@@ -153,12 +153,9 @@ body {
 
 			.part2,.part3,.part4{
 				@include animation(
-					fadeOut 0.25s 1 linear forwards 0s
+					fadeOut 0.75s 1 linear forwards 0s
 				);
-				padding: 0;
-				min-height: 0;
 				overflow: hidden;
-				position: relative;
 			}
 		}
 		&.home.part2{
@@ -169,7 +166,7 @@ body {
 
 			.part1,.part3,.part4{
 				@include animation(
-					fadeOut 0.25s 1 linear forwards 0s
+					fadeOut 0.75s 1 linear forwards 0s
 				);
 				padding: 0;
 				min-height: 0;
@@ -184,7 +181,7 @@ body {
 
 			.part1,.part2{
 				@include animation(
-					fadeOut 0.25s 1 linear forwards 0s
+					fadeOut 0.75s 1 linear forwards 0s
 				);
 				padding: 0;
 				min-height: 0;
@@ -202,6 +199,7 @@ body {
 	}
 	99% {
 		opacity: 0;
+		height: 100%;
 	}
 	100%{
 		opacity: 0;
@@ -214,13 +212,12 @@ body {
 @include keyframes( fadeIn )
 {
     0% {
-		top: 100%;
+		opacity: 0;
 	}
 	99% {
-		top: 0%;
+		opacity: 1;
 	}
 	100%{
-		top: 0%;
 		opacity: 1;
 	}
 }
