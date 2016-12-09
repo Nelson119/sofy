@@ -306,6 +306,11 @@
 			);
 		}
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {	
+			.kv{
+				@include SubItem();
+				background-size: cover;
+				overflow: hidden ;
+			}
 		}
 		.kv-1{
 			// @include Item(391, 223, -50, 0, 42, 0, 1024);

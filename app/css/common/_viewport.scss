@@ -34,6 +34,8 @@ body {
 				fadeOut 0.75s 1 linear forwards 0s
 			);
 		}
+	}
+	&.home, &.rule, &.form, &.thankyou, &.video-carousel{
 		.scrolldown{
 			width: 0;
 			opacity: 0;

@@ -21,7 +21,13 @@ var share = {
 		// href = encodeURIComponent(href || location.href + '?utm_source=facebook&utm_medium=share&utm_campaign=sofy');
 		// title = encodeURIComponent(title || document.title);
 		// window.open('https://www.facebook.com/sharer.php?u='+href+'&amp;t='+title);
-		if(goform && app.fbstatus != 'connected'){
+
+		if(!goform){
+			window.open('https://www.facebook.com/share.php?u='+encodeURIComponent(href+'?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy'));
+			return false;
+		}
+
+		if(app.fbstatus != 'connected'){
 			FB.login(function(r){
 				if(r.status === 'connected'){				
 					app.fbstatus = r.status;
@@ -33,9 +39,9 @@ var share = {
 			}, {
 				scope: 'email'
 			});
-
-		} else{
-			window.open('https://www.facebook.com/share.php?u='+encodeURIComponent(href+'?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy'));
+		}else{
+			ui(href);
+			me();
 		}
 
 		function me(){

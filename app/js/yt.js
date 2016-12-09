@@ -154,10 +154,12 @@ app.partial.yt = function(){
 
 		$('body').on('viewport:change', function(e, view){
 
-			if(view !== 'loop' && kvloop.pauseVideo){
-				kvloop.pauseVideo();
-			}else{
-				kvloop.playVideo();
+			if($(window).width() > 768){
+				if(view !== 'loop' && kvloop.pauseVideo){
+					kvloop.pauseVideo();
+				}else{
+					kvloop.playVideo();
+				}
 			}
 
 			if(view !== 'home' && tvc.pauseVideo){

@@ -207,9 +207,9 @@ body{
 		);
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include SubItem();
-			@include animation(
-				none
-			);
+			// @include animation(
+			// 	none
+			// );
 		}
 	}
 	.bg{
