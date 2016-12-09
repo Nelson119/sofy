@@ -322,6 +322,14 @@
 			img{
 				@include SubItem();
 			}
+			&:hover .hv{
+				transform: translate(2px, 0px);
+				transition-duration: 0.15s;
+			}
+			&:active .hv{
+				transform: translate(5px, 2px);
+				transition-duration: 0.15s;
+			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				@include Item(116, 38, 475, 0, 35, 0, 320);
 			}
@@ -331,6 +339,14 @@
 			@include Item(259, 82, 594, 0, 475, 0, 876);
 			img{
 				@include SubItem();
+			}
+			&:hover .hv{
+				transform: translate(2px, 0px);
+				transition-duration: 0.15s;
+			}
+			&:active .hv{
+				transform: translate(5px, 2px);
+				transition-duration: 0.15s;
 			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				@include Item(116, 38, 475, 0, 169, 0, 320);
@@ -745,11 +761,31 @@
 			display: block;
 			position: relative;
 			display: inline-block;
+			.hv{
+				@include SubItem();
+				height: auto;
+			}
+			&:hover .hv{
+				transform: translate(1px, 1px);
+				transition-duration: 0.15s;
+			}
+			&:active .hv{
+				transform: translate(3px, 3px);
+				transition-duration: 0.15s;
+			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				@include Item(113, 39, 392, 0, 104, 0, 320);
 				img{
 					@include SubItem();
 					height: auto;
+					&:hover .hv{
+						transform: translate(1px, 0px);
+						transition-duration: 0.15s;
+					}
+					&:active .hv{
+						transform: translate(3px, 2px);
+						transition-duration: 0.15s;
+					}
 				}
 			}
 		}
