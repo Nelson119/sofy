@@ -477,7 +477,7 @@
 	}
 }
 .sky-background{
-	background: url(../img/background/background.jpg) 0 0/ 100% 100%;
+	background: url(../img/background/background.jpg) center/ cover;
 	@include SubItem();
 	// position: fixed;
 	left: -1%;
@@ -486,104 +486,6 @@
 	min-height: 100%;
 	min-height: 100vh;
 	overflow: hidden;
-
-	.cloud-1, ,.cloud-2,.cloud-3,.cloud-4,,.cloud-5,.cloud-6,
-	.cloud-7, ,.cloud-8,.cloud-9,.cloud-10,,.cloud-11,.cloud-12{
-		@include animation(
-			cloud 650s infinite linear
-		);
-	}
-
-	.cloud-1{
-		@include Item(343, 169, 64, 0, 1, 0, 1920);
-		background-size: 100% 100%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(343, 169, 64, 0, 1, 0, 640);
-		}
-	}
-	.cloud-2{
-		@include Item(440, 192, 94, 0, 0, 114, 1920);
-		background-size: 100% 100%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(440, 192, 94, 0, 0, 114, 1920);
-		}
-	}
-	.cloud-3{
-		@include Item(390, 260, 382, 0, 248, 0, 1920);
-		background-size: 100% 100%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(390, 260, 382, 0, 248, 0, 640);
-		}
-	}
-	.cloud-4{
-		@include Item(314, 142, 584, 0, 0, 269, 1920);
-		background-size: 100% 100%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(314, 142, 584, 0, 0, 269, 640);
-		}
-	}
-	.cloud-5{
-		@include Item(301, 143, 0, 135, 155, 0, 1920);
-		background-size: 100% 100%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(301, 143, 0, 135, 155, 0, 640);
-		}
-	}
-	.cloud-6{
-		@include Item(583, 188, 0, -50, 0, -70, 1920);
-		background-size: 100% 100%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(583, 188, 0, -50, 0, -70, 640);
-		}
-	}
-	.cloud-7{
-		@include Item(314, 142, 584, 0, 0, 269, 1920);
-		background-size: 100% 100%;
-		right: 150%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(314, 142, 584, 0, 0, 269, 640);
-		}
-	}
-	.cloud-8{
-		@include Item(301, 143, 0, 135, 155, 0, 1920);
-		background-size: 100% 100%;
-		left: 150%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(301, 143, 0, 135, 155, 0, 640);
-		}
-	}
-	.cloud-9{
-		@include Item(583, 188, 0, -50, 0, -70, 1920);
-		background-size: 100% 100%;
-		right: 150%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(583, 188, 0, -50, 0, -70, 640);
-		}
-	}
-	.cloud-10{
-		@include Item(343, 169, 64, 0, 1, 0, 1920);
-		background-size: 100% 100%;
-		left: 150%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(343, 169, 64, 0, 1, 0, 640);
-		}
-	}
-	.cloud-11{
-		@include Item(440, 192, 94, 0, 0, 114, 1920);
-		background-size: 100% 100%;
-		right: 150%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(440, 192, 94, 0, 0, 114, 640);
-		}
-	}
-	.cloud-12{
-		@include Item(390, 260, 382, 0, 248, 0, 1920);
-		background-size: 100% 100%;
-		left: 150%;
-		@media screen and (max-width: #{$screen-sm-num - 1}px) {
-			@include Item(390, 260, 382, 0, 248, 0, 640);
-		}
-	}
 
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		background-image: url(../img/background/background@320.jpg)

@@ -120,20 +120,21 @@ app.partial.menu = function(){
 	$('body').on('viewport:change', function(e, view){
 	});
 
-	$('.home-content article').on('mousewheel', function(e){
-		if(app.freezeHome){
-			console.log('freeze');
-			e.stopPropagation();
-			e.preventDefault();
-			return false;
-		}
-	});
+	// $('.home-content article').on('mousewheel', function(e){
+	// 	console.log(app.freezeHome)
+	// 	if(app.freezeHome){
+	// 		// console.log('freeze');
+	// 		e.stopPropagation();
+	// 		e.preventDefault();
+	// 		return false;
+	// 	}
+	// });
 	$('body').on('viewport:home', function(e){
 		var cont = $('.home-content article');
-		app.freezeHome = true;
-		setTimeout(function(){
-			app.freezeHome = false;
-		}, 800);
+		// app.freezeHome = true;
+		// setTimeout(function(){
+		// 	app.freezeHome = false;
+		// }, 800);
 		cont.unbind('scroll').on('scroll', function(e){
 			if(cont.scrollTop() == 0 && $('body').hasClass('home')){
 				$('.logo').trigger('click');

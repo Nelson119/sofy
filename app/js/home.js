@@ -12,6 +12,9 @@ app.partial.home = function(){
 	}
 
 	$('.bloggers a').on('click', function(e){
+		if($(this).hasClass('disabled')){
+			return false;
+		}
 		$('#' + $(this).attr('data-target')).addClass('fade in');
 		e.stopPropagation();
 		e.preventDefault();

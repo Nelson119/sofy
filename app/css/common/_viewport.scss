@@ -58,7 +58,7 @@ body {
 		}
 	}
 	&.home{
-		.content.home-content, .blogger-box{
+		.content.home-content, .blogger-box.in{
 			height: calc(100% - 90px);
 			transition: 0s linear 0s;
 			@include animation(

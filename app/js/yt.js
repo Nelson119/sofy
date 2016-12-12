@@ -177,7 +177,6 @@ app.partial.yt = function(){
 			}
 		});
 
-		var played = false;
 		var wait4loop = setInterval(function(){
 			if($(window).width() <= 768 || $('html.ios').length){
 				clearInterval(wait4loop);
@@ -193,15 +192,14 @@ app.partial.yt = function(){
 			if(frac > 0){
 				bar.animate(frac);	
 			}
-			if(frac >= 1 && !played){
-				// clearInterval(wait4loop);
+			if(frac >= 0.95){
+				clearInterval(wait4loop);
 				kvloop.pauseVideo();	
 				kvloop.seekTo(0);
 				setTimeout(function(){
 					app.changeView('loop');
-					kvloop.playVideo();	
+					seek0();	
 				}, 750);
-				played = true;
 			}
 
 			var ct = kvloop.getCurrentTime();
@@ -211,6 +209,11 @@ app.partial.yt = function(){
 				kvloop.seekTo(0);
 			}
 		}, 100);
+
+		function seek0(){
+			kvloop.playVideo();	
+			setTimeout(seek0, 9.8);
+		}
 
 		$('body').on('viewport:change', function(e, view){
 
