@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app, $ YT */
+/*global app, $, YT, ProgressBar */
 app.partial.yt = function(){
 	// 2. This code loads the IFrame Player API code asynchronously.
 	var tag = document.createElement('script');
@@ -52,8 +52,8 @@ app.partial.yt = function(){
 		});
 
 
+		var fragTick = 0;
 		YT.Player.prototype.carouselPlay = function(){
-
 			if(this.getPlayerState() !== 1){
 
 				playing = this;
@@ -69,9 +69,38 @@ app.partial.yt = function(){
 				});
 
 				playing.playVideo();
+				var totalTime = playing.getDuration();
+
+				clearInterval(fragTick);
+				fragTick = setInterval(function(){
+					var fragPercent = playing.getVideoLoadedFraction() * 100;
+					var currentTime = playing.getCurrentTime();
+					var played = currentTime/totalTime * 100;
+					$('.duration .played', playing.pe).width(played + '%');
+
+					if(fragPercent < 100){
+						$('.duration .downloaded', playing.pe).width(fragPercent + '%');
+					}
+					if(played === 100){
+						playing.pauseVideo();
+					}
+				}, 25);
+
+				$('.duration', playing.pe).unbind('click').on('click', function(e){
+					var percent = (e.clientX - $(this).offset().left) / $('.duration .downloaded', playing.pe).width();
+					var to = Math.floor(percent * totalTime);
+					$('.duration .played', playing.pe).width(percent*100 + '%');
+
+					playing.seekTo(to, true);
+					
+					e.stopPropagation();
+					e.preventDefault();
+					return false;
+				});
 
 			}else{
 				this.pauseVideo();
+				clearInterval(fragTick);
 
 				$(this.pe).removeClass('playing');
 				$(this.pe).addClass('paused');
@@ -86,7 +115,7 @@ app.partial.yt = function(){
 			moving = setTimeout(function(){
 				$('.video-background .video-container .video').removeClass('mousemove');
 			}, 750);
-		}).find('.share, .prev, .next').on('mousemove', function(e){
+		}).find('.share, .prev, .next, .duration').on('mousemove', function(e){
 			clearTimeout(moving);
 			e.stopPropagation();
 		});
@@ -140,17 +169,48 @@ app.partial.yt = function(){
 
 		var tvc = new YT.Player('tvc');
 
-		var kvloop = new YT.Player('kvloop');
+		var kvloop = new YT.Player('kvloop', {
+			events:{
+				onStateChange: function(){
+					// console.log('onStateChange');
+				}
+			}
+		});
 
+		var played = false;
 		var wait4loop = setInterval(function(){
-			if(kvloop.getPlayerState){
-				kvloop.playVideo();
+			if($(window).width() <= 768 || $('html.ios').length){
 				clearInterval(wait4loop);
+				app.changeView('loop');
+				return;
+			}
+			if(!kvloop.playVideo){
+				return;
+			}
+			kvloop.playVideo();
+			var frac = kvloop.getVideoLoadedFraction();
+			kvloop.mute();
+			if(frac > 0){
+				bar.animate(frac);	
+			}
+			if(frac >= 1 && !played){
+				// clearInterval(wait4loop);
+				kvloop.pauseVideo();	
+				kvloop.seekTo(0);
 				setTimeout(function(){
 					app.changeView('loop');
-				}, 1000);
+					kvloop.playVideo();	
+				}, 750);
+				played = true;
 			}
-		}, 500);
+
+			var ct = kvloop.getCurrentTime();
+			var tt = kvloop.getDuration();
+			// console.log((tt-ct) <= 2);
+			if((tt-ct) <= 0.1){
+				kvloop.seekTo(0);
+			}
+		}, 100);
 
 		$('body').on('viewport:change', function(e, view){
 
@@ -186,6 +246,53 @@ app.partial.yt = function(){
 		return app.viewBack(e);
 	});
 
+
+
+	// progressbar.js@1.0.0 version is used
+	// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+	var bar = new ProgressBar.Circle(document.getElementById('fragLoading'), {
+	  color: '#aaa',
+	  // This has to be the same size as the maximum width to
+	  // prevent clipping
+	  strokeWidth: 2,
+	  trailWidth: 0,
+	  easing: 'easeInOut',
+	  duration: 50,
+	  text: {
+	    autoStyleContainer: false
+	  },
+	  from: { color: '#fff', width: 1 },
+	  to: { color: '#fff', width: 2 },
+	  // Set default step function for all animate calls
+	  step: function(state, circle) {
+	    circle.path.setAttribute('stroke', state.color);
+	    circle.path.setAttribute('stroke-width', state.width);
+
+	    var value = Math.round(circle.value() * 100);
+	    if (value === 0) {
+	      circle.setText('');
+	    } else {
+	      circle.setText(value);
+	    }
+
+	  }
+	});
+	bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+	bar.text.style.fontSize = '2rem';
+
+
+	var sec1 = Math.random() / 100 / 3;
+	var sec2 = Math.random() / 10;
+	var pres = sec1 + sec2;
+
+	setTimeout(function(){
+		bar.animate(sec1); 
+	}, sec1 * 250 + 100);
+
+	setTimeout(function(){
+		bar.animate(sec2); 
+	}, sec2 * 250 + 500);
 };	
 
 

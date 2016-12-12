@@ -34,7 +34,8 @@ app.partial.menu = function(){
 
 	$('.menu nav a:eq(2)').on('click', function(e){
 		if( $(window).width() > 768){
-			TweenMax.to('.home-content article', 1, {scrollTop: 935*0.8});
+			// TweenMax.to('.home-content article', 1, {scrollTop: 935*0.8});
+			TweenMax.to('.home-content article', 1, {scrollTop: 909});
 		}else{
 			TweenMax.to('.home-content article', 1, {scrollTop: 1270 / 375 * $(window).width()});
 		}
@@ -43,7 +44,8 @@ app.partial.menu = function(){
 
 	$('.menu nav a:eq(3)').on('click', function(e){
 		if( $(window).width() > 768){
-			TweenMax.to('.home-content article', 1, {scrollTop: 2078*0.8});
+			// TweenMax.to('.home-content article', 1, {scrollTop: 2078*0.8});
+			TweenMax.to('.home-content article', 1, {scrollTop: 1915});
 		}else{
 			TweenMax.to('.home-content article', 1, {scrollTop: 2115 / 375 * $(window).width()});
 		}
@@ -62,7 +64,7 @@ app.partial.menu = function(){
 
 	$('.kv-container').on('mousewheel',function(e){
 		if(e.deltaY < 0){
-			TweenMax.to('.home-content article', 1, {scrollTop: 1});
+			TweenMax.set('.home-content article', {scrollTop: 1});
 			return app.changeView('home', e);
 		}
 		return false;
@@ -118,23 +120,23 @@ app.partial.menu = function(){
 	$('body').on('viewport:change', function(e, view){
 	});
 
+	$('.home-content article').on('mousewheel', function(e){
+		if(app.freezeHome){
+			console.log('freeze');
+			e.stopPropagation();
+			e.preventDefault();
+			return false;
+		}
+	});
 	$('body').on('viewport:home', function(e){
-		// var hc = new Hammer(this);
-		// hc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 		var cont = $('.home-content article');
+		app.freezeHome = true;
+		setTimeout(function(){
+			app.freezeHome = false;
+		}, 800);
 		cont.unbind('scroll').on('scroll', function(e){
-			// console.log(cont.scrollTop() == 0 && $('body').hasClass('home'));
 			if(cont.scrollTop() == 0 && $('body').hasClass('home')){
-				// hc.on('swipedown',function(e){
-				// 	$('.logo').trigger('click');
-				// 	hc.off('swipedown');
-				// 	hc.get('swipe').set({ direction: null });
-				// });
-				// $(this).one('mousewheel',function(e){
-				// 	if(e.deltaY > 0){
-						$('.logo').trigger('click');
-				// 	}
-				// });
+				$('.logo').trigger('click');
 			}else{
 				// hc.off('swipedown');
 				// hc.get('swipe').set({ direction: null });

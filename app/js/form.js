@@ -15,14 +15,6 @@ app.partial.form = function(){
 	$('.form-page .zip').twzipcode({
 		language: 'lang/zh-tw' 
 	});
-// sName
-// sMobile
-// sEmail
-// sZip
-// sCounty
-// sDistrict
-// sAddr
-// sAD
 
 	var form = {};
 

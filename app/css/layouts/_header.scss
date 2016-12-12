@@ -46,12 +46,20 @@ header {
 		right: 108px;
 		top: 4px;
 		transition-duration: 0.25s;
+		transform: scale(0.95);
+		transform-origin: center bottom 1px;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include Item(41, 42, 18, 0, 0, 55, 320);
 			img{
 				@include SubItem();
 				height: auto;
 			}
+		}
+		&:hover{
+			transition-duration: 0.3s;
+			top: 2%;
+
+			transform: scale(1) ;//rotateZ(10deg) rotateX(-15deg) translateX(-2%) translateY(5%);
 		}
 	}
 

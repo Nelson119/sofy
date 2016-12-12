@@ -35,7 +35,7 @@
     <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body class="loading">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -44,11 +44,11 @@
         <!-- <figure class="poster visible-xs" data-src="img/background/kv@320.png"></figure>
         <figure class="poster kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure> -->
         <aside class="player">
-          <iframe class="hidden-xs" id="kvloop" src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
-          <!-- <iframe class="visible-xs" src="//giphy.com/embed/BeZK1k7Pk1p8k" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+          <iframe class="hidden-xs" id="kvloop" src="https://www.youtube.com/embed/XujOYvQRvOY?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=XujOYvQRvOY" frameborder="0" allowfullscreen></iframe>
+          <img class="visible-xs" src="img/background/loop.gif">
         </aside>
         <figure class="kv-1 hidden-xs" data-src="img/background/kv-1.png"></figure>
-        <figure class="kv visible-xs" data-src="img/background/kv@320.png"></figure>
+        <!-- <figure class="kv visible-xs" data-src="img/background/kv@320.png"></figure> -->
         <figure class="kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure>
         <figure class="goto-video">
           <a class="visible-xs" href="javascript:">
@@ -64,12 +64,12 @@
         <aside class="video">
           <figure class="bg visible-xs" data-src="img/lightbox/grid.png"></figure>
           <aside class="player">
-            <iframe src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/gQNILniwIOI?modestbranding=1&cc_load_policy=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=gQNILniwIOI" frameborder="0" allowfullscreen></iframe>
           </aside>
           <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
             <span>ep1 東經121.59° 清風草原</span>
           </h3>
-          <figure class="poster hidden-xs" data-src="img/background/kv.png"></figure>
+          <figure class="poster hidden-xs" data-src="https://i.ytimg.com/vi/gQNILniwIOI/maxresdefault.jpg"></figure>
           <figure class="poster visible-xs" data-src="img/background/video-poster@320.png"></figure>
           <figure class="next">
             <a href="javascript:">
@@ -80,12 +80,19 @@
           <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
             <a href="javascript:"><img src="img/background/share.png"></a>
           </figure>
+          <figure class="duration">
+            <i class="downloaded">
+              <i class="played">
+              </i>
+            </i>
+          </figure>
         </aside>
         <aside class="video">
           <figure class="bg visible-xs" data-src="img/lightbox/grid.png"></figure>
           <aside class="player">
-            <iframe src="https://www.youtube.com/embed/KqlGAw6Bs-w?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=KqlGAw6Bs-w" frameborder="0" allowfullscreen></iframe>
-            <figure class="poster" data-src="https://i.ytimg.com/vi/KqlGAw6Bs-w/maxresdefault.jpg"></figure>
+            <iframe src="https://www.youtube.com/embed/gmZOFetb1_c?modestbranding=1&cc_load_policy=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=gmZOFetb1_c" frameborder="0" allowfullscreen></iframe>
+          <figure class="poster hidden-xs" data-src="https://i.ytimg.com/vi/gmZOFetb1_c/maxresdefault.jpg"></figure>
+          <figure class="poster visible-xs" data-src="img/background/video-poster@320.png"></figure>
           </aside>
           <h3 class="tagline visible-xs text-center vertical-middle fontsize-xs-14">
             <span>ep2 北緯24.93° 柔海花田</span>
@@ -99,6 +106,12 @@
           <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
             <a href="javascript:"><img src="img/background/share.png"></a>
           </figure>
+          <figure class="duration">
+            <i class="downloaded">
+              <i class="played">
+              </i>
+            </i>
+          </figure>
         </aside>
       </aside>
       <a href="javascript:" class="close-button">
@@ -107,18 +120,6 @@
     </figure>
     <!--  -->
     <figure class="sky-background hidden-xs"  data-src="img/background/background.jpg">
-      <figure class="cloud-1"  data-src="img/background/cloud-1.png"></figure>
-      <figure class="cloud-2"  data-src="img/background/cloud-2.png"></figure>
-      <figure class="cloud-3"  data-src="img/background/cloud-3.png"></figure>
-      <figure class="cloud-4"  data-src="img/background/cloud-4.png"></figure>
-      <figure class="cloud-5"  data-src="img/background/cloud-5.png"></figure>
-      <figure class="cloud-6"  data-src="img/background/cloud-6.png"></figure>
-      <figure class="cloud-7"  data-src="img/background/cloud-4.png"></figure>
-      <figure class="cloud-8"  data-src="img/background/cloud-5.png"></figure>
-      <figure class="cloud-9"  data-src="img/background/cloud-6.png"></figure>
-      <figure class="cloud-10"  data-src="img/background/cloud-1.png"></figure>
-      <figure class="cloud-11"  data-src="img/background/cloud-2.png"></figure>
-      <figure class="cloud-12"  data-src="img/background/cloud-3.png"></figure>
     </figure>
     <figure class="sky-background visible-xs"  data-src="img/background/background@320.jpg"></figure>
     <header class="row">
@@ -215,9 +216,18 @@
                 <span><img src="img/home/qrcode.png"></span>
                 <figcaption class="text-center fontsize-17">掃QRCode<br>儲存折價券至手機</figcaption>
               </figure>
-              <figure class="blossom">
+              <a href="coupon.pdf" target="_blank" class="blossom hidden-xs">
                 <img src="img/home/blossom.png">
-              </figure>
+                <p class="print">
+                  <span  class="text-center fontsize-17">列印折價券 &gt;</span>
+                </p>
+              </a>
+              <a download="coupon.ashx" href="coupon.ashx" target="_blank" target="_blank" class="blossom visible-xs">
+                <img src="img/home/blossom.png">
+                <p class="print">
+                  <span class="text-center fontsize-xs-12">列印折價券 &gt;</span>
+                </p>
+              </a>
               <figure class="blossom-1 hidden-xs">
                 <img src="img/home/blossom.png">
               </figure>
@@ -230,11 +240,6 @@
                 <img class="visible-xs" src="img/home/flag-2@320.png">
               </figure>
 
-              <p class="print">
-                <a href="coupon.pdf" target="_blank" class="text-center fontsize-17 hidden-xs">列印折價券 &gt;</a>
-                <a download="coupon.ashx" href="coupon.ashx" target="_blank" class="text-center fontsize-xs-12 visible-xs">列印折價券 &gt;</a>
-
-              </p>
               <figure class="coupon">
                 <img class="hidden-xs" src="img/home/part2-coupon.png">
                 <img class="visible-xs" src="img/home/part2-coupon@320.png">
@@ -252,7 +257,7 @@
 
               <aside class="tvc">
                 <aside class="tvc-video">
-                  <iframe id="tvc" src="https://www.youtube.com/embed/DgnpxqjckqQ?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=DgnpxqjckqQ" frameborder="0" allowfullscreen></iframe>
+                  <iframe id="tvc" src="https://www.youtube.com/embed/6lKYqS768bI?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=6lKYqS768bI" frameborder="0" allowfullscreen></iframe>
                 </aside>
               </aside>
             </aside>
@@ -485,7 +490,7 @@
             </aside>
 
             <section class="butt vertical-middle text-center fontsize-25 fontsize-xs-12">
-              <a class="gotop vertical-middle text-center" href="javascript:TweenMax.to('.content article', 0.5, {scrollTop: 0});void(0)">
+              <a class="gotop vertical-middle text-center" href="javascript:TweenMax.to('.content article', 0.5, {scrollTop: 1});void(0)">
                 <span>
                   top<br><i class="fa fa-angle-up fontsize-22" aria-hidden="true"></i>
                 </span>
@@ -910,6 +915,8 @@
       </aside>
     </section>
 
+    <figure id="fragLoading"></figure>
+
   
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -942,6 +949,7 @@
     <script src="/bower_components/hammerjs/hammer.js"></script>
     <script src="/bower_components/jquery-hammerjs/jquery.hammer.js"></script>
     <script src="/bower_components/jquery-TWzipcode/jquery.twzipcode.min.js"></script>
+    <script src="/bower_components/progressbar.js/dist/progressbar.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

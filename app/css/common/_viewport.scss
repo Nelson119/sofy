@@ -9,6 +9,8 @@ body {
 	// @media screen and (max-width: #{$screen-sm-num - 1}px) {
 	// }
 	.blogger-box, .content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
+		height: 0;
+		transition: 0s linear 0.75s;
 		@include animation(
 			fadeOut 0.75s 1 linear forwards 0s
 		);
@@ -18,6 +20,8 @@ body {
 		.video-background{
 			top: 100%;
 		}
+		height: 0;
+		transition: 0s linear 0.75s;
 		@include animation(
 			fadeOut 0.75s 1 linear forwards 0s
 		);
@@ -30,6 +34,8 @@ body {
 	&.home, &.rule, &.form, &.thankyou{
 		.video-background{
 			overflow: hidden;
+			height: 0;
+			transition: 0s linear 0.75s;
 			@include animation(
 				fadeOut 0.75s 1 linear forwards 0s
 			);
@@ -53,6 +59,8 @@ body {
 	}
 	&.home{
 		.content.home-content, .blogger-box{
+			height: calc(100% - 90px);
+			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -60,6 +68,8 @@ body {
 	}
 	&.rule{
 		.content.rule-content{
+			height: calc(100% - 90px);
+			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -77,6 +87,8 @@ body {
 	}
 	&.form{
 		.content.form-content{
+			height: calc(100% - 90px);
+			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -91,6 +103,8 @@ body {
 	}
 	&.thankyou{
 		.content.thankyou-content{
+			height: calc(100% - 90px);
+			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -98,8 +112,18 @@ body {
 	}
 	&.loop{
 		.kv-container {
+			height: 100%;
+			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
+			);
+		}
+		.video-container {
+			overflow: hidden;
+			height: 0;
+			transition: 0s linear 0.75s;
+			@include animation(
+				fadeOut 0.75s 1 linear forwards 0s
 			);
 		}
 	}
@@ -112,6 +136,10 @@ body {
 		}
 
 		.kv-container {
+			height: 0;
+			transition: 0s linear 0.75s;
+			overflow: hidden;
+			width: 0;
 			@include animation(
 				fadeOut 0.75s 1 linear forwards 0s
 			);
@@ -119,6 +147,9 @@ body {
 		z-index: 10;
 		.video-container {
 			top: 0%;
+			height: 100%;;
+			transition: 0s linear 0s;
+			z-index: 10;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -145,6 +176,8 @@ body {
 			}
 
 			.part2,.part3,.part4{
+				height: 0;
+				transition: 0s linear 0.75s;
 				@include animation(
 					fadeOut 0.75s 1 linear forwards 0s
 				);
@@ -158,6 +191,8 @@ body {
 			}
 
 			.part1,.part3,.part4{
+				height: 0;
+				transition: 0s linear 0.75s;
 				@include animation(
 					fadeOut 0.75s 1 linear forwards 0s
 				);
@@ -173,6 +208,8 @@ body {
 			}
 
 			.part1,.part2{
+				height: 0;
+				transition: 0s linear 0.75s;
 				@include animation(
 					fadeOut 0.75s 1 linear forwards 0s
 				);
@@ -192,7 +229,6 @@ body {
 	}
 	99% {
 		opacity: 0;
-		height: 100%;
 	}
 	100%{
 		opacity: 0;

@@ -10,8 +10,12 @@ app.partial.ga = function(){
 		ga('send', 'event', 'Button', 'click', $(this).attr('data-ga'));
 	});
 
-	$('.page[data-ga]').on('page:in', function(r){
-		ga('send', 'pageview', { 'page': 'index.html', 'title': $(this).attr('data-ga') });
-		// console.log( { 'page': 'default.htm', 'title': '活動首頁' });
+	// $('.page[data-ga]').on('page:in', function(r){
+	// 	ga('send', 'pageview', { 'page': 'index.html', 'title': $(this).attr('data-ga') });
+	// 	// console.log( { 'page': 'default.htm', 'title': '活動首頁' });
+	// });
+	
+	$('body').on('viewport:change', function(e, view){
+		// ga('send', 'pageview', { 'page': 'index.html', 'title': $(this).attr('data-ga') });
 	});
 };

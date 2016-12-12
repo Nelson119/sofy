@@ -66,17 +66,46 @@ body {
 			background-size: per(61, 320) auto;
 		}
 		@include animation(
-			fade 1.5s 1 linear forwards 3s
+			fade 1.5s 1 linear forwards 0s
 		);
 
 	}
+	#fragLoading{
 
+		overflow: hidden;
+		height: 0;
+		transition: 0s linear 0.75s;
+		@include animation(
+			fade 0.5s 1 linear forwards 0.75s
+		);
+	}
 	&.loading{
 		&:after{
 			@include animation(
 				none
 			);
 
+		}
+		#fragLoading{
+			width: 200px;
+			height: 200px;
+			position: fixed;
+			left: calc(50% - 100px);
+			top: calc(50% - 100px);
+			z-index: 101;
+			color: #fff;
+			@include animation(
+				none
+			);
+
+			path{
+				stroke: #fff;
+			}
+
+			div{
+				top: 80%!important;
+				color: #fff!important;
+			}
 		}
 	}
 

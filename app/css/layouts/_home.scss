@@ -6,9 +6,11 @@
 	margin-top: 113px;
 	height: auto;
 	background: url(../img/home/background-head.png) center 5px/ 876px auto no-repeat;
-    transform: scale(0.8);
+    // transform: scale(0.8);
+    transform: scale(0.9);
     transform-origin: center bottom 1px;
     margin-top: -48.3em;
+	margin-top: -16.7em;
 
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
     	transform: none;
@@ -261,6 +263,34 @@
 			}
 			img{
 				@include SubItem();
+				@include animation(
+					blossom-2 0.4s 1 linear forwards
+				);
+			}
+			&:hover{
+				img{
+
+					@include animation(
+						blossom 3s 1 linear forwards
+					);
+				}
+			}
+			.print{
+				@include Item(194, 193, 30, 0, 35, 0, 256);
+				border-radius: 50%;
+				background: #ccbed9;
+				span{
+					color: #844e58;
+					@include Item(80, 0, 80, 0, 20, 0, 118);
+				}
+				@media screen and (max-width: #{$screen-sm-num - 1}px) {
+					@include Item(118, 117, 20, 0, 20, 0, 155);
+					span{
+						@include Item(80, 0, 80, 0, 20, 0, 118);
+						height: 1.1em;
+					}
+				}
+
 			}
 		}
 
@@ -295,23 +325,6 @@
 				@include Item(95, 94, 57, 0, 26, 0, 146);
 				img{
 					@include SubItem();
-				}
-			}
-
-		}
-		.print{
-			@include Item(194, 193, 295, 0, 612, 0, 896);
-			border-radius: 50%;
-			background: #ccbed9;
-			a{
-				color: #844e58;
-				@include Item(80, 0, 80, 0, 20, 0, 118);
-			}
-			@media screen and (max-width: #{$screen-sm-num - 1}px) {
-				@include Item(118, 117, 246, 0, 99, 0, 320);
-				a{
-					@include Item(80, 0, 80, 0, 20, 0, 118);
-					height: 1.1em;
 				}
 			}
 
