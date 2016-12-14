@@ -40,28 +40,28 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <figure class="video-background">
-      <aside class="kv-container">        
-        <!-- <figure class="poster visible-xs" data-src="img/background/kv@320.png"></figure>
-        <figure class="poster kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure> -->
+      <aside class="kv-container">
         <aside class="player">
           <iframe class="hidden-xs" id="kvloop" src="https://www.youtube.com/embed/XujOYvQRvOY?modestbranding=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=XujOYvQRvOY" frameborder="0" allowfullscreen></iframe>
           <img class="visible-xs" src="img/background/loop.gif">
         </aside>
         <figure class="kv-1 hidden-xs" data-src="img/background/kv-1.png"></figure>
-        <!-- <figure class="kv visible-xs" data-src="img/background/kv@320.png"></figure> -->
         <figure class="kv-1 visible-xs" data-src="img/background/kv-1@320.png"></figure>
         <figure class="goto-video">
-          <a class="visible-xs" href="javascript:">
+          <a class="visible-xs" href="javascript:" data-ga="Index_video_m">
             <img src="img/scroll-down@320.png">
             <aside class="text-center vertical-middle fontsize-xs-10">
               <span>立即觀看影片<br>抽與喬喬的午茶約會</span>
             </aside>
           </a>
         </figure>
-        <a class="play-button" href="javascript:"></a>
+        <figure class="share" data-ref="https://www.youtube.com/watch?v=gQNILniwIOI">
+          <a href="javascript:" data-ga="share_index" data-ga="share_index_m"><img src="img/background/share.png"></a>
+        </figure>
+        <a class="play-button" href="javascript:" data-ga="index_video"></a>
       </aside>
       <aside class="video-container">
-        <aside class="video">
+        <aside class="video" data-ga="video_1_play" data-ga-m="video_1_play_m">
           <figure class="bg visible-xs" data-src="img/lightbox/grid.png"></figure>
           <aside class="player">
             <iframe src="https://www.youtube.com/embed/gQNILniwIOI?modestbranding=1&cc_load_policy=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=gQNILniwIOI" frameborder="0" allowfullscreen></iframe>
@@ -72,13 +72,13 @@
           <figure class="poster hidden-xs" data-src="https://i.ytimg.com/vi/gQNILniwIOI/maxresdefault.jpg"></figure>
           <figure class="poster visible-xs" data-src="img/background/video-poster@320.png"></figure>
           <figure class="next">
-            <a href="javascript:">
+            <a href="javascript:" data-ga="video_2" data-ga-m="video_2_m">
               <img class="hidden-xs" src="img/background/next.png">
               <img class="visible-xs" src="img/background/next@320.png">
             </a>
           </figure>
-          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
-            <a href="javascript:"><img src="img/background/share.png"></a>
+          <figure class="share" data-ref="https://www.youtube.com/watch?v=gQNILniwIOI">
+            <a href="javascript:" data-ga="share_a" data-ga="share_a_m"><img src="img/background/share.png"></a>
           </figure>
           <figure class="duration hidden-xs">
             <i class="downloaded">
@@ -87,7 +87,7 @@
             </i>
           </figure>
         </aside>
-        <aside class="video">
+        <aside class="video" data-ga="video_2_play" data-ga-m="video_2_play_m">
           <figure class="bg visible-xs" data-src="img/lightbox/grid.png"></figure>
           <aside class="player">
             <iframe src="https://www.youtube.com/embed/gmZOFetb1_c?modestbranding=1&cc_load_policy=1&iv_load_policy=3&enablejsapi=1&version=3&controls=0&showinfo=0&loop=1&vq=hd720&playlist=gmZOFetb1_c" frameborder="0" allowfullscreen></iframe>
@@ -98,13 +98,13 @@
             <span>ep2 北緯24.93° 柔海花田</span>
           </h3>
           <figure class="prev">
-            <a href="javascript:">
+            <a href="javascript:" data-ga="video_1" data-ga-m="video_1_m">
               <img class="hidden-xs" src="img/background/prev.png">
               <img class="visible-xs" src="img/background/prev@320.png">
             </a>
           </figure>
-          <figure class="share" data-ref="https://www.facebook.com/sofytaiwan/videos/920584451421413/">
-            <a href="javascript:"><img src="img/background/share.png"></a>
+          <figure class="share" data-ref="https://www.youtube.com/watch?v=gmZOFetb1_c">
+            <a href="javascript:" data-ga="share_b" data-ga-m="share_b_m"><img src="img/background/share.png"></a>
           </figure>
           <figure class="duration hidden-xs">
             <i class="downloaded">
@@ -122,30 +122,32 @@
     <figure class="sky-background hidden-xs"  data-src="img/background/background.jpg">
     </figure>
     <figure class="sky-background visible-xs"  data-src="img/background/background@320.jpg"></figure>
+
     <header class="row">
       <h1 class="logo">
-        <a href="./"><img src="img/header/logo.png"></a>
+        <a href="./" data-ga="logo" data-ga-m="logo_m"><img src="img/header/logo.png"></a>
       </h1>
-      <a href="coupon.pdf" target="_blank" class="coupon hidden-xs"><img src="img/header/coupon.png"></a>
-      <a download="coupon" href="coupon.ashx" target="_blank" class="coupon visible-xs"><img src="img/header/coupon.png"></a>
-      <a href="javascript:" class="burger"><img src="img/header/burger.png"></a>
+      <a href="coupon.pdf" data-ga="coupon" target="_blank" class="coupon hidden-xs"><img src="img/header/coupon.png"></a>
+      <a download="coupon.jpg" data-ga-m="coupon_m" href="coupon.jpg" target="_blank" class="coupon visible-xs"><img src="img/header/coupon.png"></a>
+      <a href="javascript:" data-ga="menu" data-ga-m="menu_m" class="burger"><img src="img/header/burger.png"></a>
       <aside class="menu">
         <img class="hidden-xs" src="img/menu/menu-bg.png">
-        <a class="menu-f" href="javascript:"><img src="img/menu/menu-f.png"></a>
+        <a class="menu-f" href="javascript:"><img src="img/menu/menu-f.png" data-ga="menu_facebook"></a>
         <a class="menu-x hidden-xs" href="javascript:"><img src="img/menu/menu-x.png"></a>
         <nav class="fontsize-18 fontsize-xs-13 vertical-middle text-right">
           <aside class="text-left">
-            <a href="javascript:">喬喬の寵愛肌地</a>
-            <a href="javascript:">我の清爽淨肌</a>
-            <a href="javascript:">索取清爽折扣</a>
-            <a href="javascript:">姊妹私心大推</a>
-            <a href="javascript:">活動辦法</a>
-            <a href="javascript:">得獎名單</a>
+            <a href="javascript:" data-ga="menu_video" data-ga-m="menu_video_m">喬喬の寵愛肌地</a>
+            <a href="javascript:" data-ga="menu_try" data-ga-m="menu_try_m">我の清爽淨肌</a>
+            <a href="javascript:" data-ga="menu_coupon" data-ga-m="menu_coupon_m">索取清爽折扣</a>
+            <a href="javascript:" data-ga="menu_kol" data-ga-m="menu_kol_m">姊妹私心大推</a>
+            <a href="javascript:" data-ga="menu_rule" data-ga-m="menu_rule_m">活動辦法</a>
+            <a href="javascript:" data-ga="menu_award" data-ga-m="menu_award_m">得獎名單</a>
           </aside>
         </nav>
       </aside>
     </header>
-    <a class="scrolldown" href="javascript:">
+
+    <a class="scrolldown" href="javascript:" data-ga="index_down" data-ga-m="index_down_m">
       <img class="bg" src="img/scroll-down-bg.png">
       <img src="img/scroll-down.png"></a>
 
@@ -216,7 +218,7 @@
                 <span><img src="img/home/qrcode.png"></span>
                 <figcaption class="text-center fontsize-17">掃QRCode<br>儲存折價券至手機</figcaption>
               </figure>
-              <a href="coupon.pdf" target="_blank" class="blossom hidden-xs">
+              <a href="coupon.pdf" target="_blank" class="blossom hidden-xs" data-ga="product_print">
                 <img src="img/home/blossom.png">
                 <figure class="coupon">
                   <img src="img/home/part2-coupon.png">
@@ -225,7 +227,7 @@
                   <span  class="text-center fontsize-17">列印折價券 &gt;</span>
                 </p>
               </a>
-              <a download="coupon.ashx" href="coupon.ashx" target="_blank" target="_blank" class="blossom visible-xs">
+              <a download="coupon.jpg" href="coupon.jpg" target="_blank" target="_blank" class="blossom visible-xs" data-ga="product_print_m">
                 <img src="img/home/blossom.png">
                 <figure class="coupon">
                   <img src="img/home/part2-coupon@320.png">
@@ -247,11 +249,11 @@
               </figure>
 
               <nav>
-                <a class="pchome" target="_blank" href="https://goo.gl/90xOU0">
+                <a class="pchome" target="_blank" href="https://goo.gl/90xOU0" data-ga="product_pchome" data-ga-m="product_pchome_m">
                   <img src="img/home/pchome-bg.png">
                   <img class="hv" src="img/home/pchome.png">
                 </a>
-                <a class="watsons" target="_blank" href="https://goo.gl/4mpHqa">
+                <a class="watsons" target="_blank" href="https://goo.gl/4mpHqa" data-ga="product_watsons" data-ga-m="product_watsons_m">
                   <img src="img/home/watsons-bg.png">
                   <img class="hv" src="img/home/watsons.png">
                 </a>
@@ -280,7 +282,7 @@
 
               <ul class="bloggers row text-center">
                 <li class="col-sm-4 col-xs-6">
-                  <a href="javascript:" data-target="blogger1">
+                  <a href="javascript:" data-target="blogger1" data-ga="kol_1" data-ga-m="kol_1_m">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -300,7 +302,7 @@
                   </a>
                 </li>
                 <li class="col-sm-4 col-xs-6">
-                  <a href="javascript:" data-target="blogger2">
+                  <a href="javascript:" data-target="blogger2" data-ga="kol_2" data-ga-m="kol_2_m">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -320,7 +322,7 @@
                   </a>
                 </li>
                 <li class="col-sm-4 col-xs-6">
-                  <a href="javascript:" data-target="blogger3" class="disabled">
+                  <a href="javascript:" data-target="blogger3" class="disabled" data-ga="kol_3" data-ga-m="kol_3_m">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -340,7 +342,7 @@
                   </a>
                 </li>
                 <li class="col-sm-4 col-xs-6">
-                  <a href="javascript:" data-target="blogger4" class="disabled">
+                  <a href="javascript:" data-target="blogger4" class="disabled" data-ga="kol_4" data-ga-m="kol_4_m">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -360,7 +362,7 @@
                   </a>
                 </li>
                 <li class="col-sm-4 col-xs-6">
-                  <a href="javascript:" data-target="blogger5" class="disabled">
+                  <a href="javascript:" data-target="blogger5" class="disabled" data-ga="kol_5" data-ga-m="kol_5_m">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -380,7 +382,7 @@
                   </a>
                 </li>
                 <li class="col-sm-4 col-xs-6">
-                  <a href="javascript:" data-target="blogger6" class="disabled">
+                  <a href="javascript:" data-target="blogger6" class="disabled" data-ga="kol_6" data-ga-m="kol_6_m">
                     <figure class="profile-picture">
                       <img src="img/home/blossom.png">
                       <span>
@@ -485,18 +487,14 @@
                 </li>
               </ul>
 
-              <a href="javascript:" class="more">
+              <a href="javascript:" class="more" data-ga="try" data-ga-m="try_m">
                 <img src="img/home/more-bg.png">
                 <img class="hv" src="img/home/more.png">
               </a>
             </aside>
 
             <section class="butt vertical-middle text-center fontsize-25 fontsize-xs-12">
-              <a class="gotop vertical-middle text-center" href="javascript:TweenMax.to('.content article', 0.5, {scrollTop: 1});void(0)">
-                <span>
-                  top<br><i class="fa fa-angle-up fontsize-22" aria-hidden="true"></i>
-                </span>
-              </a>
+              <a class="back" href="javascript:"><img src="img/home/back.png"></a>
             </section>
           </section>
         </section>
@@ -567,6 +565,98 @@
       </article>
     </section>
 
+    <section class="content award-content">
+      <article>
+        <section class="award-page">
+          <h3 class="text-center vertical-middle fontsize-47 fontsize-xs-22">得獎名單</h3>
+
+          <ul class="fontsize-21 fontsize-xs-11">
+            <li>與喬喬共進拉花午茶 20名
+              <ol class="row">
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+              </ol>
+            </li>
+            <li>蘇菲清爽淨肌日用超薄23cm/12片一箱(24包) 50名
+              <ol class="row">
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+                <li class="col-xs-6">王x君      0910xxx999</li>
+              </ol>
+            </li>
+          </ul>
+          <a class="close" href="javascript:">
+            <img src="img/award/close.png">
+          </a>
+        </section>
+      </article>
+    </section>
+
     <section class="content form-content">
       <article>
 
@@ -602,10 +692,10 @@
             </span>
             <span class="row">
               <span class="col-xs-12 col-sm-5">
-                <a href="javascript:" class="reset"><img src="img/form/reset.png"></a>
+                <a href="javascript:" class="reset"><img src="img/form/reset.png" data-ga="keyin_restart" data-ga-m="keyin_restart_m"></a>
               </span>
               <span class="col-xs-12 col-sm-6">
-                <a href="javascript:" class="submit"><img src="img/form/submit.png"></a>
+                <a href="javascript:" class="submit"><img src="img/form/submit.png" data-ga="keyin_send" data-ga-m="keyin_send_m"></a>
               </span>
             </span>
 
@@ -919,25 +1009,27 @@
 
     <figure id="fragLoading"></figure>
 
+    <a id="menuoff" href="javascript:"></a>
+
   
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      // e.src='https://www.google-analytics.com/analytics.js';
-      // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      // ga('create','UA-XXXXX-X');ga('send','pageview');
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-88007344-1');ga('send','pageview');
     </script>
     <script>
 
-    (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/zh_TW/all.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <!-- build:js js/vendor.js -->
@@ -973,14 +1065,15 @@
     <!-- build:js js/main.js -->
     <script src="js/app.js"></script>
     <script src="js/preload.js"></script>
-    <script src="js/ga.js"></script>
     <script src="js/yt.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/home.js"></script>
     <script src="js/rule.js"></script>
+    <script src="js/award.js"></script>
     <script src="js/form.js"></script>
     <script src="js/thankyou.js"></script>
     <script src="js/share.js"></script>
+    <script src="js/ga.js"></script>
     <!-- endbuild -->
   </body>
 </html>

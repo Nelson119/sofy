@@ -1,4 +1,4 @@
-.rule-page{
+.award-page{
 	width: 875px;
 	background: url(../img/lightbox/grid.png);
 	color: #fff;
@@ -12,7 +12,7 @@
 		// transform: scale(0.8);
 		transform: scale(0.9);
 		transform-origin: center bottom 1px;
-		margin-top: -24.8em;
+		margin-top: -11.8em;
 	}
 
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
@@ -25,7 +25,7 @@
 		width: 328px;
 		height: 88px;
 		margin: 0 auto;
-		background: url(../img/rule/title-bg.png) 0 0 no-repeat;
+		background: url(../img/award/title-bg.png) 0 0 no-repeat;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			width: em(171, 22);
 			background-size: cover;
@@ -40,53 +40,37 @@
 		padding-left: 1.2em;
 		>li{
 			list-style: none;
+			font-weight: 500;
 			&:before{
 				display: inline-block;
 				width: 16px;
 				height: 16px;
-				background: #ee78bd;
+				background: #4bdcdf;
 				border-radius: 50%;
 				content: '';
 				margin-left: -1.4em;
-				margin-right: 0.5em;
+				margin-right: 0.6em;
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
 					width: em(8, 11);
 					height: em(8, 11);
 				}
 			}
 			ol{
-				padding-left: 5em;
-				@media screen and (max-width: #{$screen-sm-num - 1}px) {
-					padding-left: 2em;
-				}
+				padding-left: 0;
+				// @media screen and (max-width: #{$screen-sm-num - 1}px) {
+				// 	padding-left: 2em;
+				// }
 				li{
+					font-weight: 300;
 					list-style: none;
 					counter-increment: i;
 					line-height: 1.8em;
 					letter-spacing: 0.1em;
-					&:before{
-						content: '（'counter(i)'）';
-						margin-left: -3em;
-					}
-					&:nth-child(6){
-						@media screen and (min-width: #{$screen-sm-num}px) {
-							width: 405px;
-						}
-
-					}
-					&:nth-child(7){
-						@media screen and (min-width: #{$screen-sm-num}px) {
-							width: 255px;
-						}
-					}
-					&+li{
-						margin-top: 0.5em;
-					}
 				}
 			}
 
 			&+li{
-				margin-top: 1em;
+				margin-top: 3em;
 			}
 		}
 	}

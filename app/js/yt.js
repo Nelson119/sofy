@@ -179,9 +179,8 @@ app.partial.yt = function(){
 
 		var wait4loop = setInterval(function(){
 			if($(window).width() <= 768 || $('html.ios').length){
+				gifLoad();
 				clearInterval(wait4loop);
-				app.changeView('loop');
-				return;
 			}
 			if(!kvloop.playVideo){
 				return;
@@ -196,7 +195,7 @@ app.partial.yt = function(){
 				clearInterval(wait4loop);
 				kvloop.pauseVideo();	
 				kvloop.seekTo(0);
-				setTimeout(function(){
+				var s = setTimeout(function(){
 					app.changeView('loop');
 					seek0();	
 				}, 750);
@@ -209,6 +208,18 @@ app.partial.yt = function(){
 				kvloop.seekTo(0);
 			}
 		}, 100);
+
+		function gifLoad(){
+			var gif = new Image();
+			gif.onload = function(){	
+				bar.animate(1);			
+				setTimeout(function(){
+					app.changeView('loop');
+				}, 750);
+				return;
+			};
+			gif.src = $('.kv-container .player img').attr('src');
+		}
 
 		function seek0(){
 			kvloop.playVideo();	

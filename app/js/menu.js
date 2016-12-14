@@ -8,9 +8,19 @@
 app.partial.menu = function(){
 	$('header .burger').on('click', function(){
 		$('body').addClass('menu');
-		$('.menu').hammer().one('swiperight',function(e){
-		  $('body').removeClass('menu');
+		$('body.menu').hammer().one('swiperight',function(e){
+			$('body').removeClass('menu');
+			$('body.menu').hammer().unbind('swiperight');
+			$('#menuoff').hammer().unbind('tap');
 		});
+		$('#menuoff').hammer().one('tap', function(e){
+			$('body').removeClass('menu');
+			$('body.menu').hammer().unbind('swiperight');
+			$('#menuoff').hammer().unbind('tap');
+		});
+	});
+	$('.kv-container').hammer().on('swipeleft',function(e){
+		$('header .burger').trigger('click');
 	});
 	$('.menu .menu-x').on('click', function(){
 		$('body').removeClass('menu');
@@ -53,8 +63,11 @@ app.partial.menu = function(){
 	});
 
 	$('.menu nav a:eq(4)').on('click', function(e){
-		// TweenMax.set('.content article', {scrollTop: 0});
 		return changeView('rule', e);
+	});
+
+	$('.menu nav a:eq(5)').on('click', function(e){
+		return changeView('award', e);
 	});
 
 
@@ -83,16 +96,18 @@ app.partial.menu = function(){
 
 	var viewStack = [];
 
-	function changeView(view, e){
+	function changeView(view, e, isback){
 		$('body').removeClass('menu');
-		var views = ['loading', 'loop', 'rule', 'video', 'form', 'thankyou', 'home part1', 'home part2', 'home part3', 'video-carousel'];
+		// console.log('view',view);
+		var views = ['loading','home', 'loop', 'rule', 'video', 'form', 'thankyou', 'video-carousel', 'award'];
 		var rm = views.join(' ').replace(view);
 		$('body').removeClass(rm).addClass(view);
 
 		$('body').trigger('viewport:' + view);
 		$('body').trigger('viewport:change', view);
-
-		viewStack.push(view);
+		if(!isback){
+			viewStack.push(view);
+		}
 
 		if(e){
 			e.stopPropagation();
@@ -103,9 +118,9 @@ app.partial.menu = function(){
 
 	function viewBack(e){
 		if(viewStack.length){
+			var view = viewStack[viewStack.length - 2];
 			viewStack.pop();
-			var view = viewStack[viewStack.length - 1];
-			changeView(view);
+			changeView(view, null, true);
 		}
 		if(e){
 			e.stopPropagation();
@@ -118,23 +133,26 @@ app.partial.menu = function(){
 		// console.log(e);
 	});
 	$('body').on('viewport:change', function(e, view){
+		if(view === 'loop' && console.clear){			
+			console.clear();
+		}
 	});
 
-	// $('.home-content article').on('mousewheel', function(e){
-	// 	console.log(app.freezeHome)
-	// 	if(app.freezeHome){
-	// 		// console.log('freeze');
-	// 		e.stopPropagation();
-	// 		e.preventDefault();
-	// 		return false;
-	// 	}
-	// });
+	$('.home-content article .home-page').on('mousewheel', function(e){
+		if(app.freezeHome){
+			e.stopPropagation();
+			e.preventDefault();
+			return false;
+		}
+	});
+	var freezeTimeout = 0;
 	$('body').on('viewport:home', function(e){
 		var cont = $('.home-content article');
-		// app.freezeHome = true;
-		// setTimeout(function(){
-		// 	app.freezeHome = false;
-		// }, 800);
+		app.freezeHome = true;
+		clearTimeout(freezeTimeout);
+		setTimeout(function(){
+			app.freezeHome = false;
+		}, 1000);
 		cont.unbind('scroll').on('scroll', function(e){
 			if(cont.scrollTop() == 0 && $('body').hasClass('home')){
 				$('.logo').trigger('click');

@@ -32,4 +32,8 @@ app.partial.home = function(){
 
 	});
 
+	$('.back').on('click', function(e){
+		app.changeView('loop', e);
+	});
+
 };	

@@ -8,7 +8,7 @@
 body {
 	// @media screen and (max-width: #{$screen-sm-num - 1}px) {
 	// }
-	.blogger-box, .content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content{
+	.blogger-box, .content.rule-content, .content.form-content, .content.home-content, .content.thankyou-content, .content.award-content{
 		height: 0;
 		transition: 0s linear 0.75s;
 		@include animation(
@@ -31,7 +31,7 @@ body {
 		position: relative;
 		height: 0;
 	}
-	&.home, &.rule, &.form, &.thankyou{
+	&.home, &.rule, &.form, &.thankyou, &.award{
 		.video-background{
 			overflow: hidden;
 			height: 0;
@@ -41,7 +41,7 @@ body {
 			);
 		}
 	}
-	&.home, &.rule, &.form, &.thankyou, &.video-carousel{
+	&.home, &.rule, &.form, &.thankyou, &.video-carousel, &.award{
 		.scrolldown{
 			width: 0;
 			opacity: 0;
@@ -59,7 +59,10 @@ body {
 	}
 	&.home{
 		.content.home-content, .blogger-box.in{
-			height: calc(100% - 90px);
+			height: calc(100% - 110px);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: calc(100% - #{vw320(65)});
+			}
 			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
@@ -68,11 +71,14 @@ body {
 	}
 	&.rule{
 		.content.rule-content{
-			height: calc(100% - 90px);
+			height: calc(100% - 110px);
 			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: calc(100% - #{vw320(65)});
+			}
 		}
 		.content article{
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
@@ -87,7 +93,10 @@ body {
 	}
 	&.form{
 		.content.form-content{
-			height: calc(100% - 90px);
+			height: calc(100% - 110px);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: calc(100% - #{vw320(65)});
+			}
 			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
@@ -103,7 +112,22 @@ body {
 	}
 	&.thankyou{
 		.content.thankyou-content{
-			height: calc(100% - 90px);
+			height: calc(100% - 110px);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: calc(100% - #{vw320(65)});
+			}
+			transition: 0s linear 0s;
+			@include animation(
+				fadeIn 0.75s 1 linear forwards 0s
+			);
+		}
+	}
+	&.award{
+		.content.award-content{
+			height: calc(100% - 110px);
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: calc(100% - #{vw320(65)});
+			}
 			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
@@ -135,6 +159,9 @@ body {
 			}
 		}
 
+		@media screen and (max-width: #{$screen-sm-num+1}px){
+		}
+
 		.kv-container {
 			height: 0;
 			transition: 0s linear 0.75s;
@@ -147,9 +174,9 @@ body {
 		z-index: 10;
 		.video-container {
 			top: 0%;
-			height: 100%;;
 			transition: 0s linear 0s;
 			z-index: 10;
+			height: 100%;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -157,6 +184,16 @@ body {
 		.video-background{
 			.close-button{
 				display: block;
+			}
+			&.short{		
+				transform-origin: center top 1px;
+				transform: scale(0.98);
+				height: calc(100% - #{vw320(65)});
+
+				.share{
+					transform-origin: center top 1px;
+					transform: scale(0.8);
+				}
 			}
 		}
 	}
@@ -219,6 +256,15 @@ body {
 				position: relative;
 			}
 		}
+
+
+	}
+}
+html,body{	
+	overflow: hidden;
+
+	&.menu{
+		overflow: visible;
 	}
 }
 

@@ -1,5 +1,5 @@
 header {
-	height: 90px;
+	height: 110px;
 	position: relative;
 	overflow: visible;
 	z-index: 50;
@@ -13,7 +13,7 @@ header {
 	}
 
 	.logo{
-		margin: 7px 0 0 36px;
+		margin: 17px 0 0 36px;
 		top: 0;
 		left: 0;
 		position: fixed;
@@ -31,8 +31,10 @@ header {
 	.burger{
 		position: absolute;
 		right: 47px;
-		top: 31px;
+		top: 41px;
 		transition-duration: 0.25s;
+		transform: scale(1.15);
+		transform-origin: center center 1px;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			@include Item(23, 21, 29, 0, 0, 21, 320);
 			img{
@@ -44,7 +46,7 @@ header {
 	.coupon{
 		position: absolute;
 		right: 108px;
-		top: 4px;
+		top: 14px;
 		transition-duration: 0.25s;
 		transform: scale(0.95);
 		transform-origin: center bottom 1px;
@@ -57,7 +59,7 @@ header {
 		}
 		&:hover{
 			transition-duration: 0.3s;
-			top: 2%;
+			top: 1em;
 
 			transform: scale(1) ;//rotateZ(10deg) rotateX(-15deg) translateX(-2%) translateY(5%);
 		}
@@ -219,6 +221,13 @@ body.menu{
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		transform: translateX(#{per(-230, 320)});
 		overflow-x: visible; 
+		a#menuoff{
+			@include SubItem();
+			display: block;
+			position: fixed;
+			background: rgba(0,0,0,0.05);
+			z-index: 50;
+		}
 	}
 	header .coupon, header .burger{
 		@media screen and (min-width: #{$screen-sm-num}px) {
@@ -228,6 +237,9 @@ body.menu{
 }
 
 body{
+	a#menuoff{
+		display: none;
+	}
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		transition-duration: 0.25s;
 	}

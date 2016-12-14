@@ -42,7 +42,7 @@ app.partial.form = function(){
 		form.sDistrict = $('[name=district] option:selected').val();
 		form.sCounty = $('[name=county] option:selected').val();
 		form.sZip = $('[name=zipcode]').val();
-		form.sAD = extractUrlValue('utm_medium') || 'none';
+		form.sAD = extractUrlValue('utm_source') || 'none';
 
 		if(!form.sName){
 			alert('請填寫姓名');

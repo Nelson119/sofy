@@ -99,6 +99,22 @@ $(function(){
     });
 
 
+	$(window).hammer().on('tap scroll', function(){
+		if( $(window).width() <= 768 && window.innerHeight < 560 ){
+			$('.video-carousel .video-background').addClass('short');
+		}else if($('.video-background').hasClass('short')){
+			$('.video-background').removeClass('short');
+		}
+		if( $(window).width() <= 768 && window.innerHeight ){
+			$('html, body, .video-background, .sky-background').height(window.innerHeight);
+		}
+	});
+	$('body').on('viewport:video-carousel', function(e){
+		$(window).trigger('tap');
+		if( $(window).width() <= 768 && window.innerHeight ){
+			$('html, body, .video-background, .sky-background').height(window.innerHeight);
+		}
+	});
 
 	//觸發第一次調整頁面尺寸
 	$(window).trigger('resize');
@@ -106,6 +122,7 @@ $(function(){
 	if(location.hash == '#rule'){
 		app.changeView('rule');
 	}
+
 
 });
 
