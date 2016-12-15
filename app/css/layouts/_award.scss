@@ -5,9 +5,14 @@
 	padding: 50px 100px;
 	margin: 0 auto;
 	position: relative;
-
-
 	margin-bottom: 75px;
+	&:after{
+		content: '';
+		@include SubItem();
+		background: url(../img/lightbox/gradient.png) center/ 100% 100%;
+		z-index: -1;
+	}
+
 	@media screen and (min-width: #{$screen-sm-num}px) {
 		// transform: scale(0.8);
 		transform: scale(0.9);
@@ -17,7 +22,7 @@
 
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		width: per(280, 320);
-		padding: per(41, 320) per(28, 320) per(165, 320);
+		padding: per(41, 320) per(28, 320) per(40, 320);
 		margin-top: per(10, 320);
 	}
 
@@ -41,6 +46,10 @@
 		>li{
 			list-style: none;
 			font-weight: 500;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				width: per(160, 215);
+				margin: 0 auto;
+			}
 			&:before{
 				display: inline-block;
 				width: 16px;
@@ -66,8 +75,11 @@
 					counter-increment: i;
 					line-height: 1.8em;
 					letter-spacing: 0.1em;
+					word-spacing: 3em;
 				}
 			}
+
+
 
 			&+li{
 				margin-top: 3em;

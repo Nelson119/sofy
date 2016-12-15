@@ -5,6 +5,12 @@
 	padding: 50px 100px;
 	margin: 0 auto;
 	position: relative;
+	&:after{
+		content: '';
+		@include SubItem();
+		background: url(../img/lightbox/gradient.png) center/ 100% 100%;
+		z-index: -1;
+	}
 
 
 	margin-bottom: 75px;

@@ -238,6 +238,22 @@
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
 					@include Item(279, 474, 74, 0, 18, 0, 320);
 					z-index: 0;
+					&:before{
+						content: '';
+						@include SubItem();
+						background: url(../img/lightbox/gradient.png) center/ 100% 100%;
+						z-index: -1;
+						opacity: 1;
+						z-index: 3;
+					}
+					&:after{
+						content: '';
+						@include SubItem();
+						background: url(../img/lightbox/grid.png);
+						z-index: -1;
+						opacity: 1;
+						z-index: 3;
+					}
 				}
 			}
 
