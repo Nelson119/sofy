@@ -68,6 +68,9 @@ body {
 				fadeIn 0.75s 1 linear forwards 0s
 			);
 		}
+		.blogger-box.in{
+			height: 100%;
+		}
 	}
 	&.rule{
 		.content.rule-content{

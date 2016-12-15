@@ -45,7 +45,7 @@ app.partial.menu = function(){
 	$('.menu nav a:eq(2)').on('click', function(e){
 		if( $(window).width() > 768){
 			// TweenMax.to('.home-content article', 1, {scrollTop: 935*0.8});
-			TweenMax.to('.home-content article', 1, {scrollTop: 909});
+			TweenMax.to('.home-content article', 1, {scrollTop: 837});
 		}else{
 			TweenMax.to('.home-content article', 1, {scrollTop: 1270 / 375 * $(window).width()});
 		}
@@ -55,7 +55,7 @@ app.partial.menu = function(){
 	$('.menu nav a:eq(3)').on('click', function(e){
 		if( $(window).width() > 768){
 			// TweenMax.to('.home-content article', 1, {scrollTop: 2078*0.8});
-			TweenMax.to('.home-content article', 1, {scrollTop: 1915});
+			TweenMax.to('.home-content article', 1, {scrollTop: 1865});
 		}else{
 			TweenMax.to('.home-content article', 1, {scrollTop: 2115 / 375 * $(window).width()});
 		}

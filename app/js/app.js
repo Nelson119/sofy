@@ -99,7 +99,7 @@ $(function(){
     });
 
 
-	$(window).hammer().on('tap scroll', function(){
+	$(window).hammer().on('tap scroll resize', function(){
 		if( $(window).width() <= 768 && window.innerHeight < 560 ){
 			$('.video-carousel .video-background').addClass('short');
 		}else if($('.video-background').hasClass('short')){
@@ -107,6 +107,8 @@ $(function(){
 		}
 		if( $(window).width() <= 768 && window.innerHeight ){
 			$('html, body, .video-background, .sky-background').height(window.innerHeight);
+		}else{
+			$('html, body, .video-background, .sky-background').removeAttr('style');
 		}
 	});
 	$('body').on('viewport:video-carousel', function(e){
