@@ -289,6 +289,10 @@
 					border-radius: 2.5px;
 				}
 			}
+
+			&:focus{
+				outline: none;
+			}
 		}
 
 		.slick-dots{
@@ -596,34 +600,6 @@
 		transform: scale(1);
 		opacity: 0;
 		background: url(../img/background/pause.png) center no-repeat;
-    }
-}
-
-@include keyframes( cloud )
-{
-    0% {
-		transform: scale(1) translateX(0vw);
-		opacity: 1;
-    }
-    50% {
-		transform: scale(1.1) translateX(150vw);
-		opacity: 1;
-    }
-    51% {
-		transform: scale(0) translateX(150vw);
-		opacity: 0;
-    }
-    52% {
-		transform: scale(0) translateX(-150vw);
-		opacity: 0;
-    }
-    53% {
-		transform: scale(1.1) translateX(-150vw);
-		opacity: 1;
-    }
-    100% {
-		transform: scale(1) translateX(0vw);
-		opacity: 1;
     }
 }
 

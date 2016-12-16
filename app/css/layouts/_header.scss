@@ -60,6 +60,9 @@ header {
 		&:hover{
 			transition-duration: 0.3s;
 			top: 1em;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				top: 0;
+			}
 
 			transform: scale(1) ;//rotateZ(10deg) rotateX(-15deg) translateX(-2%) translateY(5%);
 		}
@@ -195,6 +198,22 @@ header {
 				@media screen and (max-width: #{$screen-sm-num - 1}px) {
 					border-bottom: 2px solid #fa7aab;
 				}
+
+
+				&[disabled]{
+					opacity: 0.5;
+					pointer-events: none;
+					&:after{
+						display: block;
+						font-size: 0.5em;
+						line-height: 0.5em;
+						content: 'coming soon';
+						@media screen and (max-width: #{$screen-sm-num - 1}px) {
+							font-size: 0.8em;
+							line-height: 0.8em;
+						}
+					}
+				}
 			}
 		}
 
@@ -222,11 +241,8 @@ body.menu{
 		transform: translateX(#{per(-230, 320)});
 		overflow-x: visible; 
 		a#menuoff{
-			@include SubItem();
-			display: block;
-			position: fixed;
-			background: rgba(0,0,0,0.05);
-			z-index: 50;
+			width: 100%;
+			transition-delay: 0s;
 		}
 	}
 	header .coupon, header .burger{
@@ -238,7 +254,13 @@ body.menu{
 
 body{
 	a#menuoff{
-		display: none;
+		@include SubItem();
+		width: 0;
+		transition-delay: 0.75s;
+		display: block;
+		position: fixed;
+		background: rgba(0,0,0, 0.05);
+		z-index: 50;
 	}
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
 		transition-duration: 0.25s;

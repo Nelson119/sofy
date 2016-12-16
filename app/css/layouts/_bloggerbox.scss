@@ -5,10 +5,10 @@ body.home .blogger-box{
 	background: rgba(0,0,0,0.5);
 	z-index: 200;
 	@media screen and (max-width: #{$screen-sm-num - 1}px) {
-		margin-top: per(75, 320);
+		margin-top: per(65, 320);
 		background: none;
 		overflow: auto; 
-		height: calc(100% - #{em(75)});
+		height: calc(100% - #{em(65)});
 	}
 
 	.inner{
@@ -144,7 +144,6 @@ body.home .blogger-box{
 		}
 	}
 	p{
-		margin-bottom: 5px;
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			margin-bottom: em(0, 12);
 		}
@@ -194,7 +193,7 @@ body.home .blogger-box{
 			margin-bottom: per(40, 280);
 			padding-bottom: per(40, 280);
 			p + p{
-				margin-top: em(22);
+				margin-top: 2em;
 			}
 		}
 	}

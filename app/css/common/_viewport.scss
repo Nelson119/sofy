@@ -70,6 +70,9 @@ body {
 		}
 		.blogger-box.in{
 			height: 100%;
+			@media screen and (max-width: #{$screen-sm-num - 1}px) {
+				height: calc(100% - #{vw320(65)});
+			}
 		}
 	}
 	&.rule{
@@ -177,9 +180,9 @@ body {
 		z-index: 10;
 		.video-container {
 			top: 0%;
-			transition: 0s linear 0s;
 			z-index: 10;
 			height: 100%;
+			transition: 0s linear 0s;
 			@include animation(
 				fadeIn 0.75s 1 linear forwards 0s
 			);
@@ -266,6 +269,17 @@ body {
 html,body{	
 	overflow: hidden;
 
+	&.share{
+		overflow-y: visible;
+		overflow-x: hidden;
+		.kv-container,.video-container{
+			pointer-events: none;
+		}
+		header .burger, header .coupon, header .logo{
+			position:fixed;
+			backface-visibility: hidden;
+		}
+	}
 	&.menu{
 		overflow: visible;
 	}

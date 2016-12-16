@@ -8,6 +8,7 @@
 app.partial.menu = function(){
 	$('header .burger').on('click', function(){
 		$('body').addClass('menu');
+		// $('header .burger').unbind('click');
 		$('body.menu').hammer().one('swiperight',function(e){
 			$('body').removeClass('menu');
 			$('body.menu').hammer().unbind('swiperight');
@@ -19,7 +20,7 @@ app.partial.menu = function(){
 			$('#menuoff').hammer().unbind('tap');
 		});
 	});
-	$('.kv-container').hammer().on('swipeleft',function(e){
+	$('.kv-container,.content,.video-container .video:eq(1),.blogger-box').hammer().on('swipeleft',function(e){
 		$('header .burger').trigger('click');
 	});
 	$('.menu .menu-x').on('click', function(){
@@ -98,6 +99,7 @@ app.partial.menu = function(){
 
 	function changeView(view, e, isback){
 		$('body').removeClass('menu');
+		$('.blogger-box .in').removeClass('in');
 		// console.log('view',view);
 		var views = ['loading','home', 'loop', 'rule', 'video', 'form', 'thankyou', 'video-carousel', 'award'];
 		var rm = views.join(' ').replace(view);

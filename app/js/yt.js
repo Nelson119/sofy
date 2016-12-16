@@ -51,7 +51,6 @@ app.partial.yt = function(){
 			}
 		});
 
-
 		var fragTick = 0;
 		YT.Player.prototype.carouselPlay = function(){
 			if(this.getPlayerState() !== 1){
@@ -196,16 +195,12 @@ app.partial.yt = function(){
 				kvloop.pauseVideo();	
 				kvloop.seekTo(0);
 				var s = setTimeout(function(){
-					app.changeView('loop');
-					seek0();	
+					if(location.hash == '#rule'){
+						app.changeView('rule');
+					}else{
+						app.changeView('loop');	
+					}
 				}, 750);
-			}
-
-			var ct = kvloop.getCurrentTime();
-			var tt = kvloop.getDuration();
-			// console.log((tt-ct) <= 2);
-			if((tt-ct) <= 0.1){
-				kvloop.seekTo(0);
 			}
 		}, 100);
 
@@ -214,7 +209,11 @@ app.partial.yt = function(){
 			gif.onload = function(){	
 				bar.animate(1);			
 				setTimeout(function(){
-					app.changeView('loop');
+					if(location.hash == '#rule'){
+						app.changeView('rule');
+					}else{
+						app.changeView('loop');	
+					}
 				}, 750);
 				return;
 			};
@@ -232,7 +231,7 @@ app.partial.yt = function(){
 				if(view !== 'loop' && kvloop.pauseVideo){
 					kvloop.pauseVideo();
 				}else{
-					kvloop.playVideo();
+					seek0();
 				}
 			}
 

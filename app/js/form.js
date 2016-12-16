@@ -42,7 +42,7 @@ app.partial.form = function(){
 		form.sDistrict = $('[name=district] option:selected').val();
 		form.sCounty = $('[name=county] option:selected').val();
 		form.sZip = $('[name=zipcode]').val();
-		form.sAD = extractUrlValue('utm_source') || 'none';
+		form.sAD = app.extractUrlValue('utm_source') || 'none';
 
 		if(!form.sName){
 			alert('請填寫姓名');
@@ -75,7 +75,7 @@ app.partial.form = function(){
 
 	function send(){
 		$.ajax({
-			url: 'http://www1.jwttw.com/event/sofy/2016waka/SaveData.ashx',
+			url: 'http://wakaimc.sofy.com.tw/SaveData.ashx',
 			data: form,
 			method: 'post'
 		}).success(function(r){
@@ -93,13 +93,5 @@ app.partial.form = function(){
 		});
 	}
 
-	function extractUrlValue(key, url)
-	{
-		if (typeof url === 'undefined'){
-			url = window.location.href;
-		}
-		var match = url.match('[?&]' + key + '=([^&]+)');
-		return match ? match[1] : null;
-	}
 
 };	

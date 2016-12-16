@@ -3,7 +3,7 @@
 	no-use-before-define, no-trailing-spaces, space-infix-ops, comma-spacing,
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
-	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
+	eqeqeq, no-extend-native, quotes , no-inner-declarations, no-alert*/
 /*global  $, FB */
 
 var app = {};
@@ -28,17 +28,23 @@ var share = {
 		}
 
 		if(app.fbstatus != 'connected'){
-			FB.login(function(r){
-				if(r.status === 'connected'){				
-					app.fbstatus = r.status;
-					ui(href);
-					me();
-				}else{
-					console.log('not logged in');
-				}
-			}, {
-				scope: 'email'
-			});
+			if(!/crios/ig.test(navigator.userAgent)){
+				FB.login(function(r){
+					if(r.status === 'connected'){				
+						app.fbstatus = r.status;
+						ui(href);
+						me();
+					}else{
+						console.log('not logged in');
+					}
+				}, {
+					scope: 'email'
+				});
+
+			}else{
+				window.open('https://www.facebook.com/share.php?u='+encodeURIComponent(href+'?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy'));
+				app.changeView('form');
+			}
 		}else{
 			ui(href);
 			me();
@@ -53,9 +59,13 @@ var share = {
 		}
 
 		function ui(h){
+			if( $(window).width() > 768 ){
+				$('body').addClass('share');
+			}
 			FB.ui({
   				method: 'feed',
-  				link: h
+  				link: h,
+  				display: ( app.ismobile ? 'touch' : 'iframe')
 			},
 			function(r) {
 				if(!goform){
@@ -63,6 +73,9 @@ var share = {
 				}
 				if (r && !r.error_message) {
 					app.changeView('form');
+				}
+				if( $(window).width() > 768 ){
+					$('body').removeClass('share');
 				}
 			});
 		}
@@ -78,7 +91,6 @@ var share = {
 		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
 	}
 };
-
 window.fbAsyncInit = function() {
 	FB.init({
 		appId      : (debug ? '227687320989903' : '227679697657332'),
@@ -88,9 +100,14 @@ window.fbAsyncInit = function() {
 
 	FB.getLoginStatus(function(r) {
 		app.fbstatus = r.status;
+		if(extractUrlValue('code')){
+			share.facebook(decodeURIComponent(extractUrlValue('shref')), null , true);
+		}
 	});
 };
-
+if(extractUrlValue('error_code')){
+	alert('請先同意存取');
+}
 $(function(){
 
     // 定義每個section
@@ -121,9 +138,6 @@ $(function(){
 	//觸發第一次調整頁面尺寸
 	$(window).trigger('resize');
 
-	if(location.hash == '#rule'){
-		app.changeView('rule');
-	}
 
 
 });
@@ -140,5 +154,17 @@ $.fn.hasAttr = function(attributeName){
 		return false;
 	}
 };
+
+function extractUrlValue(key, url)
+{
+	if (typeof url === 'undefined'){
+		url = window.location.href;
+	}
+	var match = url.match('[?&]' + key + '=([^&]+)');
+	return match ? match[1] : null;
+}
+
+app.extractUrlValue = extractUrlValue;
+
 
 

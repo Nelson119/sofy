@@ -180,6 +180,7 @@
 				}
 
 				figcaption{
+					white-space: nowrap;
 					width: 100%;
 					position:absolute;
 					bottom: 0;
@@ -533,8 +534,17 @@
 								);
 							}
 						}
+
+						p{
+							display: none;
+						}
 						i{
 							display: none;
+						}
+						.more{
+							margin-top: em(22, 16);
+							margin-bottom: em(68, 16);
+							display: block;
 						}
 					}
 				}
@@ -818,6 +828,11 @@
 			&:active .hv{
 				transform: translate(3px, 3px);
 				transition-duration: 0.15s;
+			}
+			&.hide{
+				display: inline-block!important;
+				opacity: 0;
+				pointer-events: none;
 			}
 			@media screen and (max-width: #{$screen-sm-num - 1}px) {
 				@include Item(113, 39, 392, 0, 104, 0, 320);
