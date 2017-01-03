@@ -20,7 +20,7 @@ app.partial.menu = function(){
 			$('#menuoff').hammer().unbind('tap');
 		});
 	});
-	$('.kv-container,.content,.video-container .video:eq(1),.blogger-box').hammer().on('swipeleft',function(e){
+	$('.kv-container,.content:not(.form-content),.video-container .video:eq(1),.blogger-box').hammer().on('swipeleft',function(e){
 		$('header .burger').trigger('click');
 	});
 	$('.menu .menu-x').on('click', function(){

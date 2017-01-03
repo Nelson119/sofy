@@ -452,6 +452,12 @@
 				}
 			}
 		}
+		.kvloop{
+			background-size: 400vw 2800vh;
+			@include animation(
+				loopjpg steps(1) 10s infinite
+			);
+		}
 
 		@media screen and (max-width: #{$screen-sm-num - 1}px) {
 			overflow-y: auto;
@@ -498,9 +504,8 @@
 				height: 100vh!important;
 				overflow:hidden;
 				position: relative;
-				img{
+				.kvloop{
 					@include SubItem();
-					height: auto;
 				}
 			}
 		}
@@ -627,3 +632,30 @@
 		transform: scale(1, 1);
 	}
 }
+
+@include keyframes(loopjpg)
+{
+	$y: 0;
+	$x: 0;
+	$xvw: 0;
+	$yvh: 0;
+	@for $i from 0 to 108 {
+
+		#{(100 / 107) * $i}% {
+			background-position: #{$x}px #{$y}px;
+			background-position: #{$xvw}vw #{$yvh}vh;
+			content: $i;
+		}
+		@if(($i % 4) == 3){
+			$x: 0;
+			$y: $y - 568;
+			$xvw: 0;
+			$yvh: $yvh - 100;
+		}@else{
+			$x: $x - 320;
+			$xvw: $xvw - 100;
+		}
+	}
+}
+
+

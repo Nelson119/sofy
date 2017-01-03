@@ -31,6 +31,7 @@ app.partial.form = function(){
 		$('[name=district]').val(null);
 		$('[name=county]').val(null);
 		$('[name=zipcode]').val('');
+		$('[name=sValidateCode]').val('');
 
 	});
 
@@ -43,6 +44,7 @@ app.partial.form = function(){
 		form.sCounty = $('[name=county] option:selected').val();
 		form.sZip = $('[name=zipcode]').val();
 		form.sAD = app.extractUrlValue('utm_source') || 'none';
+		form.sValidateCode = $('[name=sValidateCode]').val();
 
 		if(!form.sName){
 			alert('請填寫姓名');
@@ -64,6 +66,10 @@ app.partial.form = function(){
 			alert('請填寫完整地址');
 			return false;
 		}
+		if(!form.sValidateCode){
+			alert('請填寫驗證碼');
+			return false;
+		}
 		if(!$('#agree').is(':checked')){
 			alert('請勾選同意');
 			return false;
@@ -75,12 +81,12 @@ app.partial.form = function(){
 
 	function send(){
 		$.ajax({
-			url: 'http://wakaimc.sofy.com.tw/SaveData.ashx',
+			url: app.debug ? 'http://www1.jwttw.com/event/sofy/2016waka/SaveData.ashx' :'http://wakaimc.sofy.com.tw/SaveData.ashx',
 			data: form,
 			method: 'post'
 		}).success(function(r){
-			if(r.Success == '0'){
-				console.log(r);
+			if(r.Success == '0' && r.Msg){
+				alert(r.Msg);
 			}else{
 				app.changeView('thankyou');
 

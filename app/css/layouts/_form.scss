@@ -13,7 +13,7 @@
 		width: per(280, 320);
 		padding: per(41, 320) per(28, 320) per(125, 320);
 		margin: per(10, 320) auto 0;
-		background: url(../img/form/background@320.png) center top/ 100% auto no-repeat;
+		background: url(../img/form/background@320.png) center top/ 100% 100% no-repeat;
 	}
 	@media screen and (min-width: #{$screen-sm-num}px) {
 		// transform: scale(0.8);

@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations*/
-/*global app, $, YT, ProgressBar */
+/*global app, $, YT */
 app.partial.yt = function(){
 	// 2. This code loads the IFrame Player API code asynchronously.
 	var tag = document.createElement('script');
@@ -178,7 +178,6 @@ app.partial.yt = function(){
 
 		var wait4loop = setInterval(function(){
 			if($(window).width() <= 768 || $('html.ios').length){
-				gifLoad();
 				clearInterval(wait4loop);
 			}
 			if(!kvloop.playVideo){
@@ -188,7 +187,7 @@ app.partial.yt = function(){
 			var frac = kvloop.getVideoLoadedFraction();
 			kvloop.mute();
 			if(frac > 0){
-				bar.animate(frac);	
+				app.bar.animate(frac);	
 			}
 			if(frac >= 0.95){
 				clearInterval(wait4loop);
@@ -203,23 +202,6 @@ app.partial.yt = function(){
 				}, 750);
 			}
 		}, 100);
-
-		function gifLoad(){
-			var gif = new Image();
-			gif.onload = function(){	
-				bar.animate(1);			
-				setTimeout(function(){
-					if(location.hash == '#rule'){
-						app.changeView('rule');
-					}else{
-						app.changeView('loop');	
-					}
-				}, 750);
-				return;
-			};
-			gif.src = $('.kv-container .player img').attr('src');
-		}
-
 		function seek0(){
 			kvloop.playVideo();	
 			setTimeout(seek0, 9.8);
@@ -261,51 +243,6 @@ app.partial.yt = function(){
 
 
 
-	// progressbar.js@1.0.0 version is used
-	// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-
-	var bar = new ProgressBar.Circle(document.getElementById('fragLoading'), {
-	  color: '#aaa',
-	  // This has to be the same size as the maximum width to
-	  // prevent clipping
-	  strokeWidth: 2,
-	  trailWidth: 0,
-	  easing: 'easeInOut',
-	  duration: 50,
-	  text: {
-	    autoStyleContainer: false
-	  },
-	  from: { color: '#fff', width: 1 },
-	  to: { color: '#fff', width: 2 },
-	  // Set default step function for all animate calls
-	  step: function(state, circle) {
-	    circle.path.setAttribute('stroke', state.color);
-	    circle.path.setAttribute('stroke-width', state.width);
-
-	    var value = Math.round(circle.value() * 100);
-	    if (value === 0) {
-	      circle.setText('');
-	    } else {
-	      circle.setText(value);
-	    }
-
-	  }
-	});
-	bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-	bar.text.style.fontSize = '2rem';
-
-
-	var sec1 = Math.random() / 100 / 3;
-	var sec2 = Math.random() / 10;
-	var pres = sec1 + sec2;
-
-	setTimeout(function(){
-		bar.animate(sec1); 
-	}, sec1 * 250 + 100);
-
-	setTimeout(function(){
-		bar.animate(sec2); 
-	}, sec2 * 250 + 500);
 };	
 
 

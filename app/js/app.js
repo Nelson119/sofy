@@ -4,7 +4,7 @@
 	no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,no-empty,
 	key-spacing ,curly, no-shadow, no-return-assign, no-redeclare, no-unused-vars,
 	eqeqeq, no-extend-native, quotes , no-inner-declarations, no-alert*/
-/*global  $, FB */
+/*global  $, FB, ProgressBar */
 
 var app = {};
 app.partial = {};
@@ -14,7 +14,9 @@ app.fbstatus = null;
 // var dayOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // 網址為 gulp 或者 github 時 設定成debug 模式
-var debug = /localhost[:]9000|nelson119.github.io/.test(location.href);
+var debug = /localhost[:]9000|www1.jwttw.com/.test(location.href);
+
+app.debug = debug;
 
 var share = {
 	facebook: function(href, title, goform){
@@ -27,28 +29,28 @@ var share = {
 			return false;
 		}
 
-		if(app.fbstatus != 'connected'){
-			if(!/crios/ig.test(navigator.userAgent)){
-				FB.login(function(r){
-					if(r.status === 'connected'){				
-						app.fbstatus = r.status;
-						ui(href);
-						me();
-					}else{
-						console.log('not logged in');
-					}
-				}, {
-					scope: 'email'
-				});
+		// if(app.fbstatus != 'connected'){
+			// if(!/crios/ig.test(navigator.userAgent)){
+			// 	FB.login(function(r){
+			// 		if(r.status === 'connected'){				
+			// 			app.fbstatus = r.status;
+			// 			ui(href);
+			// 			me();
+			// 		}else{
+			// 			console.log('not logged in');
+			// 		}
+			// 	}, {
+			// 		scope: 'email'
+			// 	});
 
-			}else{
+			// }else{
 				window.open('https://www.facebook.com/share.php?u='+encodeURIComponent(href+'?utm_source=facebook&utm_medium=fbshare_m&utm_campaign=sofy'));
 				app.changeView('form');
-			}
-		}else{
-			ui(href);
-			me();
-		}
+			// }
+		// }else{
+		// 	ui(href);
+		// 	me();
+		// }
 
 		function me(){
 			FB.api('/me', function(me){
@@ -110,6 +112,26 @@ if(extractUrlValue('error_code')){
 }
 $(function(){
 
+	if($(window).width() <= 768 || $('html.ios').length){
+		gifLoad();
+	}
+
+	function gifLoad(){
+		var gif = new Image();
+		gif.onload = function(){	
+			app.bar.animate(1);			
+			setTimeout(function(){
+				if(location.hash == '#rule'){
+					app.changeView('rule');
+				}else{
+					app.changeView('loop');	
+				}
+			}, 750);
+			return;
+		};
+		gif.src = $('.kv-container .player .kvloop').attr('data-src');
+	}
+
     // 定義每個section
 	$.each(app.partial, function(name, init){
 		init();
@@ -165,6 +187,53 @@ function extractUrlValue(key, url)
 }
 
 app.extractUrlValue = extractUrlValue;
+
+
+// progressbar.js@1.0.0 version is used
+// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+app.bar = new ProgressBar.Circle(document.getElementById('fragLoading'), {
+  color: '#aaa',
+  // This has to be the same size as the maximum width to
+  // prevent clipping
+  strokeWidth: 2,
+  trailWidth: 0,
+  easing: 'easeInOut',
+  duration: 50,
+  text: {
+    autoStyleContainer: false
+  },
+  from: { color: '#fff', width: 1 },
+  to: { color: '#fff', width: 2 },
+  // Set default step function for all animate calls
+  step: function(state, circle) {
+    circle.path.setAttribute('stroke', state.color);
+    circle.path.setAttribute('stroke-width', state.width);
+
+    var value = Math.round(circle.value() * 100);
+    if (value === 0) {
+      circle.setText('');
+    } else {
+      circle.setText(value);
+    }
+
+  }
+});
+app.bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+app.bar.text.style.fontSize = '2rem';
+
+
+var sec1 = Math.random() / 100 / 3;
+var sec2 = Math.random() / 10;
+var pres = sec1 + sec2;
+
+setTimeout(function(){
+	app.bar.animate(sec1); 
+}, sec1 * 250 + 100);
+
+setTimeout(function(){
+	app.bar.animate(sec2); 
+}, sec2 * 250 + 500);
 
 
 
